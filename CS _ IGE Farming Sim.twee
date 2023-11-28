@@ -1,0 +1,16 @@
+:: StoryTitle
+CS + IGE Farming Sim
+
+
+:: StoryData
+{
+  "ifid": "D2EDA601-D58B-40C5-9FD3-41500E0E72D7",
+  "format": "Harlowe",
+  "format-version": "3.3.6",
+  "start": "Untitled Passage",
+  "zoom": 1
+}
+
+
+:: Untitled Passage {"position":"625,250","size":"100,100"}
+Hello World!
