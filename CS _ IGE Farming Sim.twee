@@ -7,46 +7,163 @@ CS + IGE Farming Sim
   "ifid": "D2EDA601-D58B-40C5-9FD3-41500E0E72D7",
   "format": "Harlowe",
   "format-version": "3.3.7",
-  "start": "Introduction",
+  "start": "Start",
+  "tag-colors": {
+    "startup": "red"
+  },
   "zoom": 1
 }
 
 
+:: Bad Outcome {"position":"1200,475","size":"100,100"}
+(set: $farmScore to it -1)[Your $crop suffered.]
+
+[[Damb...|Farm]]
+
+
 :: Bean Farm {"position":"700,400","size":"100,100"}
-[[It's time to start the farm!|Farm]]
+(set: $crop to "beans")(set: $guide to "Adriana")[Beans? Good choice! Beans have a long history in Mexico, as beans are an integral part of the Mexican diet. This food is deeply engrained in Mexican dishes and cultural practices.]
+
+I'll have you work with $guide to help get your farm started!
+
+[[Speak to $guide|Farmhand]]
 
 
 :: Cassava Farm {"position":"700,550","size":"100,100"}
-[[It's time to start the farm!|Farm]]
+(set: $crop to "cassava")(set: $guide to "Hery")[Cassava? Good choice! Cassava is a staple food crop in Madagascar, Africa. The crop is often featured in traditional ceremonies and rituals.]
+
+I'll have you work with $guide to help get your farm started!
+
+[[Speak to $guide|Farmhand]]
 
 
-:: Corn Farm {"position":"700,200","size":"100,100"}
-[[It's time to start the farm!|Farm]]
+:: Choose Your Crop {"position":"500,300","size":"100,100"}
+Hello! Welcome to the shop where you can buy your first crop. After you grow and harvest your first crop, you can sell your crops at the store to increase your income.
 
+Which crop did you want to grow?
 
-:: Farm {"position":"900,300","size":"100,100"}
-[[Visit the Farm Store|Farm Store]]
-[[Finish working on the farm|Transition]]
-
-
-:: Farm Store {"position":"1000,100","size":"100,100"}
-[[Head back to the farm|Farm]]
-
-
-:: Introduction {"position":"500,300","size":"100,100"}
-What farm should I start with?
-
-[[Start with a Corn farm|Corn Farm]]
 [[Start with a Rice farm|Rice Farm]]
+[[Start with a Corn farm|Corn Farm]]
 [[Start with a Bean farm|Bean Farm]]
 [[Start with a Cassava farm|Cassava Farm]]
 
 
-:: Rice Farm {"position":"700,50","size":"100,100"}
-[[It's time to start the farm!|Farm]]
+:: Corn Farm {"position":"700,200","size":"100,100"}
+(set: $crop to "corn")(set: $guide to "Kuruk")[Corn? Good choice! Corn has deep cultural and historical roots in Native American traditions, as it played a vital role in the diets of indigenous peoples. It is celebrated in multiple festivals and events across the country.]
+
+I'll have you work with $guide to help get your farm started!
+
+[[Speak to $guide|Farmhand]]
 
 
-:: Transition {"position":"1000,500","size":"100,100"}
-insert random event here
+:: Crop Details {"position":"1000,50","size":"100,100"}
+{
+(if: $crop is "rice")[Rice traces back more than 10,000 years ago and it was given as a gift from the animals after a large flood, giving the Chinese people a source of plentiful food. It is considered sacred and has shaped cultures and traditions for centuries in Asia.]
+(else-if: $crop is "corn")[Corn is also known as maize. It has been deeply rooted in Native American tradition and also serves other purposes, such as the making of mats, baskets, ceremonial rattling sticks, carved to create darts, toys, and more.]
+(else-if: $crop is "beans")[Beans have been around since pre-Hispanic Mexico and served as a base for daily meals. They were consumed ground up, processed into a paste, or mixed with grains. On cold days, beans were milled into powder and mixed with corn flour to create masa for tamales.]
+(else:)[In the middle of the nineteenth century, cassava became increasingly important as a staple food and was widely planted in Africa. It thrives in our environment because of its low water requirement, survivability in marginal soils, and flexibility in harvest time. No part of cassava goes to waste as parts are dried and fed to animals and the water squeezed from the fermeted cassava, the starch, is used to harden cloths.]
+}
 
+Ready to get to farming?
+
+[[Yup!|Farm]]
+
+
+:: Ending {"position":"1300,300","size":"100,100"}
+Hey $name, it's $guide again! Looks like the quality of $farmName...
+
+(event: when time > 4s)[(if: $farmScore >= 7)[...did amazing! Well done!](else:)[...could use some improvements. But you can always try again!]]
+
+(event: when time > 8s)[''THE END'']
+
+
+:: Farm {"position":"1100,300","size":"100,100"}
+{
+(set: _weather to (random: 0, 100))
+(if: _weather >= 90)[The weather is rainy.]
+(else-if: _weather <= 10)[There is a drought.]
+(else:)[The weather is clear.]
+}
+
+Farm score: $farmScore
+
+{
+<!--For testing purposes, next 2 choices are tests-->
+(if: _weather < 90 and > 10)[[Do good|Good Outcome]](else:)[[Do bad|Bad Outcome]]
+}
+
+[[Visit the Farm Store|Farm Store]]
+[[Finish working on the farm|Ending]]
+[[Ask about $crop|Crop Details]]
+
+
+:: Farm Name {"position":"300,300","size":"100,100"}
+(set: $farmName to (prompt: "What is your farm named?", ""))
+
+{
+(if: $farmName is not "")[$farmName! I like the sound of it! Catchy! Now that we got introductions out of the way, it's time to choose which crop you want to farm! Let's go to the store to buy your first crop.
+
+[[Okay!|Choose Your Crop]]](else:)[Umm... Did you hear me? What was your farm's name?
+
+[[Sorry, the name of my farm is...|Farm Name]]]
+}
+
+
+:: Farm Store {"position":"1200,50","size":"100,100"}
 [[Head back to the farm|Farm]]
+
+
+:: Farmer Name {"position":"300,100","size":"100,100"}
+(set: $name to (prompt: "What is your name?", ""))
+
+(if: $name is not "")[Hey there, $name! Welcome to your new farm! What did you want to name your farm?
+
+[[My farm is called...|Farm Name]]](else:)[Uhh... Hello? You there? What was your name?
+
+[[Sorry, my name is...|Farmer Name]]]
+
+
+:: Farmhand {"position":"900,300","size":"100,100"}
+Hi there! You're $name, right? My name is $guide and I'll be helping you grow your $crop on $farmName.
+
+If you have any questions, lemme know. Otherwise, let's start farming!
+
+[[Ask about $crop|Crop Details]]
+[[Start farming!|Farm]]
+
+
+:: Good Outcome {"position":"1000,475","size":"100,100"}
+(set: $farmScore to it +1)[Your $crop did pretty well.]
+
+[[Nice!|Farm]]
+
+
+:: Rice Farm {"position":"700,50","size":"100,100"}
+(set: $crop to "rice")(set: $guide to "Mei")[Rice? Good choice! Rice is a staple food for the Asian population. The cultivation of rice has led to a successful agricultural heritage of many Asian societies.]
+
+I'll have you work with $guide to help get your farm started!
+
+[[Speak to $guide|Farmhand]]
+
+
+:: Start {"position":"100,300","size":"100,100"}
+Hello! Welcome to Farming Simulator 2023!
+
+What's your name?
+
+[[My name is...|Farmer Name]]
+
+<!--Hey fellow programmer! You can adjust any of the narrative stuff in these next few passages. I just wanted to implement variables for the user name and their farm name for
+personalization. Remove this comment once you've done so -->
+
+
+
+:: Startup [startup] {"position":"300,500","size":"100,100"}
+(set: $name to "Avery")
+(set: $farmName to "Great Farms")
+(set: $crop to "rice")
+(set: $guide to "Mei")
+(set: $weeks to 10)
+(set: $farmScore to 0)
+
+<!--Preset values, will get changed as game progresses-->
