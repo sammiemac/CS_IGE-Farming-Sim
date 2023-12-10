@@ -63,7 +63,7 @@ Ready to get to farming?
 [[Yup!|Farm]]
 
 
-:: Ending {"position":"1675,400","size":"100,100"}
+:: Ending {"position":"1625,400","size":"100,100"}
 Hey $name, it's $guide again! Looks like the quality of $farmName...
 
 (event: when time > 4s)[(if: $farmScore >= 7)[...did amazing! Well done!](else:)[...could use some improvements. But you can always try again!]]
@@ -71,11 +71,12 @@ Hey $name, it's $guide again! Looks like the quality of $farmName...
 (event: when time > 8s)[''THE END'']
 
 
-:: Farm {"position":"1225,425","size":"100,100"}
+:: Farm {"position":"1225,400","size":"100,100"}
+[''Day $day'']
 {
 (set: $weather to (random: 0, 100))
-(if: $weather >= 80)[The weather is rainy.]
-(else-if: $weather <= 20)[There is a drought.]
+(if: $weather >= 90)[The weather is rainy.]
+(else-if: $weather <= 10)[There is a drought.]
 (else:)[The weather is clear.]
 }
 
@@ -84,7 +85,8 @@ Hey $name, it's $guide again! Looks like the quality of $farmName...
 [[Check on the plots|Farm Plots]]
 [[Visit the Farm Store|Farm Store]]
 [[Talk to $guide about $crop1|Crop Details]]
-[[Finish working on the farm|Ending]]
+[[End for today|Farm Transition]]
+
 
 
 :: Farm Name {"position":"300,300","size":"100,100"}
@@ -109,13 +111,25 @@ Hey $name, it's $guide again! Looks like the quality of $farmName...
 [[Head back|Farm]]
 
 
-:: Farm Store {"position":"1475,100","size":"100,100"}
+:: Farm Store {"position":"1525,50","size":"100,100"}
 
 [Welcome to the Farm Store $name! How can I help you? ]
 
 [[Buy|Purchase Menu]]
 [[Sell|Sell Menu]]
 [[Head back to the farm|Farm]]
+
+
+:: Farm Transition {"position":"1450,500","size":"100,100"}
+(live: 1s) [You go to bed after a day of hard long work and dream of a bountiful harvest that feels almost too real...]
+
+(set: $day to it + 1)
+
+{
+(live: 4s) [
+(if: $day is 7) [[[Oh, it seems that day has arrived!|Ending]]]
+(else:) [[[Ready to wake up?|Farm]]]]
+}
 
 
 :: Farmer Name {"position":"300,100","size":"100,100"}
@@ -131,9 +145,9 @@ Hey $name, it's $guide again! Looks like the quality of $farmName...
 :: Plot 1 Status {"position":"1050,850","size":"100,100"}
 {
 <!-- the farm score should only be incremented once during the initial check -->
-(if: ($plot's 1st is not "empty") and ($weather < 80 and > 20) and ($plotChecked's 1st is false)) [The (print: $plot's 1st) seems to be doing well enough. (set: $farmScore to it +1) (set: $plotChecked's 1st to true) (set: $cropStatus's 1st to "normal")]
-(else-if: ($plot's 1st is not "empty") and ($weather <= 20) and ($plotChecked's 1st is false))[The (print: $plot's 1st) is in dire need of water..  (set: $farmScore to it -1) (set: $plotChecked's 1st to true) (set: $cropStatus's 1st to "parched")]
-(else-if: ($plot's 1st is not "empty") and ($weather >= 80) and ($plotChecked's 1st is false))[The (print: $plot's 1st) seems to be flourishing!  (set: $farmScore to it +2) (set: $plotChecked's 1st to true) (set: $cropStatus's 1st to "hydrated")]
+(if: ($plot's 1st is not "empty") and ($weather < 90 and > 10) and ($plotChecked's 1st is false)) [The (print: $plot's 1st) seems to be doing well enough. (set: $farmScore to it +1) (set: $plotChecked's 1st to true) (set: $cropStatus's 1st to "normal")]
+(else-if: ($plot's 1st is not "empty") and ($weather <= 10) and ($plotChecked's 1st is false))[The (print: $plot's 1st) is in dire need of water..  (set: $farmScore to it -1) (set: $plotChecked's 1st to true) (set: $cropStatus's 1st to "parched")]
+(else-if: ($plot's 1st is not "empty") and ($weather >= 90) and ($plotChecked's 1st is false))[The (print: $plot's 1st) seems to be flourishing!  (set: $farmScore to it +2) (set: $plotChecked's 1st to true) (set: $cropStatus's 1st to "hydrated")]
 <!-- once plot has been checked, this branch will execute on subsequent checks until status is reset with the next day -->
 (else-if: ($plot's 1st is not "empty") and ($plotChecked's 1st is true))
 [The (print: $plot's 1st) is (print: $cropStatus's 1st).]
@@ -147,9 +161,9 @@ Hey $name, it's $guide again! Looks like the quality of $farmName...
 :: Plot 2 Status {"position":"1175,850","size":"100,100"}
 {
 <!-- the farm score should only be incremented once during the initial check -->
-(if: ($plot's 2nd is not "empty") and ($weather < 80 and > 20) and ($plotChecked's 2nd is false)) [The (print: $plot's 2nd) seems to be doing well enough. (set: $farmScore to it +1) (set: $plotChecked's 2nd to true) (set: $cropStatus's 2nd to "normal")]
-(else-if: ($plot's 1st is not "empty") and ($weather <= 20) and ($plotChecked's 2nd is false))[The (print: $plot's 2nd) is in dire need of water..  (set: $farmScore to it -1) (set: $plotChecked's 2nd to true) (set: $cropStatus's 2nd to "parched")]
-(else-if: ($plot's 2nd is not "empty") and ($weather >= 80) and ($plotChecked's 2nd is false))[The (print: $plot's 2nd) seems to be flourishing!  (set: $farmScore to it +2) (set: $plotChecked's 2nd to true) (set: $cropStatus's 2nd to "hydrated")]
+(if: ($plot's 2nd is not "empty") and ($weather < 90 and > 10) and ($plotChecked's 2nd is false)) [The (print: $plot's 2nd) seems to be doing well enough. (set: $farmScore to it +1) (set: $plotChecked's 2nd to true) (set: $cropStatus's 2nd to "normal")]
+(else-if: ($plot's 1st is not "empty") and ($weather <= 10) and ($plotChecked's 2nd is false))[The (print: $plot's 2nd) is in dire need of water..  (set: $farmScore to it -1) (set: $plotChecked's 2nd to true) (set: $cropStatus's 2nd to "parched")]
+(else-if: ($plot's 2nd is not "empty") and ($weather >= 90) and ($plotChecked's 2nd is false))[The (print: $plot's 2nd) seems to be flourishing!  (set: $farmScore to it +2) (set: $plotChecked's 2nd to true) (set: $cropStatus's 2nd to "hydrated")]
 <!-- once plot has been checked, this branch will execute on subsequent checks until status is reset with the next day -->
 (else-if: ($plot's 2nd is not "empty") and ($plotChecked's 2nd is true))
 [The (print: $plot's 2nd) is (print: $cropStatus's 2nd).]
@@ -164,9 +178,9 @@ Hey $name, it's $guide again! Looks like the quality of $farmName...
 :: Plot 3 Status {"position":"1325,850","size":"100,100"}
 {
 <!-- the farm score should only be incremented once during the initial check -->
-(if: ($plot's 3rd is not "empty") and ($weather < 80 and > 20) and ($plotChecked's 3rd is false)) [The (print: $plot's 3rd) seems to be doing well enough. (set: $farmScore to it +1) (set: $plotChecked's 3rd to true) (set: $cropStatus's 3rd to "normal")]
-(else-if: ($plot's 1st is not "empty") and ($weather <= 20) and ($plotChecked's 3rd is false))[The (print: $plot's 3rd) is in dire need of water..  (set: $farmScore to it -1) (set: $plotChecked's 3rd to true) (set: $cropStatus's 3rd to "parched")]
-(else-if: ($plot's 3rd is not "empty") and ($weather >= 80) and ($plotChecked's 3rd is false))[The (print: $plot's 3rd) seems to be flourishing!  (set: $farmScore to it +2) (set: $plotChecked's 3rd to true) (set: $cropStatus's 3rd to "hydrated")]
+(if: ($plot's 3rd is not "empty") and ($weather < 90 and > 10) and ($plotChecked's 3rd is false)) [The (print: $plot's 3rd) seems to be doing well enough. (set: $farmScore to it +1) (set: $plotChecked's 3rd to true) (set: $cropStatus's 3rd to "normal")]
+(else-if: ($plot's 1st is not "empty") and ($weather <= 10) and ($plotChecked's 3rd is false))[The (print: $plot's 3rd) is in dire need of water..  (set: $farmScore to it -1) (set: $plotChecked's 3rd to true) (set: $cropStatus's 3rd to "parched")]
+(else-if: ($plot's 3rd is not "empty") and ($weather >= 90) and ($plotChecked's 3rd is false))[The (print: $plot's 3rd) seems to be flourishing!  (set: $farmScore to it +2) (set: $plotChecked's 3rd to true) (set: $cropStatus's 3rd to "hydrated")]
 <!-- once plot has been checked, this branch will execute on subsequent checks until status is reset with the next day -->
 (else-if: ($plot's 3rd is not "empty") and ($plotChecked's 3rd is true))
 [The (print: $plot's 3rd) is (print: $cropStatus's 3rd).]
@@ -180,9 +194,9 @@ Hey $name, it's $guide again! Looks like the quality of $farmName...
 :: Plot 4 Status {"position":"1450,850","size":"100,100"}
 {
 <!-- the farm score should only be incremented once during the initial check -->
-(if: ($plot's 4th is not "empty") and ($weather < 80 and > 20) and ($plotChecked's 4th is false)) [The (print: $plot's 4th) seems to be doing well enough. (set: $farmScore to it +1) (set: $plotChecked's 4th to true) (set: $cropStatus's 4th to "normal")]
-(else-if: ($plot's 1st is not "empty") and ($weather <= 20) and ($plotChecked's 4th is false))[The (print: $plot's 4th) is in dire need of water..  (set: $farmScore to it -1) (set: $plotChecked's 4th to true) (set: $cropStatus's 4th to "parched")]
-(else-if: ($plot's 4th is not "empty") and ($weather >= 80) and ($plotChecked's 4th is false))[The (print: $plot's 4th) seems to be flourishing!  (set: $farmScore to it +2) (set: $plotChecked's 4th to true) (set: $cropStatus's 4th to "hydrated")]
+(if: ($plot's 4th is not "empty") and ($weather < 90 and > 10) and ($plotChecked's 4th is false)) [The (print: $plot's 4th) seems to be doing well enough. (set: $farmScore to it +1) (set: $plotChecked's 4th to true) (set: $cropStatus's 4th to "normal")]
+(else-if: ($plot's 1st is not "empty") and ($weather <= 10) and ($plotChecked's 4th is false))[The (print: $plot's 4th) is in dire need of water..  (set: $farmScore to it -1) (set: $plotChecked's 4th to true) (set: $cropStatus's 4th to "parched")]
+(else-if: ($plot's 4th is not "empty") and ($weather >= 90) and ($plotChecked's 4th is false))[The (print: $plot's 4th) seems to be flourishing!  (set: $farmScore to it +2) (set: $plotChecked's 4th to true) (set: $cropStatus's 4th to "hydrated")]
 <!-- once plot has been checked, this branch will execute on subsequent checks until status is reset with the next day -->
 (else-if: ($plot's 4th is not "empty") and ($plotChecked's 4th is true))
 [The (print: $plot's 4th) is (print: $cropStatus's 4th).]
@@ -193,7 +207,7 @@ Hey $name, it's $guide again! Looks like the quality of $farmName...
 [[Head back.|Farm]]
 
 
-:: Purchase Menu {"position":"1300,150","size":"100,100"}
+:: Purchase Menu {"position":"1350,100","size":"100,100"}
 [Excellent! What would you like to purchase?]
 
 [[Go back|Farm Store]]
@@ -207,7 +221,7 @@ I'll have you work with $guide to help get your farm started!
 [[Speak to $guide|Starting Farmhand]]
 
 
-:: Sell Menu {"position":"1650,150","size":"100,100"}
+:: Sell Menu {"position":"1700,100","size":"100,100"}
 [Excellent! What would you like to sell?]
 
 [[Go back|Farm Store]]
@@ -244,7 +258,7 @@ If you have any questions, lemme know. Otherwise, let's start farming!
 (set: $cropStatus to (a: "normal", "normal", "normal", "normal"))
 (set: $guide to "Mei")
 (set: $gold to 30)
-(set: $weeks to 10)
+(set: $days to 0)
 (set: $weather to 50)
 (set: $farmScore to 0)
 (set: $plot to (a: $crop1, $crop2, $crop3, $crop4))

@@ -37,14 +37,15 @@ I&#39;ll have you work with $guide to help get your farm started!
 
 Ready to get to farming?
 
-[[Yup!|Farm]]</tw-passagedata><tw-passagedata pid="6" name="Ending" tags="" position="1675,400" size="100,100">Hey $name, it&#39;s $guide again! Looks like the quality of $farmName...
+[[Yup!|Farm]]</tw-passagedata><tw-passagedata pid="6" name="Ending" tags="" position="1625,400" size="100,100">Hey $name, it&#39;s $guide again! Looks like the quality of $farmName...
 
 (event: when time &gt; 4s)[(if: $farmScore &gt;= 7)[...did amazing! Well done!](else:)[...could use some improvements. But you can always try again!]]
 
-(event: when time &gt; 8s)[&#39;&#39;THE END&#39;&#39;]</tw-passagedata><tw-passagedata pid="7" name="Farm" tags="" position="1225,425" size="100,100">{
+(event: when time &gt; 8s)[&#39;&#39;THE END&#39;&#39;]</tw-passagedata><tw-passagedata pid="7" name="Farm" tags="" position="1225,400" size="100,100">[&#39;&#39;Day $day&#39;&#39;]
+{
 (set: $weather to (random: 0, 100))
-(if: $weather &gt;= 80)[The weather is rainy.]
-(else-if: $weather &lt;= 20)[There is a drought.]
+(if: $weather &gt;= 90)[The weather is rainy.]
+(else-if: $weather &lt;= 10)[There is a drought.]
 (else:)[The weather is clear.]
 }
 
@@ -53,7 +54,8 @@ Ready to get to farming?
 [[Check on the plots|Farm Plots]]
 [[Visit the Farm Store|Farm Store]]
 [[Talk to $guide about $crop1|Crop Details]]
-[[Finish working on the farm|Ending]]</tw-passagedata><tw-passagedata pid="8" name="Farm Name" tags="" position="300,300" size="100,100">(set: $farmName to (prompt: &quot;What is your farm named?&quot;, &quot;&quot;))
+[[End for today|Farm Transition]]
+</tw-passagedata><tw-passagedata pid="8" name="Farm Name" tags="" position="300,300" size="100,100">(set: $farmName to (prompt: &quot;What is your farm named?&quot;, &quot;&quot;))
 
 {
 (if: $farmName is not &quot;&quot;)[$farmName! I like the sound of it! Catchy! Now that we got introductions out of the way, it&#39;s time to choose which crop you want to farm! Let&#39;s go to the store to buy your first crop.
@@ -61,7 +63,7 @@ Ready to get to farming?
 [[Okay!|Choose Your Crop]]](else:)[Umm... Did you hear me? What was your farm&#39;s name?
 
 [[Sorry, the name of my farm is...|Farm Name]]]
-}</tw-passagedata><tw-passagedata pid="9" name="Farm Store" tags="" position="1475,100" size="100,100">
+}</tw-passagedata><tw-passagedata pid="9" name="Farm Store" tags="" position="1525,50" size="100,100">
 [Welcome to the Farm Store $name! How can I help you? ]
 
 [[Buy|Purchase Menu]]
@@ -98,7 +100,7 @@ personalization. Remove this comment once you&#39;ve done so --&gt;</tw-passaged
 (set: $cropStatus to (a: &quot;normal&quot;, &quot;normal&quot;, &quot;normal&quot;, &quot;normal&quot;))
 (set: $guide to &quot;Mei&quot;)
 (set: $gold to 30)
-(set: $weeks to 10)
+(set: $days to 0)
 (set: $weather to 50)
 (set: $farmScore to 0)
 (set: $plot to (a: $crop1, $crop2, $crop3, $crop4))
@@ -112,9 +114,9 @@ personalization. Remove this comment once you&#39;ve done so --&gt;</tw-passaged
 [[Check on (print: $plot&#39;s 4th) plot|Plot 4 Status]]
 [[Head back|Farm]]</tw-passagedata><tw-passagedata pid="16" name="Plot 1 Status" tags="" position="1050,850" size="100,100">{
 &lt;!-- the farm score should only be incremented once during the initial check --&gt;
-(if: ($plot&#39;s 1st is not &quot;empty&quot;) and ($weather &lt; 80 and &gt; 20) and ($plotChecked&#39;s 1st is false)) [The (print: $plot&#39;s 1st) seems to be doing well enough. (set: $farmScore to it +1) (set: $plotChecked&#39;s 1st to true) (set: $cropStatus&#39;s 1st to &quot;normal&quot;)]
-(else-if: ($plot&#39;s 1st is not &quot;empty&quot;) and ($weather &lt;= 20) and ($plotChecked&#39;s 1st is false))[The (print: $plot&#39;s 1st) is in dire need of water..  (set: $farmScore to it -1) (set: $plotChecked&#39;s 1st to true) (set: $cropStatus&#39;s 1st to &quot;parched&quot;)]
-(else-if: ($plot&#39;s 1st is not &quot;empty&quot;) and ($weather &gt;= 80) and ($plotChecked&#39;s 1st is false))[The (print: $plot&#39;s 1st) seems to be flourishing!  (set: $farmScore to it +2) (set: $plotChecked&#39;s 1st to true) (set: $cropStatus&#39;s 1st to &quot;hydrated&quot;)]
+(if: ($plot&#39;s 1st is not &quot;empty&quot;) and ($weather &lt; 90 and &gt; 10) and ($plotChecked&#39;s 1st is false)) [The (print: $plot&#39;s 1st) seems to be doing well enough. (set: $farmScore to it +1) (set: $plotChecked&#39;s 1st to true) (set: $cropStatus&#39;s 1st to &quot;normal&quot;)]
+(else-if: ($plot&#39;s 1st is not &quot;empty&quot;) and ($weather &lt;= 10) and ($plotChecked&#39;s 1st is false))[The (print: $plot&#39;s 1st) is in dire need of water..  (set: $farmScore to it -1) (set: $plotChecked&#39;s 1st to true) (set: $cropStatus&#39;s 1st to &quot;parched&quot;)]
+(else-if: ($plot&#39;s 1st is not &quot;empty&quot;) and ($weather &gt;= 90) and ($plotChecked&#39;s 1st is false))[The (print: $plot&#39;s 1st) seems to be flourishing!  (set: $farmScore to it +2) (set: $plotChecked&#39;s 1st to true) (set: $cropStatus&#39;s 1st to &quot;hydrated&quot;)]
 &lt;!-- once plot has been checked, this branch will execute on subsequent checks until status is reset with the next day --&gt;
 (else-if: ($plot&#39;s 1st is not &quot;empty&quot;) and ($plotChecked&#39;s 1st is true))
 [The (print: $plot&#39;s 1st) is (print: $cropStatus&#39;s 1st).]
@@ -124,9 +126,9 @@ personalization. Remove this comment once you&#39;ve done so --&gt;</tw-passaged
 [[Check out another plot.|Farm Plots]]
 [[Head back.|Farm]]</tw-passagedata><tw-passagedata pid="17" name="Plot 2 Status" tags="" position="1175,850" size="100,100">{
 &lt;!-- the farm score should only be incremented once during the initial check --&gt;
-(if: ($plot&#39;s 2nd is not &quot;empty&quot;) and ($weather &lt; 80 and &gt; 20) and ($plotChecked&#39;s 2nd is false)) [The (print: $plot&#39;s 2nd) seems to be doing well enough. (set: $farmScore to it +1) (set: $plotChecked&#39;s 2nd to true) (set: $cropStatus&#39;s 2nd to &quot;normal&quot;)]
-(else-if: ($plot&#39;s 1st is not &quot;empty&quot;) and ($weather &lt;= 20) and ($plotChecked&#39;s 2nd is false))[The (print: $plot&#39;s 2nd) is in dire need of water..  (set: $farmScore to it -1) (set: $plotChecked&#39;s 2nd to true) (set: $cropStatus&#39;s 2nd to &quot;parched&quot;)]
-(else-if: ($plot&#39;s 2nd is not &quot;empty&quot;) and ($weather &gt;= 80) and ($plotChecked&#39;s 2nd is false))[The (print: $plot&#39;s 2nd) seems to be flourishing!  (set: $farmScore to it +2) (set: $plotChecked&#39;s 2nd to true) (set: $cropStatus&#39;s 2nd to &quot;hydrated&quot;)]
+(if: ($plot&#39;s 2nd is not &quot;empty&quot;) and ($weather &lt; 90 and &gt; 10) and ($plotChecked&#39;s 2nd is false)) [The (print: $plot&#39;s 2nd) seems to be doing well enough. (set: $farmScore to it +1) (set: $plotChecked&#39;s 2nd to true) (set: $cropStatus&#39;s 2nd to &quot;normal&quot;)]
+(else-if: ($plot&#39;s 1st is not &quot;empty&quot;) and ($weather &lt;= 10) and ($plotChecked&#39;s 2nd is false))[The (print: $plot&#39;s 2nd) is in dire need of water..  (set: $farmScore to it -1) (set: $plotChecked&#39;s 2nd to true) (set: $cropStatus&#39;s 2nd to &quot;parched&quot;)]
+(else-if: ($plot&#39;s 2nd is not &quot;empty&quot;) and ($weather &gt;= 90) and ($plotChecked&#39;s 2nd is false))[The (print: $plot&#39;s 2nd) seems to be flourishing!  (set: $farmScore to it +2) (set: $plotChecked&#39;s 2nd to true) (set: $cropStatus&#39;s 2nd to &quot;hydrated&quot;)]
 &lt;!-- once plot has been checked, this branch will execute on subsequent checks until status is reset with the next day --&gt;
 (else-if: ($plot&#39;s 2nd is not &quot;empty&quot;) and ($plotChecked&#39;s 2nd is true))
 [The (print: $plot&#39;s 2nd) is (print: $cropStatus&#39;s 2nd).]
@@ -137,9 +139,9 @@ personalization. Remove this comment once you&#39;ve done so --&gt;</tw-passaged
 [[Check out another plot.|Farm Plots]]
 [[Head back.|Farm]]</tw-passagedata><tw-passagedata pid="18" name="Plot 3 Status" tags="" position="1325,850" size="100,100">{
 &lt;!-- the farm score should only be incremented once during the initial check --&gt;
-(if: ($plot&#39;s 3rd is not &quot;empty&quot;) and ($weather &lt; 80 and &gt; 20) and ($plotChecked&#39;s 3rd is false)) [The (print: $plot&#39;s 3rd) seems to be doing well enough. (set: $farmScore to it +1) (set: $plotChecked&#39;s 3rd to true) (set: $cropStatus&#39;s 3rd to &quot;normal&quot;)]
-(else-if: ($plot&#39;s 1st is not &quot;empty&quot;) and ($weather &lt;= 20) and ($plotChecked&#39;s 3rd is false))[The (print: $plot&#39;s 3rd) is in dire need of water..  (set: $farmScore to it -1) (set: $plotChecked&#39;s 3rd to true) (set: $cropStatus&#39;s 3rd to &quot;parched&quot;)]
-(else-if: ($plot&#39;s 3rd is not &quot;empty&quot;) and ($weather &gt;= 80) and ($plotChecked&#39;s 3rd is false))[The (print: $plot&#39;s 3rd) seems to be flourishing!  (set: $farmScore to it +2) (set: $plotChecked&#39;s 3rd to true) (set: $cropStatus&#39;s 3rd to &quot;hydrated&quot;)]
+(if: ($plot&#39;s 3rd is not &quot;empty&quot;) and ($weather &lt; 90 and &gt; 10) and ($plotChecked&#39;s 3rd is false)) [The (print: $plot&#39;s 3rd) seems to be doing well enough. (set: $farmScore to it +1) (set: $plotChecked&#39;s 3rd to true) (set: $cropStatus&#39;s 3rd to &quot;normal&quot;)]
+(else-if: ($plot&#39;s 1st is not &quot;empty&quot;) and ($weather &lt;= 10) and ($plotChecked&#39;s 3rd is false))[The (print: $plot&#39;s 3rd) is in dire need of water..  (set: $farmScore to it -1) (set: $plotChecked&#39;s 3rd to true) (set: $cropStatus&#39;s 3rd to &quot;parched&quot;)]
+(else-if: ($plot&#39;s 3rd is not &quot;empty&quot;) and ($weather &gt;= 90) and ($plotChecked&#39;s 3rd is false))[The (print: $plot&#39;s 3rd) seems to be flourishing!  (set: $farmScore to it +2) (set: $plotChecked&#39;s 3rd to true) (set: $cropStatus&#39;s 3rd to &quot;hydrated&quot;)]
 &lt;!-- once plot has been checked, this branch will execute on subsequent checks until status is reset with the next day --&gt;
 (else-if: ($plot&#39;s 3rd is not &quot;empty&quot;) and ($plotChecked&#39;s 3rd is true))
 [The (print: $plot&#39;s 3rd) is (print: $cropStatus&#39;s 3rd).]
@@ -149,9 +151,9 @@ personalization. Remove this comment once you&#39;ve done so --&gt;</tw-passaged
 [[Check out another plot.|Farm Plots]]
 [[Head back.|Farm]]</tw-passagedata><tw-passagedata pid="19" name="Plot 4 Status" tags="" position="1450,850" size="100,100">{
 &lt;!-- the farm score should only be incremented once during the initial check --&gt;
-(if: ($plot&#39;s 4th is not &quot;empty&quot;) and ($weather &lt; 80 and &gt; 20) and ($plotChecked&#39;s 4th is false)) [The (print: $plot&#39;s 4th) seems to be doing well enough. (set: $farmScore to it +1) (set: $plotChecked&#39;s 4th to true) (set: $cropStatus&#39;s 4th to &quot;normal&quot;)]
-(else-if: ($plot&#39;s 1st is not &quot;empty&quot;) and ($weather &lt;= 20) and ($plotChecked&#39;s 4th is false))[The (print: $plot&#39;s 4th) is in dire need of water..  (set: $farmScore to it -1) (set: $plotChecked&#39;s 4th to true) (set: $cropStatus&#39;s 4th to &quot;parched&quot;)]
-(else-if: ($plot&#39;s 4th is not &quot;empty&quot;) and ($weather &gt;= 80) and ($plotChecked&#39;s 4th is false))[The (print: $plot&#39;s 4th) seems to be flourishing!  (set: $farmScore to it +2) (set: $plotChecked&#39;s 4th to true) (set: $cropStatus&#39;s 4th to &quot;hydrated&quot;)]
+(if: ($plot&#39;s 4th is not &quot;empty&quot;) and ($weather &lt; 90 and &gt; 10) and ($plotChecked&#39;s 4th is false)) [The (print: $plot&#39;s 4th) seems to be doing well enough. (set: $farmScore to it +1) (set: $plotChecked&#39;s 4th to true) (set: $cropStatus&#39;s 4th to &quot;normal&quot;)]
+(else-if: ($plot&#39;s 1st is not &quot;empty&quot;) and ($weather &lt;= 10) and ($plotChecked&#39;s 4th is false))[The (print: $plot&#39;s 4th) is in dire need of water..  (set: $farmScore to it -1) (set: $plotChecked&#39;s 4th to true) (set: $cropStatus&#39;s 4th to &quot;parched&quot;)]
+(else-if: ($plot&#39;s 4th is not &quot;empty&quot;) and ($weather &gt;= 90) and ($plotChecked&#39;s 4th is false))[The (print: $plot&#39;s 4th) seems to be flourishing!  (set: $farmScore to it +2) (set: $plotChecked&#39;s 4th to true) (set: $cropStatus&#39;s 4th to &quot;hydrated&quot;)]
 &lt;!-- once plot has been checked, this branch will execute on subsequent checks until status is reset with the next day --&gt;
 (else-if: ($plot&#39;s 4th is not &quot;empty&quot;) and ($plotChecked&#39;s 4th is true))
 [The (print: $plot&#39;s 4th) is (print: $cropStatus&#39;s 4th).]
@@ -159,11 +161,19 @@ personalization. Remove this comment once you&#39;ve done so --&gt;</tw-passaged
 }
 
 [[Check out another plot.|Farm Plots]]
-[[Head back.|Farm]]</tw-passagedata><tw-passagedata pid="20" name="Purchase Menu" tags="" position="1300,150" size="100,100">[Excellent! What would you like to purchase?]
+[[Head back.|Farm]]</tw-passagedata><tw-passagedata pid="20" name="Purchase Menu" tags="" position="1350,100" size="100,100">[Excellent! What would you like to purchase?]
 
-[[Go back|Farm Store]]</tw-passagedata><tw-passagedata pid="21" name="Sell Menu" tags="" position="1650,150" size="100,100">[Excellent! What would you like to sell?]
+[[Go back|Farm Store]]</tw-passagedata><tw-passagedata pid="21" name="Sell Menu" tags="" position="1700,100" size="100,100">[Excellent! What would you like to sell?]
 
-[[Go back|Farm Store]]</tw-passagedata></tw-storydata>
+[[Go back|Farm Store]]</tw-passagedata><tw-passagedata pid="22" name="Farm Transition" tags="" position="1450,500" size="100,100">(live: 1s) [You go to bed after a day of hard long work and dream of a bountiful harvest that feels almost too real...]
+
+(set: $day to it + 1)
+
+{
+(live: 4s) [
+(if: $day is 7) [[[Oh, it seems that day has arrived!|Ending]]]
+(else:) [[[Ready to wake up?|Farm]]]]
+}</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
