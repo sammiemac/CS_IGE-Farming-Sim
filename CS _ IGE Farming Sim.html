@@ -9,171 +9,351 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play CS + IGE Farming Sim.</tw-noscript></noscript></tw-story>
-<tw-storydata name="CS + IGE Farming Sim" startnode="13" creator="Twine" creator-version="2.8.0" format="Harlowe" format-version="3.3.7" ifid="D2EDA601-D58B-40C5-9FD3-41500E0E72D7" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="startup" color="red"></tw-tag><tw-passagedata pid="1" name="Bean Farm" tags="" position="700,400" size="100,100">(set: $crop1 to &quot;beans&quot;)(set: $guide to &quot;Adriana&quot;)(set: $plot&#39;s 1st to &quot;beans&quot;)[Beans? Good choice! Beans have a long history in Mexico, as beans are an integral part of the Mexican diet. This food is deeply engrained in Mexican dishes and cultural practices.]
+<tw-storydata name="CS + IGE Farming Sim" startnode="17" creator="Twine" creator-version="2.8.0" format="Harlowe" format-version="3.3.7" ifid="D2EDA601-D58B-40C5-9FD3-41500E0E72D7" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="startup" color="red"></tw-tag><tw-passagedata pid="1" name="Bean Plot" tags="" position="500,400" size="100,100">Hi there! You&#39;re $name, right? My name is Adriana and I&#39;ll be helping you grow your beans on this farm! Beans have a long history in Mexico, as beans are an integral part of the Mexican diet. This food is deeply engrained in Mexican dishes and cultural practices.
 
-I&#39;ll have you work with $guide to help get your farm started!
+Beans have been around since pre-Hispanic Mexico and served as a base for daily meals. They were consumed ground up, processed into a paste, or mixed with grains. On cold days, beans were milled into powder and mixed with corn flour to create masa for tamales.
 
-[[Speak to $guide|Starting Farmhand]]</tw-passagedata><tw-passagedata pid="2" name="Cassava Farm" tags="" position="700,550" size="100,100">(set: $crop1 to &quot;cassava&quot;)(set: $guide to &quot;Hery&quot;)(set: $plot&#39;s 1st to &quot;cassava&quot;)[Cassava? Good choice! Cassava is a staple food crop in Madagascar, Africa. The crop is often featured in traditional ceremonies and rituals.]
+Thanks for helping out! Speak to Hery at the cassava farm.
 
-I&#39;ll have you work with $guide to help get your farm started!
+[[Speak to Hery|Cassava Plot]]</tw-passagedata><tw-passagedata pid="2" name="Cassava Plot" tags="" position="500,550" size="100,100">Hi there! You&#39;re $name, right? My name is Hery and I&#39;ll be helping you grow your cassava on this farm! Cassava is a staple food crop in Madagascar, Africa. The crop is often featured in traditional ceremonies and rituals.]
 
-[[Speak to $guide|Starting Farmhand]]</tw-passagedata><tw-passagedata pid="3" name="Choose Your Crop" tags="" position="500,300" size="100,100">Hello! Welcome to the shop where you can buy your first crop. After you grow and harvest your first crop, you can sell your crops at the store to increase your income.
+In the middle of the nineteenth century, cassava became increasingly important as a staple food and was widely planted in Africa. It thrives in our environment because of its low water requirement, survivability in marginal soils, and flexibility in harvest time. No part of cassava goes to waste as parts are dried and fed to animals and the water squeezed from the fermeted cassava, the starch, is used to harden cloths.
 
-Which crop did you want to grow?
+You&#39;ve spoken to everyone already! Cool! We might ask you to help us with watering our crops and maybe using fertilizer to help the plants grow even better. Come by any time for any of the farms and see what we have in store for you!
 
-[[Start with a Rice farm|Rice Farm]]
-[[Start with a Corn farm|Corn Farm]]
-[[Start with a Bean farm|Bean Farm]]
-[[Start with a Cassava farm|Cassava Farm]]</tw-passagedata><tw-passagedata pid="4" name="Corn Farm" tags="" position="700,200" size="100,100">(set: $crop1 to &quot;corn&quot;)(set: $guide to &quot;Kuruk&quot;)(set: $plot&#39;s 1st to &quot;corn&quot;)[Corn? Good choice! Corn has deep cultural and historical roots in Native American traditions, as it played a vital role in the diets of indigenous peoples. It is celebrated in multiple festivals and events across the country.]
+[[Thanks Hery!|Gameplay Loop Intro]]</tw-passagedata><tw-passagedata pid="3" name="Corn Plot" tags="" position="500,200" size="100,100">Hi there! You&#39;re $name, right? My name is Kuruk and I&#39;ll be helping you grow your corn on this farm! Corn has deep cultural and historical roots in Native American traditions, as it played a vital role in the diets of indigenous peoples. It is celebrated in multiple festivals and events across the country.
 
-I&#39;ll have you work with $guide to help get your farm started!
+Corn is also known as maize. It has been deeply rooted in Native American tradition and also serves other purposes, such as the making of mats, baskets, ceremonial rattling sticks, carved to create darts, toys, and more.
 
-[[Speak to $guide|Starting Farmhand]]</tw-passagedata><tw-passagedata pid="5" name="Crop Details" tags="" position="1050,50" size="100,100">{
-(if: $crop1 is &quot;rice&quot;)[Rice traces back more than 10,000 years ago and it was given as a gift from the animals after a large flood, giving the Chinese people a source of plentiful food. It is considered sacred and has shaped cultures and traditions for centuries in Asia.]
-(else-if: $crop1 is &quot;corn&quot;)[Corn is also known as maize. It has been deeply rooted in Native American tradition and also serves other purposes, such as the making of mats, baskets, ceremonial rattling sticks, carved to create darts, toys, and more.]
-(else-if: $crop1 is &quot;beans&quot;)[Beans have been around since pre-Hispanic Mexico and served as a base for daily meals. They were consumed ground up, processed into a paste, or mixed with grains. On cold days, beans were milled into powder and mixed with corn flour to create masa for tamales.]
-(else:)[In the middle of the nineteenth century, cassava became increasingly important as a staple food and was widely planted in Africa. It thrives in our environment because of its low water requirement, survivability in marginal soils, and flexibility in harvest time. No part of cassava goes to waste as parts are dried and fed to animals and the water squeezed from the fermeted cassava, the starch, is used to harden cloths.]
-}
+Thanks for helping out! Speak to Adriana at the bean farm.
 
-Ready to get to farming?
+[[Speak to Adriana|Bean Plot]]</tw-passagedata><tw-passagedata pid="4" name="Time 2" tags="" position="1500,300" size="100,100">(set: $part2 to true)A few more weeks until the festival for $farmName.
+The weather is clear and sunny.
 
-[[Yup!|Farm]]</tw-passagedata><tw-passagedata pid="6" name="Ending" tags="" position="1625,400" size="100,100">Hey $name, it&#39;s $guide again! Looks like the quality of $farmName...
-
-(event: when time &gt; 4s)[(if: $farmScore &gt;= 7)[...did amazing! Well done!](else:)[...could use some improvements. But you can always try again!]]
-
-(event: when time &gt; 8s)[&#39;&#39;THE END&#39;&#39;]</tw-passagedata><tw-passagedata pid="7" name="Farm" tags="" position="1225,400" size="100,100">[&#39;&#39;Day $day&#39;&#39;]
-{
-(set: $weather to (random: 0, 100))
-(if: $weather &gt;= 90)[The weather is rainy.]
-(else-if: $weather &lt;= 10)[There is a drought.]
-(else:)[The weather is clear.]
-}
-
-[Farm score: $farmScore]
-
-[[Check on the plots|Farm Plots]]
+(if: $plotChecked&#39;s 1st is false or $plotChecked&#39;s 2nd is false or $plotChecked&#39;s 3rd is false or $plotChecked&#39;s 4th is false)[[Check on the plots|Farm Plots 2]]
 [[Visit the Farm Store|Farm Store]]
-[[Talk to $guide about $crop1|Crop Details]]
-[[End for today|Farm Transition]]
-</tw-passagedata><tw-passagedata pid="8" name="Farm Name" tags="" position="300,300" size="100,100">(set: $farmName to (prompt: &quot;What is your farm named?&quot;, &quot;&quot;))
-
+[[Finish up|Transition 2]]</tw-passagedata><tw-passagedata pid="5" name="Time 1" tags="" position="900,300" size="100,100">It&#39;s still early in the season for $farmName.
 {
-(if: $farmName is not &quot;&quot;)[$farmName! I like the sound of it! Catchy! Now that we got introductions out of the way, it&#39;s time to choose which crop you want to farm! Let&#39;s go to the store to buy your first crop.
+(if: $weather &lt;= 10)[It is raining pretty heavily.]
+(else-if: $weather &gt;= 90)[There is a drought.]
+(else:)[The weather is clear and sunny.]
+}
 
-[[Okay!|Choose Your Crop]]](else:)[Umm... Did you hear me? What was your farm&#39;s name?
+(if: $plotChecked&#39;s 1st is false or $plotChecked&#39;s 2nd is false or $plotChecked&#39;s 3rd is false or $plotChecked&#39;s 4th is false)[[Check on the plots|Farm Plots 1]]
+[[Visit the Farm Store|Farm Store]]
+[[Finish up|Transition 1]]</tw-passagedata><tw-passagedata pid="6" name="Farm Name" tags="" position="300,300" size="100,100">(set: $farmName to (prompt: &quot;What is your farm named?&quot;, &quot;&quot;))
 
-[[Sorry, the name of my farm is...|Farm Name]]]
-}</tw-passagedata><tw-passagedata pid="9" name="Farm Store" tags="" position="1525,50" size="100,100">
-[Welcome to the Farm Store $name! How can I help you? ]
+(if: $farmName is not &quot;&quot;)[$farmName! I like the sound of it! Catchy! Now that we got introductions out of the way, let&#39;s introduce you to the farmhands of our crops!
 
-[[Buy|Purchase Menu]]
-[[Sell|Sell Menu]]
-[[Head back to the farm|Farm]]</tw-passagedata><tw-passagedata pid="10" name="Farmer Name" tags="" position="300,100" size="100,100">(set: $name to (prompt: &quot;What is your name?&quot;, &quot;&quot;))
+[[Speak to Mei|Rice Plot]]](else:)[Umm... Did you hear me? What was your farm&#39;s name?
+
+[[Sorry, the name of my farm is...|Farm Name]]]</tw-passagedata><tw-passagedata pid="7" name="Farm Plots 1" tags="" position="900,450" size="100,100">[Which plot would you like to check on?]
+
+(if: $plotChecked&#39;s 1st is false)[[Check on Mei&#39;s rice plot|Rice Status 1]]
+(if: $plotChecked&#39;s 2nd is false)[[Check on Kuruk&#39;s corn plot|Corn Status 1]]
+(if: $plotChecked&#39;s 3rd is false)[[Check on Adriana&#39;s bean plot|Bean Status 1]]
+(if: $plotChecked&#39;s 4th is false)[[Check on Hery&#39;s cassava plot|Cassava Status 1]]
+
+[[Head back|Time 1]]</tw-passagedata><tw-passagedata pid="8" name="Farm Store" tags="" position="1200,150" size="100,100">Welcome to the farming supplies store for $farmName, $name! We sell fertilizer that can help further nourish crops in good weather conditions. (if: $store &lt;= 0)[Unfortunately, we&#39;re out of stock at the moment. Please come again when we get a new shipment later!]
+
+(if: $store &gt; 0)[[[Buy fertilizer|Purchase]]]
+(if: $part2 is false)[[[Leave the store|Time 1]]](else:)[[[Leave the store|Time 2]]]</tw-passagedata><tw-passagedata pid="9" name="Transition 1" tags="" position="1200,300" size="100,100">(set: $store to 1)(set: $plotChecked&#39;s 1st to false)(set: $plotChecked&#39;s 2nd to false)(set: $plotChecked&#39;s 3rd to false)(set: $plotChecked&#39;s 4th to false)
+Time passes by after long weeks of hard work.
+(if: $weather &gt;= 90)[(set: $cropStatus&#39;s 1st to it -1)(set: $cropStatus&#39;s 2nd to it -1)(set: $cropStatus&#39;s 3rd to it -1)(set: $cropStatus&#39;s 4th to it -1)[The drought took a heavy toll on the crops.]]
+
+The rice plot is doing (if: $cropStatus&#39;s 1st is &lt; 0)[poorly...](else-if: $cropStatus&#39;s 1st is &gt; 1)[great!](else:)[fine.]
+The corn plot is doing (if: $cropStatus&#39;s 2nd is &lt; 0)[poorly...](else-if: $cropStatus&#39;s 2nd is &gt; 1)[great!](else:)[fine.]
+The bean plot is doing (if: $cropStatus&#39;s 3rd is &lt; 0)[poorly...](else-if: $cropStatus&#39;s 3rd is &gt; 1)[great!](else:)[fine.]
+The cassava plot is doing (if: $cropStatus&#39;s 3rd is &lt; 0)[poorly...](else-if: $cropStatus&#39;s 3rd is &gt; 1)[great!](else:)[fine.]
+
+[[Got it|Time 2]]</tw-passagedata><tw-passagedata pid="10" name="Farmer Name" tags="" position="300,100" size="100,100">(set: $name to (prompt: &quot;What is your name?&quot;, &quot;&quot;))
 
 (if: $name is not &quot;&quot;)[Hey there, $name! Welcome to your new farm! What did you want to name your farm?
 
 [[My farm is called...|Farm Name]]](else:)[Uhh... Hello? You there? What was your name?
 
-[[Sorry, my name is...|Farmer Name]]]</tw-passagedata><tw-passagedata pid="11" name="Starting Farmhand" tags="" position="900,300" size="100,100">Hi there! You&#39;re $name, right? My name is $guide and I&#39;ll be helping you grow your $crop1 on $farmName.
+[[Sorry, my name is...|Farmer Name]]]</tw-passagedata><tw-passagedata pid="11" name="Rice Status 1" tags="" position="700,600" size="100,100">{
+&lt;!--Clear weather--&gt;
+(if: $weather &lt; 90 and &gt; 10)[You see Mei working on the rice.]
 
-If you have any questions, lemme know. Otherwise, let&#39;s start farming!
+&lt;!--Rainy weather--&gt;
+(else-if: $weather &lt;= 10)[You see Mei sitting on the porch of her house near the farm, keeping dry underneath the roof.]
 
-[[Ask about $crop1|Crop Details]]
-[[Start farming!|Farm]]</tw-passagedata><tw-passagedata pid="12" name="Rice Farm" tags="" position="700,50" size="100,100">(set: $crop1 to &quot;rice&quot;)(set: $guide to &quot;Mei&quot;)(set: $plot&#39;s 1st to &quot;rice&quot;)[Rice? Good choice! Rice is a staple food for the Asian population. The cultivation of rice has led to a successful agricultural heritage of many Asian societies.]
+&lt;!--Drought--&gt;
+(else:)[You see Mei wiping the sweat off her brow.]
+}
 
-I&#39;ll have you work with $guide to help get your farm started!
+(if: $weather &lt; 90 and &gt; 10)[[[Grab some farm tools and help Mei|Mei Convo 1]]](else-if: $weather &lt;= 10)[[[Talk with Mei|Mei Convo 1]]](else:)[[[Get a bottle of water for Mei|Mei Convo 1]]]
+[[Leave the rice plot|Time 1]]</tw-passagedata><tw-passagedata pid="12" name="Corn Status 1" tags="" position="825,600" size="100,100">{
+&lt;!--Clear weather--&gt;
+(if: $weather &lt; 90 and &gt; 10)[You see Kuruk working on the corn.]
 
-[[Speak to $guide|Starting Farmhand]]</tw-passagedata><tw-passagedata pid="13" name="Start" tags="" position="100,300" size="100,100">Hello! Welcome to Farming Simulator 2023!
+&lt;!--Rainy weather--&gt;
+(else-if: $weather &lt;= 10)[You see Kuruk sitting on the porch of his house near the farm, keeping dry underneath the roof.]
+
+&lt;!--Drought--&gt;
+(else:)[You see Kuruk wiping the sweat off his brow.]
+}
+
+(if: $weather &lt; 90 and &gt; 10)[[[Grab some farm tools and help Kuruk|Kuruk Convo 1]]](else-if: $weather &lt;= 10)[[[Talk with Kuruk|Kuruk Convo 1]]](else:)[[[Get a bottle of water for Kuruk|Kuruk Convo 1]]]
+[[Leave the corn plot|Time 1]]</tw-passagedata><tw-passagedata pid="13" name="Bean Status 1" tags="" position="975,600" size="100,100">{
+&lt;!--Clear weather--&gt;
+(if: $weather &lt; 90 and &gt; 10)[You see Adriana working on the beans.]
+
+&lt;!--Rainy weather--&gt;
+(else-if: $weather &lt;= 10)[You see Adriana sitting on the porch of her house near the farm, keeping dry underneath the roof.]
+
+&lt;!--Drought--&gt;
+(else:)[You see Adriana wiping the sweat off her brow.]
+}
+
+(if: $weather &lt; 90 and &gt; 10)[[[Grab some farm tools and help Adriana|Adriana Convo 1]]](else-if: $weather &lt;= 10)[[[Talk with Adriana|Adriana Convo 1]]](else:)[[[Get a bottle of water for Adriana|Adriana Convo 1]]]
+[[Leave the corn plot|Time 1]]</tw-passagedata><tw-passagedata pid="14" name="Cassava Status 1" tags="" position="1100,600" size="100,100">{
+&lt;!--Clear weather--&gt;
+(if: $weather &lt; 90 and &gt; 10)[You see Hery working on the cassava.]
+
+&lt;!--Rainy weather--&gt;
+(else-if: $weather &lt;= 10)[You see Hery sitting on the porch of his house near the farm, keeping dry underneath the roof.]
+
+&lt;!--Drought--&gt;
+(else:)[You see Hery wiping the sweat off his brow.]
+}
+
+(if: $weather &lt; 90 and &gt; 10)[[[Grab some farm tools and help Hery|Hery Convo 1]]](else-if: $weather &lt;= 10)[[[Talk with Hery|Hery Convo 1]]](else:)[[[Get a bottle of water for Hery|Hery Convo 1]]]
+[[Leave the cassava plot|Time 1]]</tw-passagedata><tw-passagedata pid="15" name="Purchase" tags="" position="1200,0" size="100,100">Excellent! Here is your fertilizer!
+
+(set: $fertilizer to it +1)(set: $store to 0)You&#39;ve gained some fertilizer.
+
+(if: $part2 is false)[[[Leave the store|Time 1]]](else:)[[[Leave the store|Time 2]]]</tw-passagedata><tw-passagedata pid="16" name="Rice Plot" tags="" position="500,50" size="100,100">Hi there! You&#39;re $name, right? My name is Mei and I&#39;ll be helping you grow your rice on this farm! Rice is a staple food for the Asian population. The cultivation of rice has led to a successful agricultural heritage of many Asian societies.
+
+Rice traces back more than 10,000 years ago and it was given as a gift from the animals after a large flood, giving the Chinese people a source of plentiful food. It is considered sacred and has shaped cultures and traditions for centuries in Asia.
+
+Thanks for helping out! Kuruk is waiting for you at the corn farm.
+
+[[Speak to Kuruk|Corn Plot]]</tw-passagedata><tw-passagedata pid="17" name="Start" tags="" position="100,300" size="100,100">Hello! Welcome to Farming Simulator 2023!
+
+You are the mayor of this humble farm, and you are going to help us prepare a few crops for the festival in a few months!
 
 What&#39;s your name?
 
 [[My name is...|Farmer Name]]
 
 &lt;!--Hey fellow programmer! You can adjust any of the narrative stuff in these next few passages. I just wanted to implement variables for the user name and their farm name for
-personalization. Remove this comment once you&#39;ve done so --&gt;</tw-passagedata><tw-passagedata pid="14" name="Startup" tags="startup" position="300,500" size="100,100">(set: $name to &quot;Avery&quot;)
+personalization. Remove this comment once you&#39;ve done so --&gt;</tw-passagedata><tw-passagedata pid="18" name="Gameplay Loop Intro" tags="" position="700,300" size="100,100">(set: $weather to (random: 0, 100))The festival will be coming in 3 months. Check up on each of the farmers throughout this time period to help out with their farm and learn more about their crops for a bountiful harvest later on!
+
+[[Start farming!|Time 1]]</tw-passagedata><tw-passagedata pid="19" name="Startup" tags="startup" position="200,500" size="100,100">&lt;!--Preset values, will get changed as game progresses--&gt;
+
+(set: $name to &quot;Avery&quot;)
 (set: $farmName to &quot;Great Farms&quot;)
-(set: $crop1 to &quot;rice&quot;)
-(set: $crop2 to &quot;empty&quot;)
-(set: $crop3 to &quot;empty&quot;)
-(set: $crop4 to &quot;empty&quot;)
-&lt;!-- crops can be in one of three states: hydrated, normal, or parched--&gt;
-(set: $cropStatus to (a: &quot;normal&quot;, &quot;normal&quot;, &quot;normal&quot;, &quot;normal&quot;))
-(set: $guide to &quot;Mei&quot;)
-(set: $gold to 30)
-(set: $days to 0)
-(set: $weather to 50)
-(set: $farmScore to 0)
-(set: $plot to (a: $crop1, $crop2, $crop3, $crop4))
+(set: $cropStatus to (a: 0, 0, 0, 0))
+(set: $reputation to (a: 0, 0, 0, 0))
+
+&lt;!--Random event for Time 2: 0 for maintaining crop, 1 for animals, 2 for food--&gt;
+(set: $event to (a: (random: 0, 2), (random: 0, 2), (random: 0, 2), (random: 0, 2)))
+
 (set: $plotChecked to (a: false, false, false, false))
-
-&lt;!--Preset values, will get changed as game progresses--&gt;</tw-passagedata><tw-passagedata pid="15" name="Farm Plots" tags="" position="1225,650" size="100,100">[Which plot would you like to check on?]
-
-[[Check on (print: $plot&#39;s 1st) plot|Plot 1 Status]]
-[[Check on (print: $plot&#39;s 2nd) plot|Plot 2 Status]]
-[[Check on (print: $plot&#39;s 3rd) plot|Plot 3 Status]]
-[[Check on (print: $plot&#39;s 4th) plot|Plot 4 Status]]
-[[Head back|Farm]]</tw-passagedata><tw-passagedata pid="16" name="Plot 1 Status" tags="" position="1050,850" size="100,100">{
-&lt;!-- the farm score should only be incremented once during the initial check --&gt;
-(if: ($plot&#39;s 1st is not &quot;empty&quot;) and ($weather &lt; 90 and &gt; 10) and ($plotChecked&#39;s 1st is false)) [The (print: $plot&#39;s 1st) seems to be doing well enough. (set: $farmScore to it +1) (set: $plotChecked&#39;s 1st to true) (set: $cropStatus&#39;s 1st to &quot;normal&quot;)]
-(else-if: ($plot&#39;s 1st is not &quot;empty&quot;) and ($weather &lt;= 10) and ($plotChecked&#39;s 1st is false))[The (print: $plot&#39;s 1st) is in dire need of water..  (set: $farmScore to it -1) (set: $plotChecked&#39;s 1st to true) (set: $cropStatus&#39;s 1st to &quot;parched&quot;)]
-(else-if: ($plot&#39;s 1st is not &quot;empty&quot;) and ($weather &gt;= 90) and ($plotChecked&#39;s 1st is false))[The (print: $plot&#39;s 1st) seems to be flourishing!  (set: $farmScore to it +2) (set: $plotChecked&#39;s 1st to true) (set: $cropStatus&#39;s 1st to &quot;hydrated&quot;)]
-&lt;!-- once plot has been checked, this branch will execute on subsequent checks until status is reset with the next day --&gt;
-(else-if: ($plot&#39;s 1st is not &quot;empty&quot;) and ($plotChecked&#39;s 1st is true))
-[The (print: $plot&#39;s 1st) is (print: $cropStatus&#39;s 1st).]
-(else:) [Nothing here except for future potential...]
-}
-
-[[Check out another plot.|Farm Plots]]
-[[Head back.|Farm]]</tw-passagedata><tw-passagedata pid="17" name="Plot 2 Status" tags="" position="1175,850" size="100,100">{
-&lt;!-- the farm score should only be incremented once during the initial check --&gt;
-(if: ($plot&#39;s 2nd is not &quot;empty&quot;) and ($weather &lt; 90 and &gt; 10) and ($plotChecked&#39;s 2nd is false)) [The (print: $plot&#39;s 2nd) seems to be doing well enough. (set: $farmScore to it +1) (set: $plotChecked&#39;s 2nd to true) (set: $cropStatus&#39;s 2nd to &quot;normal&quot;)]
-(else-if: ($plot&#39;s 1st is not &quot;empty&quot;) and ($weather &lt;= 10) and ($plotChecked&#39;s 2nd is false))[The (print: $plot&#39;s 2nd) is in dire need of water..  (set: $farmScore to it -1) (set: $plotChecked&#39;s 2nd to true) (set: $cropStatus&#39;s 2nd to &quot;parched&quot;)]
-(else-if: ($plot&#39;s 2nd is not &quot;empty&quot;) and ($weather &gt;= 90) and ($plotChecked&#39;s 2nd is false))[The (print: $plot&#39;s 2nd) seems to be flourishing!  (set: $farmScore to it +2) (set: $plotChecked&#39;s 2nd to true) (set: $cropStatus&#39;s 2nd to &quot;hydrated&quot;)]
-&lt;!-- once plot has been checked, this branch will execute on subsequent checks until status is reset with the next day --&gt;
-(else-if: ($plot&#39;s 2nd is not &quot;empty&quot;) and ($plotChecked&#39;s 2nd is true))
-[The (print: $plot&#39;s 2nd) is (print: $cropStatus&#39;s 2nd).]
-(else:) [Nothing here except for future potential...]
-}
-
-
-[[Check out another plot.|Farm Plots]]
-[[Head back.|Farm]]</tw-passagedata><tw-passagedata pid="18" name="Plot 3 Status" tags="" position="1325,850" size="100,100">{
-&lt;!-- the farm score should only be incremented once during the initial check --&gt;
-(if: ($plot&#39;s 3rd is not &quot;empty&quot;) and ($weather &lt; 90 and &gt; 10) and ($plotChecked&#39;s 3rd is false)) [The (print: $plot&#39;s 3rd) seems to be doing well enough. (set: $farmScore to it +1) (set: $plotChecked&#39;s 3rd to true) (set: $cropStatus&#39;s 3rd to &quot;normal&quot;)]
-(else-if: ($plot&#39;s 1st is not &quot;empty&quot;) and ($weather &lt;= 10) and ($plotChecked&#39;s 3rd is false))[The (print: $plot&#39;s 3rd) is in dire need of water..  (set: $farmScore to it -1) (set: $plotChecked&#39;s 3rd to true) (set: $cropStatus&#39;s 3rd to &quot;parched&quot;)]
-(else-if: ($plot&#39;s 3rd is not &quot;empty&quot;) and ($weather &gt;= 90) and ($plotChecked&#39;s 3rd is false))[The (print: $plot&#39;s 3rd) seems to be flourishing!  (set: $farmScore to it +2) (set: $plotChecked&#39;s 3rd to true) (set: $cropStatus&#39;s 3rd to &quot;hydrated&quot;)]
-&lt;!-- once plot has been checked, this branch will execute on subsequent checks until status is reset with the next day --&gt;
-(else-if: ($plot&#39;s 3rd is not &quot;empty&quot;) and ($plotChecked&#39;s 3rd is true))
-[The (print: $plot&#39;s 3rd) is (print: $cropStatus&#39;s 3rd).]
-(else:) [Nothing here except for future potential...]
-}
-
-[[Check out another plot.|Farm Plots]]
-[[Head back.|Farm]]</tw-passagedata><tw-passagedata pid="19" name="Plot 4 Status" tags="" position="1450,850" size="100,100">{
-&lt;!-- the farm score should only be incremented once during the initial check --&gt;
-(if: ($plot&#39;s 4th is not &quot;empty&quot;) and ($weather &lt; 90 and &gt; 10) and ($plotChecked&#39;s 4th is false)) [The (print: $plot&#39;s 4th) seems to be doing well enough. (set: $farmScore to it +1) (set: $plotChecked&#39;s 4th to true) (set: $cropStatus&#39;s 4th to &quot;normal&quot;)]
-(else-if: ($plot&#39;s 1st is not &quot;empty&quot;) and ($weather &lt;= 10) and ($plotChecked&#39;s 4th is false))[The (print: $plot&#39;s 4th) is in dire need of water..  (set: $farmScore to it -1) (set: $plotChecked&#39;s 4th to true) (set: $cropStatus&#39;s 4th to &quot;parched&quot;)]
-(else-if: ($plot&#39;s 4th is not &quot;empty&quot;) and ($weather &gt;= 90) and ($plotChecked&#39;s 4th is false))[The (print: $plot&#39;s 4th) seems to be flourishing!  (set: $farmScore to it +2) (set: $plotChecked&#39;s 4th to true) (set: $cropStatus&#39;s 4th to &quot;hydrated&quot;)]
-&lt;!-- once plot has been checked, this branch will execute on subsequent checks until status is reset with the next day --&gt;
-(else-if: ($plot&#39;s 4th is not &quot;empty&quot;) and ($plotChecked&#39;s 4th is true))
-[The (print: $plot&#39;s 4th) is (print: $cropStatus&#39;s 4th).]
-(else:) [Nothing here except for future potential...]
-}
-
-[[Check out another plot.|Farm Plots]]
-[[Head back.|Farm]]</tw-passagedata><tw-passagedata pid="20" name="Purchase Menu" tags="" position="1350,100" size="100,100">[Excellent! What would you like to purchase?]
-
-[[Go back|Farm Store]]</tw-passagedata><tw-passagedata pid="21" name="Sell Menu" tags="" position="1700,100" size="100,100">[Excellent! What would you like to sell?]
-
-[[Go back|Farm Store]]</tw-passagedata><tw-passagedata pid="22" name="Farm Transition" tags="" position="1450,500" size="100,100">(live: 1s) [You go to bed after a day of hard long work and dream of a bountiful harvest that feels almost too real...]
-
-(set: $day to it + 1)
-
+(set: $fertilizer to 0)
+(set: $store to 1)
+(set: $weather to 50)
+(set: $part2 to false)</tw-passagedata><tw-passagedata pid="20" name="Mei Convo 1" tags="" position="700,725" size="100,100">(set: $reputation&#39;s 1st to it +1)(set: $plotChecked&#39;s 1st to true)(set: $cropStatus&#39;s 1st to it + 1)
 {
-(live: 4s) [
-(if: $day is 7) [[[Oh, it seems that day has arrived!|Ending]]]
-(else:) [[[Ready to wake up?|Farm]]]]
-}</tw-passagedata></tw-storydata>
+&lt;!--Clear weather--&gt;
+(if: $weather &lt; 90 and &gt; 10)[Thanks for helping out! The crops look better.]
+
+&lt;!--Rainy weather--&gt;
+(else-if: $weather &lt;= 10)[Nothing much we can do today in the rain, but thanks for checking up on me.]
+
+&lt;!--Drought--&gt;
+(else:)[The heat&#39;s getting to me and the crops, but thanks for checking up on me.]
+}
+
+[[Leave the rice plot|Time 1]]
+(if: $fertilizer &gt; 0 and $weather &lt; 90 and &gt; 10)[[[Use fertilizer|Fertilize Rice 1]]]</tw-passagedata><tw-passagedata pid="21" name="Fertilize Rice 1" tags="" position="700,850" size="100,100">(set: $cropStatus&#39;s 1st to it +1)(set: $fertilizer to it -1)You used the fertilizer, helping nourish the rice!
+[[Leave the rice plot|Time 1]]</tw-passagedata><tw-passagedata pid="22" name="Kuruk Convo 1" tags="" position="825,725" size="100,100">(set: $reputation&#39;s 2nd to it +1)(set: $plotChecked&#39;s 2nd to true)(set: $cropStatus&#39;s 2nd to it +1)
+{
+&lt;!--Clear weather--&gt;
+(if: $weather &lt; 90 and &gt; 10)[Thanks for helping out! The crops look better.]
+
+&lt;!--Rainy weather--&gt;
+(else-if: $weather &lt;= 10)[Nothing much we can do today in the rain, but thanks for checking up on me.]
+
+&lt;!--Drought--&gt;
+(else:)[The heat&#39;s getting to me and the crops, but thanks for checking up on me.]
+}
+
+[[Leave the rice plot|Time 1]]
+(if: $fertilizer &gt; 0 and $weather &lt; 90 and &gt; 10)[[[Use fertilizer|Fertilize Corn 1]]]</tw-passagedata><tw-passagedata pid="23" name="Fertilize Corn 1" tags="" position="825,850" size="100,100">(set: $cropStatus&#39;s 2nd to it +1)(set: $fertilizer to it -1)You used the fertilizer, helping nourish the corn!
+[[Leave the rice plot|Time 1]]</tw-passagedata><tw-passagedata pid="24" name="Adriana Convo 1" tags="" position="975,725" size="100,100">(set: $reputation&#39;s 3rd to it +1)(set: $plotChecked&#39;s 3rd to true)(set: $cropStatus&#39;s 3rd to it +1)
+{
+&lt;!--Clear weather--&gt;
+(if: $weather &lt; 90 and &gt; 10)[Thanks for helping out! The crops look better.]
+
+&lt;!--Rainy weather--&gt;
+(else-if: $weather &lt;= 10)[Nothing much we can do today in the rain, but thanks for checking up on me.]
+
+&lt;!--Drought--&gt;
+(else:)[The heat&#39;s getting to me and the crops, but thanks for checking up on me.]
+}
+
+[[Leave the bean plot|Time 1]]
+(if: $fertilizer &gt; 0 and $weather &lt; 90 and &gt; 10)[[[Use fertilizer|Fertilize Bean 1]]]</tw-passagedata><tw-passagedata pid="25" name="Fertilize Bean 1" tags="" position="975,850" size="100,100">(set: $cropStatus&#39;s 3rd to it +1)(set: $fertilizer to it -1)You used the fertilizer, helping nourish the beans!
+[[Leave the bean plot|Time 1]]</tw-passagedata><tw-passagedata pid="26" name="Hery Convo 1" tags="" position="1100,725" size="100,100">(set: $reputation&#39;s 4th to it +1)(set: $plotChecked&#39;s 4th to true)(set: $cropStatus&#39;s 4th to it +1)
+{
+&lt;!--Clear weather--&gt;
+(if: $weather &lt; 90 and &gt; 10)[Thanks for helping out! The crops look better.]
+
+&lt;!--Rainy weather--&gt;
+(else-if: $weather &lt;= 10)[Nothing much we can do today in the rain, but thanks for checking up on me.]
+
+&lt;!--Drought--&gt;
+(else:)[The heat&#39;s getting to me and the crops, but thanks for checking up on me.]
+}
+
+[[Leave the cassava plot|Time 1]]
+(if: $fertilizer &gt; 0 and $weather &lt; 90 and &gt; 10)[[[Use fertilizer|Fertilize Cassava 1]]]</tw-passagedata><tw-passagedata pid="27" name="Fertilize Cassava 1" tags="" position="1100,850" size="100,100">(set: $cropStatus&#39;s 4th to it +1)(set: $fertilizer to it -1)You used the fertilizer, helping nourish the beans!
+[[Leave the bean plot|Time 1]]</tw-passagedata><tw-passagedata pid="28" name="Farm Plots 2" tags="" position="1500,450" size="100,100">[Which plot would you like to check on?]
+
+(if: $plotChecked&#39;s 1st is false)[[Check on Mei&#39;s rice plot|Rice Status 2]]
+(if: $plotChecked&#39;s 2nd is false)[[Check on Kuruk&#39;s corn plot|Corn Status 2]]
+(if: $plotChecked&#39;s 3rd is false)[[Check on Adriana&#39;s bean plot|Bean Status 2]]
+(if: $plotChecked&#39;s 4th is false)[[Check on Hery&#39;s cassava plot|Cassava Status 2]]
+
+[[Head back|Time 2]]</tw-passagedata><tw-passagedata pid="29" name="Transition 2" tags="" position="1800,300" size="100,100">(set: $plotChecked&#39;s 1st to false)(set: $plotChecked&#39;s 2nd to false)(set: $plotChecked&#39;s 3rd to false)(set: $plotChecked&#39;s 4th to false)
+A few more weeks pass by, and before you know it, it is time for the festival!
+
+[[Let&#39;s celebrate!|Festival]]</tw-passagedata><tw-passagedata pid="30" name="Rice Status 2" tags="" position="1300,600" size="100,100">{
+&lt;!--Maintenance--&gt;
+(if: $event&#39;s 1st is 0)[You see Mei working on the rice.]
+
+&lt;!--Animal handling--&gt;
+(else-if: $event&#39;s 1st is 1)[You see Mei tending to some animals.]
+
+&lt;!--Dinner--&gt;
+(else:)[You see Mei inside her house preparing food.]
+}
+
+(if: $event&#39;s 1st is 0)[[[Help Mei with the crops|Mei Convo 2]]](else-if: $event&#39;s 1st is 1)[[[Approach Mei and the animals|Mei Convo 2]]](else:)[[[Ask to come inside Mei&#39;s house|Mei Convo 2]]]
+[[Leave the rice plot|Time 2]]</tw-passagedata><tw-passagedata pid="31" name="Corn Status 2" tags="" position="1425,600" size="100,100">{
+&lt;!--Maintenance--&gt;
+(if: $event&#39;s 2nd is 0)[You see Kuruk working on the corn.]
+
+&lt;!--Animal handling--&gt;
+(else-if: $event&#39;s 2nd is 1)[You see Kuruk tending to some animals.]
+
+&lt;!--Dinner--&gt;
+(else:)[You see Kuruk inside his house preparing food.]
+}
+
+(if: $event&#39;s 2nd is 0)[[[Help Kuruk with the crops|Kuruk Convo 2]]](else-if: $event&#39;s 2nd is 1)[[[Approach Kuruk and the animals|Kuruk Convo 2]]](else:)[[[Ask to come inside Kuruk&#39;s house|Kuruk Convo 2]]]
+[[Leave the corn plot|Time 2]]</tw-passagedata><tw-passagedata pid="32" name="Bean Status 2" tags="" position="1575,600" size="100,100">{
+&lt;!--Maintenance--&gt;
+(if: $event&#39;s 3rd is 0)[You see Adriana working on the beans.]
+
+&lt;!--Animal handling--&gt;
+(else-if: $event&#39;s 3rd is 1)[You see Adriana tending to some animals.]
+
+&lt;!--Dinner--&gt;
+(else:)[You see Adriana inside her house preparing food.]
+}
+
+(if: $event&#39;s 3rd is 0)[[[Help Adriana with the crops|Adriana Convo 2]]](else-if: $event&#39;s 3rd is 1)[[[Approach Adriana and the animals|Adriana Convo 2]]](else:)[[[Ask to come inside Adriana&#39;s house|Adriana Convo 2]]]
+[[Leave the bean plot|Time 2]]</tw-passagedata><tw-passagedata pid="33" name="Cassava Status 2" tags="" position="1700,600" size="100,100">{
+&lt;!--Maintenance--&gt;
+(if: $event&#39;s 4th is 0)[You see Hery working on the cassava.]
+
+&lt;!--Animal handling--&gt;
+(else-if: $event&#39;s 4th is 1)[You see Hery tending to some animals.]
+
+&lt;!--Dinner--&gt;
+(else:)[You see Hery inside his house preparing food.]
+}
+
+(if: $event&#39;s 4th is 0)[[[Help Hery with the crops|Hery Convo 2]]](else-if: $event&#39;s 4th is 1)[[[Approach Hery and the animals|Hery Convo 2]]](else:)[[[Ask to come inside Hery&#39;s house|Hery Convo 2]]]
+[[Leave the cassava plot|Time 2]]</tw-passagedata><tw-passagedata pid="34" name="Mei Convo 2" tags="" position="1300,725" size="100,100">(set: $reputation&#39;s 1st to it +1)(set: $plotChecked&#39;s 1st to true)(set: $cropStatus&#39;s 1st to it +1)
+{
+&lt;!--Maintenance--&gt;
+(if: $event&#39;s 1st is 0)[Mei talks about how to better maintain the crop.]
+
+&lt;!--Animal handling--&gt;
+(else-if: $event&#39;s 1st is 1)[Mei talks about the animal nearby.]
+
+&lt;!--Dinner--&gt;
+(else:)[Mei talks about food made from the crop.]
+}
+
+[[Leave the rice plot|Time 2]]
+(if: $fertilizer &gt; 0)[[[Use fertilizer before you leave|Fertilize Rice 2]]]</tw-passagedata><tw-passagedata pid="35" name="Fertilize Rice 2" tags="" position="1300,850" size="100,100">(set: $cropStatus&#39;s 1st to it +1)(set: $fertilizer to it -1)You used the fertilizer, helping nourish the rice!
+[[Leave the rice plot|Time 2]]</tw-passagedata><tw-passagedata pid="36" name="Kuruk Convo 2" tags="" position="1425,725" size="100,100">(set: $reputation&#39;s 2nd to it +1)(set: $plotChecked&#39;s 2nd to true)(set: $cropStatus&#39;s 2nd to it +1)
+{
+&lt;!--Maintenance--&gt;
+(if: $event&#39;s 2nd is 0)[Kuruk talks about how to better maintain the crop.]
+
+&lt;!--Animal handling--&gt;
+(else-if: $event&#39;s 2nd is 1)[Kuruk talks about the animal nearby.]
+
+&lt;!--Dinner--&gt;
+(else:)[Kuruk talks about food made from the crop.]
+}
+
+[[Leave the rice plot|Time 2]]
+(if: $fertilizer &gt; 0)[[[Use fertilizer before you leave|Fertilize Corn 2]]]</tw-passagedata><tw-passagedata pid="37" name="Fertilize Corn 2" tags="" position="1425,850" size="100,100">(set: $cropStatus&#39;s 2nd to it +1)(set: $fertilizer to it -1)You used the fertilizer, helping nourish the corn!
+[[Leave the corn plot|Time 2]]</tw-passagedata><tw-passagedata pid="38" name="Adriana Convo 2" tags="" position="1575,725" size="100,100">(set: $reputation&#39;s 3rd to it +1)(set: $plotChecked&#39;s 3rd to true)(set: $cropStatus&#39;s 3rd to it +1)
+{
+&lt;!--Maintenance--&gt;
+(if: $event&#39;s 3rd is 0)[Adriana talks about how to better maintain the crop.]
+
+&lt;!--Animal handling--&gt;
+(else-if: $event&#39;s 3rd is 1)[Adriana talks about the animal nearby.]
+
+&lt;!--Dinner--&gt;
+(else:)[Adriana talks about food made from the crop.]
+}
+
+[[Leave the rice plot|Time 2]]
+(if: $fertilizer &gt; 0)[[[Use fertilizer before you leave|Fertilize Bean 2]]]</tw-passagedata><tw-passagedata pid="39" name="Fertilize Bean 2" tags="" position="1575,850" size="100,100">(set: $cropStatus&#39;s 3rd to it +1)(set: $fertilizer to it -1)You used the fertilizer, helping nourish the beans!
+[[Leave the bean plot|Time 2]]</tw-passagedata><tw-passagedata pid="40" name="Hery Convo 2" tags="" position="1700,725" size="100,100">(set: $reputation&#39;s 4th to it +1)(set: $plotChecked&#39;s 4th to true)(set: $cropStatus&#39;s 4th to it +1)
+{
+&lt;!--Maintenance--&gt;
+(if: $event&#39;s 4th is 0)[Hery talks about how to better maintain the crop.]
+
+&lt;!--Animal handling--&gt;
+(else-if: $event&#39;s 4th is 1)[Hery talks about the animal nearby.]
+
+&lt;!--Dinner--&gt;
+(else:)[Hery talks about food made from the crop.]
+}
+
+[[Leave the rice plot|Time 2]]
+(if: $fertilizer &gt; 0)[[[Use fertilizer before you leave|Fertilize Cassava 2]]]</tw-passagedata><tw-passagedata pid="41" name="Fertilize Cassava 2" tags="" position="1700,850" size="100,100">(set: $cropStatus&#39;s 4th to it +1)(set: $fertilizer to it -1)You used the fertilizer, helping nourish the cassava!
+[[Leave the bean plot|Time 2]]</tw-passagedata><tw-passagedata pid="42" name="Festival" tags="" position="2100,300" size="100,100">The bustling sounds of the festival fill your ears.
+
+(if: $plotChecked&#39;s 1st is false)[[[Speak with Mei|Rice Final]]]
+(if: $plotChecked&#39;s 2nd is false)[[[Speak with Kuruk|Corn Final]]]
+(if: $plotChecked&#39;s 3rd is false)[[[Speak with Adriana|Bean Final]]]
+(if: $plotChecked&#39;s 4th is false)[[[Speak with Hery|Cassava Final]]]
+
+(if: $plotChecked&#39;s 1st is true and $plotChecked&#39;s 2nd is true and $plotChecked&#39;s 3rd is true and $plotChecked&#39;s 4th is true)[[[Finish up|Ending]]]</tw-passagedata><tw-passagedata pid="43" name="Rice Final" tags="" position="1900,450" size="100,100">(set: $plotChecked&#39;s 1st to true)Hey $name! I just wanted to let you know that the rice crops did (if: $cropStatus&#39;s 1st is &lt; 0)[poorly...](else-if: $cropStatus&#39;s 1st is &gt; 1)[great!](else:)[fine.]
+
+(if: $reputation&#39;s 1st is 2)[You feel a special bond with Mei.]
+
+[[Leave|Festival]]</tw-passagedata><tw-passagedata pid="44" name="Corn Final" tags="" position="2025,450" size="100,100">(set: $plotChecked&#39;s 2nd to true)Hey $name! I just wanted to let you know that the rice crops did (if: $cropStatus&#39;s 2nd is &lt; 0)[poorly...](else-if: $cropStatus&#39;s 2nd is &gt; 1)[great!](else:)[fine.]
+
+(if: $reputation&#39;s 2nd is 2)[You feel a special bond with Kuruk.]
+
+[[Leave|Festival]]</tw-passagedata><tw-passagedata pid="45" name="Bean Final" tags="" position="2175,450" size="100,100">(set: $plotChecked&#39;s 3rd to true)Hey $name! I just wanted to let you know that the rice crops did (if: $cropStatus&#39;s 3rd is &lt; 0)[poorly...](else-if: $cropStatus&#39;s 2nd is &gt; 1)[great!](else:)[fine.]
+
+(if: $reputation&#39;s 3rd is 2)[You feel a special bond with Adriana.]
+
+[[Leave|Festival]]</tw-passagedata><tw-passagedata pid="46" name="Cassava Final" tags="" position="2300,450" size="100,100">(set: $plotChecked&#39;s 4th to true)Hey $name! I just wanted to let you know that the rice crops did (if: $cropStatus&#39;s 4th is &lt; 0)[poorly...](else-if: $cropStatus&#39;s 4th is &gt; 1)[great!](else:)[fine.]
+
+(if: $reputation&#39;s 4th is 2)[You feel a special bond with Hery.]
+
+[[Leave|Festival]]</tw-passagedata><tw-passagedata pid="47" name="Ending" tags="" position="2400,300" size="100,100">(set: _end to $cropStatus&#39;s 1st + $cropStatus&#39;s 2nd + $cropStatus&#39;s 3rd + $cropStatus&#39;s 4th)
+Overall, the state of $farmName...
+
+(if: _end &gt;= 10)[ is amazing! Well done!](else-if: _end &lt; 2)[has room for improvement. But you can always try again!](else:)[went well. Nicely done!]
+
+THE END!</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
