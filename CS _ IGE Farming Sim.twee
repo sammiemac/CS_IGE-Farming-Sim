@@ -211,11 +211,13 @@ THE END!
 :: Farm Name {"position":"300,300","size":"100,100"}
 (set: $farmName to (prompt: "What is your farm named?", ""))
 
-(if: $farmName is not "")[$farmName! I like the sound of it! Catchy! Now that we got introductions out of the way, let's introduce you to the farmhands of our crops!
+(if: $farmName is not "")[Oooh, "(text-colour:#c0eb75)[''$farmName'']!" I like the sound of that, it's nice and catchy! 
 
-[[Speak to Mei|Rice Plot]]](else:)[Umm... Did you hear me? What was your farm's name?
+Doning your official title: (text-colour:#ffc078)[''Mayor $name''], your first act for the town of Great Fields is to open (text-colour:#c0eb75)[''$farmName''] and hire four new farmhands to help grow its crops. The citizens rejoice over your idea for a harvest festival and your commitment to its community!
 
-[[Sorry, the name of my farm is...|Farm Name]]]
+[[Let's go meet the new farmhands!|Rice Plot]]](else:)[Umm... Did you hear me? What was your farm's name?
+
+[["Sorry, the name of my farm is..."|Farm Name]]]
 
 
 :: Farm Plots 1 {"position":"900,450","size":"100,100"}
@@ -250,11 +252,15 @@ Welcome to the farming supplies store for $farmName, $name! We sell fertilizer t
 :: Farmer Name {"position":"300,100","size":"100,100"}
 (set: $name to (prompt: "What is your name?", ""))
 
-(if: $name is not "")[Hey there, $name! Welcome to your new farm! What did you want to name your farm?
+(if: $name is not "")[Welcome to Great Fields, (text-colour:#ffc078)[''Mayor $name'']! The citizens are sure to love you and whatever you have cooking up for the season.
 
-[[My farm is called...|Farm Name]]](else:)[Uhh... Hello? You there? What was your name?
+Speaking of which, your plan to celebrate the town of Great Fields is... a (text-colour:#8ce99a)[harvest festival]! The town's great climate and fertile soil make it the best location to grow and raise all sorts of crops that are just as diverse as its community.
 
-[[Sorry, my name is...|Farmer Name]]]
+But first, you should probably start a farm and hire some farmhands, don't you think? So, what should you call this farm?
+
+[["My farm is called..."|Farm Name]]](else:)[Uhh... Hello? You there? What was your name?
+
+[["Sorry, my name is..."|Farmer Name]]]
 
 
 :: Fertilize Bean 1 {"position":"975,850","size":"100,100"}
@@ -416,6 +422,30 @@ The bustling sounds of the festival fill your ears.
 (if: $fertilizer > 0)[[[Use fertilizer before you leave|Fertilize Rice 2]]]
 
 
+:: Notes {"position":"350,750","size":"100,100"}
+Rice/China/Asia
+- Rice is a staple food for the Asian population.
+- The cultivation of rice has led to a successful agricultural heritage of many Asian societies.
+- Rice traces back more than 10,000 years ago and it was given as a gift from the animals after a large flood, giving the Chinese people a source of plentiful food. 
+- It is considered sacred and has shaped cultures and traditions for centuries in Asia.
+- Rice crop needs a hot and humid climate. 
+- It is best suited to regions which have high humidity, prolonged sunshine and an assured supply of water.
+- Common foods: fried rice, Zongzi (China, glutinous rice stuffed with various ingredients and wrapped in bamboo leaves), champorado (Philippines, sweet chocolate rice porridge), horchata (Mexico, sugared rice milk)
+- Livestock animal: Pigs
+- Festival: Chinese Spring Festival/Lunar New Year, celebrates the beginning of a new year on the traditional Chinese calendar. Over the 15 days, families come together to celebrate the new year and enjoy festive foods such as fish, dumplings and nian gao – a glutinous rice cake.
+
+Corn/Native America
+- Corn has deep cultural and historical roots in Native American traditions, as it played a vital role in the diets of indigenous peoples. 
+- It is celebrated in multiple festivals and events across the country.
+- Corn is also known as maize. 
+- It has been deeply rooted in Native American tradition and also serves other purposes, such as the making of mats, baskets, ceremonial rattling sticks, carved to create darts, toys, and more.
+- Common foods: corn pone (A kind of bread made from corn meal), three sisters succotash (from the Native American word msiquatash, made with corn, squash and beans which were all crops tended to by Native Americans)
+- Livestock animal: Cows (though historically it would be elk or bison)
+- Festival: The Green Corn Festival, also known as the Green Corn Ceremony, is a type of celebration and religious ceremony commonly practiced by the Eastern Woodlands and Southeastern tribes, including the Creek, Cherokee, and Seminole. It occurs in late summer, coinciding with the ripening of the corn crops. The ceremony usually lasts for three days, and involves dancing, feasting, fasting, religious observation, and other activities. During the ceremony, the members of the tribe give thanks for the corn, rain, sun, and a good harvest.
+
+
+
+
 :: Purchase {"position":"1200,0","size":"100,100"}
 Excellent! Here is your fertilizer!
 
@@ -433,11 +463,26 @@ Excellent! Here is your fertilizer!
 
 
 :: Rice Plot {"position":"500,50","size":"100,100"}
-Hi there! You're $name, right? My name is Mei and I'll be helping you grow your rice on this farm! Rice is a staple food for the Asian population. The cultivation of rice has led to a successful agricultural heritage of many Asian societies.
+You park your car just by the dirt driveway leading up to the old farmhouse. There used to be farm here in Great Fields, but the farmer it belonged to sadly passed away with no one to care for it afterwards. When you were elected mayor, you saw this as a great oppurtunity to reopen the farm for the citizens to use.
 
-Rice traces back more than 10,000 years ago and it was given as a gift from the animals after a large flood, giving the Chinese people a source of plentiful food. It is considered sacred and has shaped cultures and traditions for centuries in Asia.
+[•••]<1|
+(click-replace: ?1)[(t8n: "dissolve")[As you walk up to the farmhouse, you see a young woman sitting out on the porch. Her eyes widen with excitement as she sees you arrive, getting up from the porch stairs to come great you.
 
-Thanks for helping out! Kuruk is waiting for you at the corn farm.
+"Hi there! You're (text-colour:#ffc078)[''Mayor $name''], right?" She sticks out her hand to shake yours. "My name is (text-colour:#dee2e6)[''Mei''], and I'll be in charge of growing your rice on this farm!"
+
+[•••]<2|]]
+(click-replace: ?2)[(t8n: "dissolve")[You return her handshake and great her with a smile. "Thank you so much for helping out," you say. "I'm afraid this is my first time starting a farm, and I'm not quite sure what to do."
+
+She chuckles to herself, "Absolutely no worries! Us farmhands don't mind getting our hands dirty, and we're just happy to finally put this old farm to use." She leads you into the farmhouse as she continues to talk about her main crop, rice. 
+
+[•••]<3|]]
+(click-replace: ?3)[(t8n: "dissolve")["Rice is a staple food for the Asian population," she says. "The cultivation of rice has led to a successful agricultural heritage of many Asian societies."
+
+You nod your head along as she explains. "Wow, ]]
+
+{<!--Hi there! You're $name, right? My name is Mei and I'll be helping you grow your rice on this farm!
+
+Thanks for helping out! Kuruk is waiting for you at the corn farm.-->}
 
 [[Speak to Kuruk|Corn Plot]]
 
@@ -475,20 +520,20 @@ Thanks for helping out! Kuruk is waiting for you at the corn farm.
 
 
 :: Start {"position":"100,300","size":"100,100"}
-Hello! Welcome to Farming Simulator 2023!
+The sun shines down on the beautiful town of (text-colour:#8ce99a)[''Great Fields'']: your town! Yes, indeed you are the (text-colour:#ffc078)[newly-elected mayor] of this quaint town known for its small yet diverse and well-knit community. The hardworking citizens of Great Fields are truly the foundation of this town, and you as the mayor are looking for a way to celebrate their craft.
 
-You are the mayor of this humble farm, and you are going to help us prepare a few crops for the festival in a few months!
+But first, the town should get to know their new mayor!
 
-What's your name?
+So, what's your name?
 
-[[My name is...|Farmer Name]]
+[["My name is..."|Farmer Name]]
 
 <!--Hey fellow programmer! You can adjust any of the narrative stuff in these next few passages. I just wanted to implement variables for the user name and their farm name for
 personalization. Remove this comment once you've done so -->
 
 
 :: Startup [startup] {"position":"200,500","size":"100,100"}
-<!--Preset values, will get changed as game progresses-->
+{<!--Preset values, will get changed as game progresses-->
 
 (set: $name to "Avery")
 (set: $farmName to "Great Farms")
@@ -496,13 +541,13 @@ personalization. Remove this comment once you've done so -->
 (set: $reputation to (a: 0, 0, 0, 0))
 
 <!--Random event for Time 2: 0 for maintaining crop, 1 for animals, 2 for food-->
-(set: $event to (a: (random: 0, 2), (random: 0, 2), (random: 0, 2), (random: 0, 2)))
 
+(set: $event to (a: (random: 0, 2), (random: 0, 2), (random: 0, 2), (random: 0, 2)))
 (set: $plotChecked to (a: false, false, false, false))
 (set: $fertilizer to 0)
 (set: $store to 1)
 (set: $weather to 50)
-(set: $part2 to false)
+(set: $part2 to false)}
 
 
 :: Time 1 {"position":"900,300","size":"100,100"}
