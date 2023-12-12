@@ -225,7 +225,7 @@ THE END!
 :: Farm Name {"position":"300,300","size":"100,100"}
 {(set: $farmName to (prompt: "What is your farm named?", ""))}(if: $farmName is not "")[Oooh, "(text-colour:#c0eb75)[''$farmName'']!" I like the sound of that, it's nice and catchy! 
 
-Doning your official title: (text-colour:#ffc078)[''Mayor $name''], your first act for the town of Great Fields is to open (text-colour:#c0eb75)[''$farmName''] and hire four new farmhands to help grow its crops. The citizens rejoice over your idea for a harvest festival and your commitment to its community!
+Donning your official title: (text-colour:#ffc078)[''Mayor $name''], your first act for the town of Great Fields is to open (text-colour:#c0eb75)[''$farmName''] and hire four new farmhands to help grow its crops. The citizens rejoice over your idea for a harvest festival and your commitment to its community!
 
 [[Let's go visit the farm!|Meet Farmhands]]](else:)[Umm... Did you hear me? What was your farm's name?
 
@@ -255,7 +255,7 @@ Doning your official title: (text-colour:#ffc078)[''Mayor $name''], your first a
 
 
 :: Farm Store {"position":"1200,150","size":"100,100"}
-Welcome to the farming supplies store for $farmName, $name! We sell fertilizer that can help further nourish crops in good weather conditions. (if: $store <= 0)[Unfortunately, we're out of stock at the moment. Please come again when we get a new shipment later!]
+Welcome to the farming supplies store for (text-colour:#c0eb75)[''$farmName''], (text-colour:#ffc078)[''Mayor $name'']! We sell fertilizer that can help further nourish crops in good weather conditions. (if: $store <= 0)[Unfortunately, we're out of stock at the moment. Please come again when we get a new shipment later!]
 
 (if: $store > 0)[[[Buy fertilizer.|Purchase]]]
 (if: $part2 is false)[[[Leave the store.|Time 1]]](else:)[[[Leave the store.|Time 2]]]
@@ -666,7 +666,6 @@ You make sure Ximena takes enough rests and drinks enough water, as she continue
 }
 
 [[Leave the bean plot.|Time 1]]
-
 
 
 :: Ximena Convo 2 {"position":"1575,725","size":"100,100"}
