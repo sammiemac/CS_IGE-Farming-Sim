@@ -25,14 +25,27 @@ Corn is also known as maize. It has been deeply rooted in Native American tradit
 
 Thanks for helping out! Speak to Ximena at the bean farm.
 
-[[Speak to Ximena|Bean Plot]]</tw-passagedata><tw-passagedata pid="4" name="Time 2" tags="" position="1500,300" size="100,100">(set: $part2 to true)A few more weeks until the festival for $farmName.
-The weather is clear and sunny.
+[[Speak to Ximena|Bean Plot]]</tw-passagedata><tw-passagedata pid="4" name="Time 2" tags="" position="1500,300" size="100,100">(set: $part2 to true)After a few more weeks of preparing for the Great Fields Harvest Festival, you find another day off to go visit the farm. Luckily, the weather is clear and sunny today!
 
-(if: $plotChecked&#39;s 1st is false or $plotChecked&#39;s 2nd is false or $plotChecked&#39;s 3rd is false or $plotChecked&#39;s 4th is false)[[Check on the plots|Farm Plots 2]]
-[[Visit the Farm Store|Farm Store]]
-[[Finish up|Transition 2]]</tw-passagedata><tw-passagedata pid="5" name="Time 1" tags="" position="900,300" size="100,100">It&#39;s the next day, and you arrive at (text-colour:#c0eb75)[&#39;&#39;$farmName&#39;&#39;]. {(if: $weather &lt;= 30)[Raining is coming down hard onto your windshield as you try to get your car up the muddied driveway.]
+(if: $plotChecked&#39;s 1st is false or $plotChecked&#39;s 2nd is false or $plotChecked&#39;s 3rd is false or $plotChecked&#39;s 4th is false)[[Check on the crops.|Farm Plots 2]]
+[[Visit the Farm Store.|Farm Store]]
+[[Head home for today.|Transition 2]]</tw-passagedata><tw-passagedata pid="5" name="Time 1" tags="" position="900,300" size="100,100">{
+&lt;!--Checks if this is the first time entering this scene--&gt;
+(if: $time1Visit is false)[(set: $time1Visit to true)
+
+It&#39;s the next day, and you arrive at (text-colour:#c0eb75)[&#39;&#39;$farmName&#39;&#39;]. 
+
+&lt;!--Rainy weather--&gt;
+(if: $weather &lt;= 30)[Raining is coming down hard onto your windshield as you try to get your car up the muddied driveway.]
+
+&lt;!--Drought--&gt;
 (else-if: $weather &gt;= 70)[A drought has sadly struck the small town, and you drive your car up the dried dirtroad to the farm.]
-(else:)[The weather is clear and sunny: a near perfect day for farming, you think to yourself as you drive up to the farm.]}
+
+&lt;!--Clear weather--&gt;
+(else:)[The weather is clear and sunny: a near perfect day for farming, you think to yourself as you drive up to the farm.]]
+
+(else:)[What should you do at the farm?]
+}
 
 (if: $plotChecked&#39;s 1st is false or $plotChecked&#39;s 2nd is false or $plotChecked&#39;s 3rd is false or $plotChecked&#39;s 4th is false)[[Check up on the crops.|Farm Plots 1]]
 [[Visit the Farm Store.|Farm Store]]
@@ -52,16 +65,15 @@ Doning your official title: (text-colour:#ffc078)[&#39;&#39;Mayor $name&#39;&#39
 [[Head back to the farmhouse.|Time 1]]</tw-passagedata><tw-passagedata pid="8" name="Farm Store" tags="" position="1200,150" size="100,100">Welcome to the farming supplies store for $farmName, $name! We sell fertilizer that can help further nourish crops in good weather conditions. (if: $store &lt;= 0)[Unfortunately, we&#39;re out of stock at the moment. Please come again when we get a new shipment later!]
 
 (if: $store &gt; 0)[[[Buy fertilizer.|Purchase]]]
-(if: $part2 is false)[[[Leave the store.|Time 1]]](else:)[[[Leave the store.|Time 2]]]</tw-passagedata><tw-passagedata pid="9" name="Transition 1" tags="" position="1200,300" size="100,100">(set: $store to 1)(set: $plotChecked&#39;s 1st to false)(set: $plotChecked&#39;s 2nd to false)(set: $plotChecked&#39;s 3rd to false)(set: $plotChecked&#39;s 4th to false)(set: $event to (a: (random: 0, 2), (random: 0, 2), (random: 0, 2), (random: 0, 2)))
-Time passes by after long weeks of hard work.
-(if: $weather &gt;= 90)[(set: $cropStatus&#39;s 1st to it -1)(set: $cropStatus&#39;s 2nd to it -1)(set: $cropStatus&#39;s 3rd to it -1)(set: $cropStatus&#39;s 4th to it -1)[The drought took a heavy toll on the crops.]]
+(if: $part2 is false)[[[Leave the store.|Time 1]]](else:)[[[Leave the store.|Time 2]]]</tw-passagedata><tw-passagedata pid="9" name="Transition 1" tags="" position="1200,300" size="100,100">{(set: $store to 1)(set: $plotChecked&#39;s 1st to false)(set: $plotChecked&#39;s 2nd to false)(set: $plotChecked&#39;s 3rd to false)(set: $plotChecked&#39;s 4th to false)(set: $event to (a: (random: 0, 2), (random: 0, 2), (random: 0, 2), (random: 0, 2)))}
+As you head back home for the day, you think back on the progress that was made on the farm. (if: $weather &gt;= 70)[(set: $cropStatus&#39;s 1st to it -1)(set: $cropStatus&#39;s 2nd to it -1)(set: $cropStatus&#39;s 3rd to it -1)(set: $cropStatus&#39;s 4th to it -1)[The drought took a heavy toll on the crops...]]
 
 The rice plot is doing (if: $cropStatus&#39;s 1st is &lt; 0)[poorly...](else-if: $cropStatus&#39;s 1st is &gt; 1)[great!](else:)[fine.]
 The corn plot is doing (if: $cropStatus&#39;s 2nd is &lt; 0)[poorly...](else-if: $cropStatus&#39;s 2nd is &gt; 1)[great!](else:)[fine.]
 The bean plot is doing (if: $cropStatus&#39;s 3rd is &lt; 0)[poorly...](else-if: $cropStatus&#39;s 3rd is &gt; 1)[great!](else:)[fine.]
 The cassava plot is doing (if: $cropStatus&#39;s 3rd is &lt; 0)[poorly...](else-if: $cropStatus&#39;s 3rd is &gt; 1)[great!](else:)[fine.]
 
-[[Got it|Time 2]]</tw-passagedata><tw-passagedata pid="10" name="Farmer Name" tags="" position="300,100" size="100,100">{(set: $name to (prompt: &quot;What is your name?&quot;, &quot;&quot;))}(if: $name is not &quot;&quot;)[Welcome to Great Fields, (text-colour:#ffc078)[&#39;&#39;Mayor $name&#39;&#39;]! The citizens are sure to love you and whatever you have cooking up for the season.
+[[Let&#39;s keep going!|Time 2]]</tw-passagedata><tw-passagedata pid="10" name="Farmer Name" tags="" position="300,100" size="100,100">{(set: $name to (prompt: &quot;What is your name?&quot;, &quot;&quot;))}(if: $name is not &quot;&quot;)[Welcome to Great Fields, (text-colour:#ffc078)[&#39;&#39;Mayor $name&#39;&#39;]! The citizens are sure to love you and whatever you have cooking up for the season.
 
 Speaking of which, your plan to celebrate the town of Great Fields is... a (text-colour:#8ce99a)[harvest festival]! The town&#39;s great climate and fertile soil make it the best location to grow and raise all sorts of crops that are just as diverse as its community.
 
@@ -159,7 +171,9 @@ personalization. Remove this comment once you&#39;ve done so --&gt;</tw-passaged
 
 In fact, looks like you have some time in your busy schedule to go visit them tomorrow! Time to get your tools ready, because it looks like its time to get your hands dirty!
 
-[[Get ready for tomorrow!|Time 1]]</tw-passagedata><tw-passagedata pid="19" name="Startup" tags="startup" position="200,500" size="100,100">{
+[[Get ready for tomorrow!|Time 1]]
+
+(set: $time1Visit to false)</tw-passagedata><tw-passagedata pid="19" name="Startup" tags="startup" position="200,500" size="100,100">{
 &lt;!--Preset values, will get changed as game progresses--&gt;
 
 (set: $name to &quot;Avery&quot;)
@@ -273,14 +287,14 @@ You make sure Adric takes enough rests and drinks enough water, as he continues 
 }
 
 [[Leave the cassava plot.|Time 1]]</tw-passagedata><tw-passagedata pid="27" name="Fertilize Cassava 1" tags="" position="1100,850" size="100,100">(set: $cropStatus&#39;s 4th to it +1)(set: $fertilizer to it -1)You used the fertilizer, helping nourish the cassava!
-[[Leave the cassava plot|Time 1]]</tw-passagedata><tw-passagedata pid="28" name="Farm Plots 2" tags="" position="1500,450" size="100,100">[Which plot would you like to check on?]
+[[Leave the cassava plot|Time 1]]</tw-passagedata><tw-passagedata pid="28" name="Farm Plots 2" tags="" position="1500,450" size="100,100">[Which crop would you like to check on?]
 
 (if: $plotChecked&#39;s 1st is false)[[Check on Mei&#39;s rice plot|Rice Status 2]]
 (if: $plotChecked&#39;s 2nd is false)[[Check on Waya&#39;s corn plot|Corn Status 2]]
 (if: $plotChecked&#39;s 3rd is false)[[Check on Ximena&#39;s bean plot|Bean Status 2]]
 (if: $plotChecked&#39;s 4th is false)[[Check on Adric&#39;s cassava plot|Cassava Status 2]]
 
-[[Head back|Time 2]]</tw-passagedata><tw-passagedata pid="29" name="Transition 2" tags="" position="1800,300" size="100,100">(set: $plotChecked&#39;s 1st to false)(set: $plotChecked&#39;s 2nd to false)(set: $plotChecked&#39;s 3rd to false)(set: $plotChecked&#39;s 4th to false)
+[[Head back to the farmhouse.|Time 2]]</tw-passagedata><tw-passagedata pid="29" name="Transition 2" tags="" position="1800,300" size="100,100">(set: $plotChecked&#39;s 1st to false)(set: $plotChecked&#39;s 2nd to false)(set: $plotChecked&#39;s 3rd to false)(set: $plotChecked&#39;s 4th to false)
 A few more weeks pass by, and before you know it, it is time for the festival!
 
 [[Let&#39;s celebrate!|Festival]]</tw-passagedata><tw-passagedata pid="30" name="Rice Status 2" tags="" position="1300,600" size="100,100">{

@@ -244,14 +244,14 @@ Doning your official title: (text-colour:#ffc078)[''Mayor $name''], your first a
 
 
 :: Farm Plots 2 {"position":"1500,450","size":"100,100"}
-[Which plot would you like to check on?]
+[Which crop would you like to check on?]
 
 (if: $plotChecked's 1st is false)[[Check on Mei's rice plot|Rice Status 2]]
 (if: $plotChecked's 2nd is false)[[Check on Waya's corn plot|Corn Status 2]]
 (if: $plotChecked's 3rd is false)[[Check on Ximena's bean plot|Bean Status 2]]
 (if: $plotChecked's 4th is false)[[Check on Adric's cassava plot|Cassava Status 2]]
 
-[[Head back|Time 2]]
+[[Head back to the farmhouse.|Time 2]]
 
 
 :: Farm Store {"position":"1200,150","size":"100,100"}
@@ -330,6 +330,8 @@ The bustling sounds of the festival fill your ears.
 In fact, looks like you have some time in your busy schedule to go visit them tomorrow! Time to get your tools ready, because it looks like its time to get your hands dirty!
 
 [[Get ready for tomorrow!|Time 1]]
+
+(set: $time1Visit to false)
 
 
 :: Meet Farmhands {"position":"500,300","size":"100,100"}
@@ -545,9 +547,23 @@ personalization. Remove this comment once you've done so -->
 
 
 :: Time 1 {"position":"900,300","size":"100,100"}
-It's the next day, and you arrive at (text-colour:#c0eb75)[''$farmName'']. {(if: $weather <= 30)[Raining is coming down hard onto your windshield as you try to get your car up the muddied driveway.]
+{
+<!--Checks if this is the first time entering this scene-->
+(if: $time1Visit is false)[(set: $time1Visit to true)
+
+It's the next day, and you arrive at (text-colour:#c0eb75)[''$farmName'']. 
+
+<!--Rainy weather-->
+(if: $weather <= 30)[Raining is coming down hard onto your windshield as you try to get your car up the muddied driveway.]
+
+<!--Drought-->
 (else-if: $weather >= 70)[A drought has sadly struck the small town, and you drive your car up the dried dirtroad to the farm.]
-(else:)[The weather is clear and sunny: a near perfect day for farming, you think to yourself as you drive up to the farm.]}
+
+<!--Clear weather-->
+(else:)[The weather is clear and sunny: a near perfect day for farming, you think to yourself as you drive up to the farm.]]
+
+(else:)[What should you do at the farm?]
+}
 
 (if: $plotChecked's 1st is false or $plotChecked's 2nd is false or $plotChecked's 3rd is false or $plotChecked's 4th is false)[[Check up on the crops.|Farm Plots 1]]
 [[Visit the Farm Store.|Farm Store]]
@@ -555,25 +571,23 @@ It's the next day, and you arrive at (text-colour:#c0eb75)[''$farmName'']. {(if:
 
 
 :: Time 2 {"position":"1500,300","size":"100,100"}
-(set: $part2 to true)A few more weeks until the festival for $farmName.
-The weather is clear and sunny.
+(set: $part2 to true)After a few more weeks of preparing for the Great Fields Harvest Festival, you find another day off to go visit the farm. Luckily, the weather is clear and sunny today!
 
-(if: $plotChecked's 1st is false or $plotChecked's 2nd is false or $plotChecked's 3rd is false or $plotChecked's 4th is false)[[Check on the plots|Farm Plots 2]]
-[[Visit the Farm Store|Farm Store]]
-[[Finish up|Transition 2]]
+(if: $plotChecked's 1st is false or $plotChecked's 2nd is false or $plotChecked's 3rd is false or $plotChecked's 4th is false)[[Check on the crops.|Farm Plots 2]]
+[[Visit the Farm Store.|Farm Store]]
+[[Head home for today.|Transition 2]]
 
 
 :: Transition 1 {"position":"1200,300","size":"100,100"}
-(set: $store to 1)(set: $plotChecked's 1st to false)(set: $plotChecked's 2nd to false)(set: $plotChecked's 3rd to false)(set: $plotChecked's 4th to false)(set: $event to (a: (random: 0, 2), (random: 0, 2), (random: 0, 2), (random: 0, 2)))
-Time passes by after long weeks of hard work.
-(if: $weather >= 90)[(set: $cropStatus's 1st to it -1)(set: $cropStatus's 2nd to it -1)(set: $cropStatus's 3rd to it -1)(set: $cropStatus's 4th to it -1)[The drought took a heavy toll on the crops.]]
+{(set: $store to 1)(set: $plotChecked's 1st to false)(set: $plotChecked's 2nd to false)(set: $plotChecked's 3rd to false)(set: $plotChecked's 4th to false)(set: $event to (a: (random: 0, 2), (random: 0, 2), (random: 0, 2), (random: 0, 2)))}
+As you head back home for the day, you think back on the progress that was made on the farm. (if: $weather >= 70)[(set: $cropStatus's 1st to it -1)(set: $cropStatus's 2nd to it -1)(set: $cropStatus's 3rd to it -1)(set: $cropStatus's 4th to it -1)[The drought took a heavy toll on the crops...]]
 
 The rice plot is doing (if: $cropStatus's 1st is < 0)[poorly...](else-if: $cropStatus's 1st is > 1)[great!](else:)[fine.]
 The corn plot is doing (if: $cropStatus's 2nd is < 0)[poorly...](else-if: $cropStatus's 2nd is > 1)[great!](else:)[fine.]
 The bean plot is doing (if: $cropStatus's 3rd is < 0)[poorly...](else-if: $cropStatus's 3rd is > 1)[great!](else:)[fine.]
 The cassava plot is doing (if: $cropStatus's 3rd is < 0)[poorly...](else-if: $cropStatus's 3rd is > 1)[great!](else:)[fine.]
 
-[[Got it|Time 2]]
+[[Let's keep going!|Time 2]]
 
 
 :: Transition 2 {"position":"1800,300","size":"100,100"}
