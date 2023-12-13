@@ -62,7 +62,6 @@ You make sure Adric takes enough rests and drinks enough water, as he continues 
 }
 
 [[Leave the cassava plot|Time 2]]
-(if: $fertilizer > 0)[[[Use fertilizer before you leave|Fertilize Cassava 2]]]
 
 
 :: Bean Final {"position":"2175,450","size":"100,100"}
@@ -111,11 +110,14 @@ Thanks for helping out! Speak to Adric at the cassava farm.
 (else-if: $event's 3rd is 1)[You see Ximena tending to some animals.]
 
 <!--Dinner-->
-(else:)[You see Ximena inside her house preparing food.]
+(else:)[You see Ximena in the kitchen preparing some food.]
 }
 
-(if: $event's 3rd is 0)[[[Help Ximena with the crops|Ximena Convo 2]]](else-if: $event's 3rd is 1)[[[Approach Ximena and the animals|Ximena Convo 2]]](else:)[[[Ask to come inside Ximena's house|Ximena Convo 2]]]
-[[Leave the bean plot|Time 2]]
+{(if: $event's 3rd is 0)[[[Help Ximena with the crops|Ximena Convo 2]]]
+(else-if: $event's 3rd is 1)[[[Approach Ximena and the animals|Ximena Convo 2]]]
+(else:)[[[Ask Ximena about the food.|Ximena Convo 2]]]}
+(if: $fertilizer > 0)[[[Use fertilizer on the crops.|Fertilize Bean 2]]]
+[[Leave the bean plot.|Time 2]]
 
 
 :: Cassava Final {"position":"2300,450","size":"100,100"}
@@ -162,11 +164,14 @@ You've spoken to everyone already! Cool! We might ask you to help us with wateri
 (else-if: $event's 4th is 1)[You see Adric tending to some animals.]
 
 <!--Dinner-->
-(else:)[You see Adric inside his house preparing food.]
+(else:)[You see Adric in the kitchen preparing some food.]
 }
 
-(if: $event's 4th is 0)[[[Help Adric with the crops|Adric Convo 2]]](else-if: $event's 4th is 1)[[[Approach Adric and the animals|Adric Convo 2]]](else:)[[[Ask to come inside Adric's house|Adric Convo 2]]]
-[[Leave the cassava plot|Time 2]]
+{(if: $event's 4th is 0)[[[Help Adric with the crops.|Adric Convo 2]]]
+(else-if: $event's 4th is 1)[[[Approach Adric and the animals.|Adric Convo 2]]]
+(else:)[[[Ask Adric about the food.|Adric Convo 2]]]}
+(if: $fertilizer > 0)[[[Use fertilizer on the crops.|Fertilize Cassava 2]]]
+[[Leave the cassava plot.|Time 2]]
 
 
 :: Corn Final {"position":"2025,450","size":"100,100"}
@@ -215,10 +220,13 @@ Thanks for helping out! Speak to Ximena at the bean farm.
 (else-if: $event's 2nd is 1)[You see Waya tending to some animals.]
 
 <!--Dinner-->
-(else:)[You see Waya inside his house preparing food.]
+(else:)[You see Waya in the kitchen preparing some food.]
 }
 
-(if: $event's 2nd is 0)[[[Help Waya with the crops|Waya Convo 2]]](else-if: $event's 2nd is 1)[[[Approach Waya and the animals|Waya Convo 2]]](else:)[[[Ask to come inside Waya's house|Waya Convo 2]]]
+{(if: $event's 2nd is 0)[[[Help Waya with the crops.|Waya Convo 2]]]
+(else-if: $event's 2nd is 1)[[[Approach Waya and the animals.|Waya Convo 2]]]
+(else:)[[[Ask Waya about the food.|Waya Convo 2]]]}
+(if: $fertilizer > 0)[[[Use fertilizer on the crops.|Fertilize Corn 2]]]
 [[Leave the corn plot|Time 2]]
 
 
@@ -289,7 +297,7 @@ But first, you should probably start a farm and hire some farmhands, don't you t
 
 :: Fertilize Bean 2 {"position":"1575,850","size":"100,100"}
 (set: $cropStatus's 3rd to it +1)(set: $fertilizer to it -1)You used the fertilizer, helping nourish the beans!
-[[Leave the bean plot|Time 2]]
+[[Leave the bean plot.|Time 2]]
 
 
 :: Fertilize Cassava 1 {"position":"1100,850","size":"100,100"}
@@ -299,7 +307,7 @@ But first, you should probably start a farm and hire some farmhands, don't you t
 
 :: Fertilize Cassava 2 {"position":"1700,850","size":"100,100"}
 (set: $cropStatus's 4th to it +1)(set: $fertilizer to it -1)You used the fertilizer, helping nourish the cassava!
-[[Leave the cassava plot|Time 2]]
+[[Leave the cassava plot.|Time 2]]
 
 
 :: Fertilize Corn 1 {"position":"825,850","size":"100,100"}
@@ -309,7 +317,7 @@ But first, you should probably start a farm and hire some farmhands, don't you t
 
 :: Fertilize Corn 2 {"position":"1425,850","size":"100,100"}
 (set: $cropStatus's 2nd to it +1)(set: $fertilizer to it -1)You used the fertilizer, helping nourish the corn!
-[[Leave the corn plot|Time 2]]
+[[Leave the corn plot.|Time 2]]
 
 
 :: Fertilize Rice 1 {"position":"700,850","size":"100,100"}
@@ -319,7 +327,7 @@ But first, you should probably start a farm and hire some farmhands, don't you t
 
 :: Fertilize Rice 2 {"position":"1300,850","size":"100,100"}
 (set: $cropStatus's 1st to it +1)(set: $fertilizer to it -1)You used the fertilizer, helping nourish the rice!
-[[Leave the rice plot|Time 2]]
+[[Leave the rice plot.|Time 2]]
 
 
 :: Festival {"position":"2100,300","size":"100,100"}
@@ -383,11 +391,16 @@ You make sure Mei takes enough rests and drinks enough water, as she continues t
 
 
 :: Mei Convo 2 {"position":"1300,725","size":"100,100"}
-(set: $reputation's 1st to it +1)(set: $plotChecked's 1st to true)(set: $cropStatus's 1st to it +1)
-{
+{(set: $reputation's 1st to it +1)(set: $plotChecked's 1st to true)(set: $cropStatus's 1st to it +1)
+
 <!--Maintenance-->
-(if: $event's 1st is 0)[Mei talks about how to better maintain the crop.]
-<!--It is best suited to regions which have high humidity, prolonged sunshine and an assured supply of water.-->
+(if: $event's 1st is 0)[As you approach, she gives you a warm smile.
+<br>
+"Nice to see you again,(text-colour:#ffc078)[''Mayor $name'']! We really appreciate you opening up this farm again for us to use."
+<br>
+"If you didn't already know, rice is a staple food for the Asian population. The cultivation of rice has led to a successful agricultural heritage of many Asian societies. The crop traces back more than 10,000 years ago, where legend has it that rice was given as a gift from the animals after a large flood. This gave the Chinese people a source of plentiful food. Since then, it's considered sacred and has shaped the cultures and traditions of Asian countries for centuries."]
+<br>
+You found Mei's explanation of the crop's history to be very interesting and engaging as you continue to help her in the fields.
 
 <!--Animal handling-->
 (else-if: $event's 1st is 1)[Mei talks about the animal nearby.]
@@ -397,9 +410,7 @@ You make sure Mei takes enough rests and drinks enough water, as she continues t
 (else:)[Mei talks about food made from the crop.]
 <!--fried rice, Zongzi (China, glutinous rice stuffed with various ingredients and wrapped in bamboo leaves), champorado (Philippines, sweet chocolate rice porridge), horchata (Mexico, sugared rice milk)-->
 }
-
-[[Leave the rice plot|Time 2]]
-(if: $fertilizer > 0)[[[Use fertilizer before you leave|Fertilize Rice 2]]]
+[[Leave the rice plot.|Time 2]]
 
 
 :: Notes {"position":"400,500","size":"100,100"}
@@ -499,7 +510,7 @@ Thanks for helping out! Waya is waiting for you at the corn farm.-->}
 (if: $weather < 70 and > 30)[You see Mei working on the rice out in the fields.]
 
 <!--Rainy weather-->
-(else-if: $weather <= 30)[You see Mei sitting on the porch of her house near the farm, keeping dry underneath the roof.]
+(else-if: $weather <= 30)[You see Mei sitting on the back porch of the farmhouse, keeping dry underneath the roof.]
 
 <!--Drought-->
 (else:)[You see Mei working on the fields, wiping the sweat off her brow.]
@@ -519,11 +530,14 @@ Thanks for helping out! Waya is waiting for you at the corn farm.-->}
 (else-if: $event's 1st is 1)[You see Mei tending to some animals.]
 
 <!--Dinner-->
-(else:)[You see Mei inside her house preparing food.]
+(else:)[You see Mei in the kitchen preparing some food.]
 }
 
-(if: $event's 1st is 0)[[[Help Mei with the crops|Mei Convo 2]]](else-if: $event's 1st is 1)[[[Approach Mei and the animals|Mei Convo 2]]](else:)[[[Ask to come inside Mei's house|Mei Convo 2]]]
-[[Leave the rice plot|Time 2]]
+{(if: $event's 1st is 0)[[[Help Mei with the crops.|Mei Convo 2]]]
+(else-if: $event's 1st is 1)[[[Approach Mei and the animals.|Mei Convo 2]]]
+(else:)[[[Ask Mei about the food.|Mei Convo 2]]]}
+(if: $fertilizer > 0)[[[Use fertilizer on the crops.|Fertilize Rice 2]]]
+[[Leave the rice plot.|Time 2]]
 
 
 :: Start {"position":"100,300","size":"100,100"}
@@ -655,7 +669,6 @@ You make sure Waya takes enough rests and drinks enough water, as they continue 
 }
 
 [[Leave the corn plot|Time 2]]
-(if: $fertilizer > 0)[[[Use fertilizer before you leave|Fertilize Corn 2]]]
 
 
 :: Ximena Convo 1 {"position":"975,725","size":"100,100"}
@@ -702,4 +715,3 @@ You make sure Ximena takes enough rests and drinks enough water, as she continue
 }
 
 [[Leave the bean plot|Time 2]]
-(if: $fertilizer > 0)[[[Use fertilizer before you leave|Fertilize Bean 2]]]

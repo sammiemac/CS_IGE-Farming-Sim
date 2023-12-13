@@ -47,8 +47,7 @@ You make sure Adric takes enough rests and drinks enough water, as he continues 
 &lt;!--Cassava flour is used in making garri, a popular food in Nigeria,Cassava flour is used in making garri, a popular food in Nigeria, Garri is a creamy-white, granular flour with a slightly sour, fermented flavor from fermented, gelatinized fresh cassava tubers.--&gt;
 }
 
-[[Leave the cassava plot|Time 2]]
-(if: $fertilizer &gt; 0)[[[Use fertilizer before you leave|Fertilize Cassava 2]]]</tw-passagedata><tw-passagedata pid="3" name="Bean Final" tags="" position="2175,450" size="100,100">(set: $plotChecked&#39;s 3rd to true)Hey $name! I just wanted to let you know that the rice crops did (if: $cropStatus&#39;s 3rd is &lt; 0)[poorly...](else-if: $cropStatus&#39;s 2nd is &gt; 1)[great!](else:)[fine.]
+[[Leave the cassava plot|Time 2]]</tw-passagedata><tw-passagedata pid="3" name="Bean Final" tags="" position="2175,450" size="100,100">(set: $plotChecked&#39;s 3rd to true)Hey $name! I just wanted to let you know that the rice crops did (if: $cropStatus&#39;s 3rd is &lt; 0)[poorly...](else-if: $cropStatus&#39;s 2nd is &gt; 1)[great!](else:)[fine.]
 
 (if: $reputation&#39;s 3rd is 2)[You feel a special bond with Ximena.]
 
@@ -81,11 +80,14 @@ Thanks for helping out! Speak to Adric at the cassava farm.
 (else-if: $event&#39;s 3rd is 1)[You see Ximena tending to some animals.]
 
 &lt;!--Dinner--&gt;
-(else:)[You see Ximena inside her house preparing food.]
+(else:)[You see Ximena in the kitchen preparing some food.]
 }
 
-(if: $event&#39;s 3rd is 0)[[[Help Ximena with the crops|Ximena Convo 2]]](else-if: $event&#39;s 3rd is 1)[[[Approach Ximena and the animals|Ximena Convo 2]]](else:)[[[Ask to come inside Ximena&#39;s house|Ximena Convo 2]]]
-[[Leave the bean plot|Time 2]]</tw-passagedata><tw-passagedata pid="7" name="Cassava Final" tags="" position="2300,450" size="100,100">(set: $plotChecked&#39;s 4th to true)Hey $name! I just wanted to let you know that the rice crops did (if: $cropStatus&#39;s 4th is &lt; 0)[poorly...](else-if: $cropStatus&#39;s 4th is &gt; 1)[great!](else:)[fine.]
+{(if: $event&#39;s 3rd is 0)[[[Help Ximena with the crops|Ximena Convo 2]]]
+(else-if: $event&#39;s 3rd is 1)[[[Approach Ximena and the animals|Ximena Convo 2]]]
+(else:)[[[Ask Ximena about the food.|Ximena Convo 2]]]}
+(if: $fertilizer &gt; 0)[[[Use fertilizer on the crops.|Fertilize Bean 2]]]
+[[Leave the bean plot.|Time 2]]</tw-passagedata><tw-passagedata pid="7" name="Cassava Final" tags="" position="2300,450" size="100,100">(set: $plotChecked&#39;s 4th to true)Hey $name! I just wanted to let you know that the rice crops did (if: $cropStatus&#39;s 4th is &lt; 0)[poorly...](else-if: $cropStatus&#39;s 4th is &gt; 1)[great!](else:)[fine.]
 
 (if: $reputation&#39;s 4th is 2)[You feel a special bond with Adric.]
 
@@ -116,11 +118,14 @@ You&#39;ve spoken to everyone already! Cool! We might ask you to help us with wa
 (else-if: $event&#39;s 4th is 1)[You see Adric tending to some animals.]
 
 &lt;!--Dinner--&gt;
-(else:)[You see Adric inside his house preparing food.]
+(else:)[You see Adric in the kitchen preparing some food.]
 }
 
-(if: $event&#39;s 4th is 0)[[[Help Adric with the crops|Adric Convo 2]]](else-if: $event&#39;s 4th is 1)[[[Approach Adric and the animals|Adric Convo 2]]](else:)[[[Ask to come inside Adric&#39;s house|Adric Convo 2]]]
-[[Leave the cassava plot|Time 2]]</tw-passagedata><tw-passagedata pid="11" name="Corn Final" tags="" position="2025,450" size="100,100">(set: $plotChecked&#39;s 2nd to true)Hey $name! I just wanted to let you know that the rice crops did (if: $cropStatus&#39;s 2nd is &lt; 0)[poorly...](else-if: $cropStatus&#39;s 2nd is &gt; 1)[great!](else:)[fine.]
+{(if: $event&#39;s 4th is 0)[[[Help Adric with the crops.|Adric Convo 2]]]
+(else-if: $event&#39;s 4th is 1)[[[Approach Adric and the animals.|Adric Convo 2]]]
+(else:)[[[Ask Adric about the food.|Adric Convo 2]]]}
+(if: $fertilizer &gt; 0)[[[Use fertilizer on the crops.|Fertilize Cassava 2]]]
+[[Leave the cassava plot.|Time 2]]</tw-passagedata><tw-passagedata pid="11" name="Corn Final" tags="" position="2025,450" size="100,100">(set: $plotChecked&#39;s 2nd to true)Hey $name! I just wanted to let you know that the rice crops did (if: $cropStatus&#39;s 2nd is &lt; 0)[poorly...](else-if: $cropStatus&#39;s 2nd is &gt; 1)[great!](else:)[fine.]
 
 (if: $reputation&#39;s 2nd is 2)[You feel a special bond with Waya.]
 
@@ -153,10 +158,13 @@ Thanks for helping out! Speak to Ximena at the bean farm.
 (else-if: $event&#39;s 2nd is 1)[You see Waya tending to some animals.]
 
 &lt;!--Dinner--&gt;
-(else:)[You see Waya inside his house preparing food.]
+(else:)[You see Waya in the kitchen preparing some food.]
 }
 
-(if: $event&#39;s 2nd is 0)[[[Help Waya with the crops|Waya Convo 2]]](else-if: $event&#39;s 2nd is 1)[[[Approach Waya and the animals|Waya Convo 2]]](else:)[[[Ask to come inside Waya&#39;s house|Waya Convo 2]]]
+{(if: $event&#39;s 2nd is 0)[[[Help Waya with the crops.|Waya Convo 2]]]
+(else-if: $event&#39;s 2nd is 1)[[[Approach Waya and the animals.|Waya Convo 2]]]
+(else:)[[[Ask Waya about the food.|Waya Convo 2]]]}
+(if: $fertilizer &gt; 0)[[[Use fertilizer on the crops.|Fertilize Corn 2]]]
 [[Leave the corn plot|Time 2]]</tw-passagedata><tw-passagedata pid="15" name="Ending" tags="" position="2400,300" size="100,100">(set: _end to $cropStatus&#39;s 1st + $cropStatus&#39;s 2nd + $cropStatus&#39;s 3rd + $cropStatus&#39;s 4th)
 Overall, the state of $farmName...
 
@@ -195,13 +203,13 @@ But first, you should probably start a farm and hire some farmhands, don&#39;t y
 
 [[&quot;Sorry, my name is...&quot;|Farmer Name]]]</tw-passagedata><tw-passagedata pid="21" name="Fertilize Bean 1" tags="" position="975,850" size="100,100">(set: $cropStatus&#39;s 3rd to it +1)(set: $fertilizer to it -1)You used the fertilizer, helping nourish the beans!
 [[Leave the bean plot.|Time 1]]</tw-passagedata><tw-passagedata pid="22" name="Fertilize Bean 2" tags="" position="1575,850" size="100,100">(set: $cropStatus&#39;s 3rd to it +1)(set: $fertilizer to it -1)You used the fertilizer, helping nourish the beans!
-[[Leave the bean plot|Time 2]]</tw-passagedata><tw-passagedata pid="23" name="Fertilize Cassava 1" tags="" position="1100,850" size="100,100">(set: $cropStatus&#39;s 4th to it +1)(set: $fertilizer to it -1)You used the fertilizer, helping nourish the cassava!
+[[Leave the bean plot.|Time 2]]</tw-passagedata><tw-passagedata pid="23" name="Fertilize Cassava 1" tags="" position="1100,850" size="100,100">(set: $cropStatus&#39;s 4th to it +1)(set: $fertilizer to it -1)You used the fertilizer, helping nourish the cassava!
 [[Leave the cassava plot|Time 1]]</tw-passagedata><tw-passagedata pid="24" name="Fertilize Cassava 2" tags="" position="1700,850" size="100,100">(set: $cropStatus&#39;s 4th to it +1)(set: $fertilizer to it -1)You used the fertilizer, helping nourish the cassava!
-[[Leave the cassava plot|Time 2]]</tw-passagedata><tw-passagedata pid="25" name="Fertilize Corn 1" tags="" position="825,850" size="100,100">(set: $cropStatus&#39;s 2nd to it +1)(set: $fertilizer to it -1)You used the fertilizer, helping nourish the corn!
+[[Leave the cassava plot.|Time 2]]</tw-passagedata><tw-passagedata pid="25" name="Fertilize Corn 1" tags="" position="825,850" size="100,100">(set: $cropStatus&#39;s 2nd to it +1)(set: $fertilizer to it -1)You used the fertilizer, helping nourish the corn!
 [[Leave the corn plot.|Time 1]]</tw-passagedata><tw-passagedata pid="26" name="Fertilize Corn 2" tags="" position="1425,850" size="100,100">(set: $cropStatus&#39;s 2nd to it +1)(set: $fertilizer to it -1)You used the fertilizer, helping nourish the corn!
-[[Leave the corn plot|Time 2]]</tw-passagedata><tw-passagedata pid="27" name="Fertilize Rice 1" tags="" position="700,850" size="100,100">(set: $cropStatus&#39;s 1st to it +1)(set: $fertilizer to it -1)You used the fertilizer, helping nourish the rice!
+[[Leave the corn plot.|Time 2]]</tw-passagedata><tw-passagedata pid="27" name="Fertilize Rice 1" tags="" position="700,850" size="100,100">(set: $cropStatus&#39;s 1st to it +1)(set: $fertilizer to it -1)You used the fertilizer, helping nourish the rice!
 [[Leave the rice plot.|Time 1]]</tw-passagedata><tw-passagedata pid="28" name="Fertilize Rice 2" tags="" position="1300,850" size="100,100">(set: $cropStatus&#39;s 1st to it +1)(set: $fertilizer to it -1)You used the fertilizer, helping nourish the rice!
-[[Leave the rice plot|Time 2]]</tw-passagedata><tw-passagedata pid="29" name="Festival" tags="" position="2100,300" size="100,100">The bustling sounds of the festival fill your ears.
+[[Leave the rice plot.|Time 2]]</tw-passagedata><tw-passagedata pid="29" name="Festival" tags="" position="2100,300" size="100,100">The bustling sounds of the festival fill your ears.
 
 (if: $plotChecked&#39;s 1st is false)[[[Speak with Mei|Rice Final]]]
 (if: $plotChecked&#39;s 2nd is false)[[[Speak with Waya|Corn Final]]]
@@ -245,11 +253,16 @@ You join Mei and sit next to her on the porch as she continues to talk about how
 You make sure Mei takes enough rests and drinks enough water, as she continues to work and talk about how to grow and harvest rice.]
 }
 
-[[Leave the rice plot.|Time 1]]</tw-passagedata><tw-passagedata pid="33" name="Mei Convo 2" tags="" position="1300,725" size="100,100">(set: $reputation&#39;s 1st to it +1)(set: $plotChecked&#39;s 1st to true)(set: $cropStatus&#39;s 1st to it +1)
-{
+[[Leave the rice plot.|Time 1]]</tw-passagedata><tw-passagedata pid="33" name="Mei Convo 2" tags="" position="1300,725" size="100,100">{(set: $reputation&#39;s 1st to it +1)(set: $plotChecked&#39;s 1st to true)(set: $cropStatus&#39;s 1st to it +1)
+
 &lt;!--Maintenance--&gt;
-(if: $event&#39;s 1st is 0)[Mei talks about how to better maintain the crop.]
-&lt;!--It is best suited to regions which have high humidity, prolonged sunshine and an assured supply of water.--&gt;
+(if: $event&#39;s 1st is 0)[As you approach, she gives you a warm smile.
+&lt;br&gt;
+&quot;Nice to see you again,(text-colour:#ffc078)[&#39;&#39;Mayor $name&#39;&#39;]! We really appreciate you opening up this farm again for us to use.&quot;
+&lt;br&gt;
+&quot;If you didn&#39;t already know, rice is a staple food for the Asian population. The cultivation of rice has led to a successful agricultural heritage of many Asian societies. The crop traces back more than 10,000 years ago, where legend has it that rice was given as a gift from the animals after a large flood. This gave the Chinese people a source of plentiful food. Since then, it&#39;s considered sacred and has shaped the cultures and traditions of Asian countries for centuries.&quot;]
+&lt;br&gt;
+You found Mei&#39;s explanation of the crop&#39;s history to be very interesting and engaging as you continue to help her in the fields.
 
 &lt;!--Animal handling--&gt;
 (else-if: $event&#39;s 1st is 1)[Mei talks about the animal nearby.]
@@ -259,9 +272,7 @@ You make sure Mei takes enough rests and drinks enough water, as she continues t
 (else:)[Mei talks about food made from the crop.]
 &lt;!--fried rice, Zongzi (China, glutinous rice stuffed with various ingredients and wrapped in bamboo leaves), champorado (Philippines, sweet chocolate rice porridge), horchata (Mexico, sugared rice milk)--&gt;
 }
-
-[[Leave the rice plot|Time 2]]
-(if: $fertilizer &gt; 0)[[[Use fertilizer before you leave|Fertilize Rice 2]]]</tw-passagedata><tw-passagedata pid="34" name="Notes" tags="" position="400,500" size="100,100">Rice/China/Asia
+[[Leave the rice plot.|Time 2]]</tw-passagedata><tw-passagedata pid="34" name="Notes" tags="" position="400,500" size="100,100">Rice/China/Asia
 - Rice is a staple food for the Asian population.
 - The cultivation of rice has led to a successful agricultural heritage of many Asian societies.
 - Rice traces back more than 10,000 years ago and it was given as a gift from the animals after a large flood, giving the Chinese people a source of plentiful food. 
@@ -341,7 +352,7 @@ Thanks for helping out! Waya is waiting for you at the corn farm.--&gt;}
 (if: $weather &lt; 70 and &gt; 30)[You see Mei working on the rice out in the fields.]
 
 &lt;!--Rainy weather--&gt;
-(else-if: $weather &lt;= 30)[You see Mei sitting on the porch of her house near the farm, keeping dry underneath the roof.]
+(else-if: $weather &lt;= 30)[You see Mei sitting on the back porch of the farmhouse, keeping dry underneath the roof.]
 
 &lt;!--Drought--&gt;
 (else:)[You see Mei working on the fields, wiping the sweat off her brow.]
@@ -357,11 +368,14 @@ Thanks for helping out! Waya is waiting for you at the corn farm.--&gt;}
 (else-if: $event&#39;s 1st is 1)[You see Mei tending to some animals.]
 
 &lt;!--Dinner--&gt;
-(else:)[You see Mei inside her house preparing food.]
+(else:)[You see Mei in the kitchen preparing some food.]
 }
 
-(if: $event&#39;s 1st is 0)[[[Help Mei with the crops|Mei Convo 2]]](else-if: $event&#39;s 1st is 1)[[[Approach Mei and the animals|Mei Convo 2]]](else:)[[[Ask to come inside Mei&#39;s house|Mei Convo 2]]]
-[[Leave the rice plot|Time 2]]</tw-passagedata><tw-passagedata pid="40" name="Start" tags="" position="100,300" size="100,100">The sun shines down on the beautiful town of (text-colour:#8ce99a)[&#39;&#39;Great Fields&#39;&#39;]: your town! Yes, indeed you are the (text-colour:#ffc078)[newly-elected mayor] of this quaint town known for its small yet diverse and well-knit community. The hardworking citizens of Great Fields are truly the foundation of this town, and you as the mayor are looking for a way to celebrate their craft.
+{(if: $event&#39;s 1st is 0)[[[Help Mei with the crops.|Mei Convo 2]]]
+(else-if: $event&#39;s 1st is 1)[[[Approach Mei and the animals.|Mei Convo 2]]]
+(else:)[[[Ask Mei about the food.|Mei Convo 2]]]}
+(if: $fertilizer &gt; 0)[[[Use fertilizer on the crops.|Fertilize Rice 2]]]
+[[Leave the rice plot.|Time 2]]</tw-passagedata><tw-passagedata pid="40" name="Start" tags="" position="100,300" size="100,100">The sun shines down on the beautiful town of (text-colour:#8ce99a)[&#39;&#39;Great Fields&#39;&#39;]: your town! Yes, indeed you are the (text-colour:#ffc078)[newly-elected mayor] of this quaint town known for its small yet diverse and well-knit community. The hardworking citizens of Great Fields are truly the foundation of this town, and you as the mayor are looking for a way to celebrate their craft.
 
 But first, the town should get to know their new mayor!
 
@@ -483,8 +497,7 @@ You make sure Ximena takes enough rests and drinks enough water, as she continue
 &lt;!--Refried beans, or &quot;frijoles refritos,&quot; are a staple in Mexican cuisine, with a history dating back centuries. This classic recipe showcases the creamy texture and earthy flavor of pinto beans, which have nourished the Mexican people for generations.--&gt;
 }
 
-[[Leave the bean plot|Time 2]]
-(if: $fertilizer &gt; 0)[[[Use fertilizer before you leave|Fertilize Bean 2]]]</tw-passagedata><tw-passagedata pid="49" name="Waya Convo 2" tags="" position="1425,725" size="100,100">(set: $reputation&#39;s 2nd to it +1)(set: $plotChecked&#39;s 2nd to true)(set: $cropStatus&#39;s 2nd to it +1)
+[[Leave the bean plot|Time 2]]</tw-passagedata><tw-passagedata pid="49" name="Waya Convo 2" tags="" position="1425,725" size="100,100">(set: $reputation&#39;s 2nd to it +1)(set: $plotChecked&#39;s 2nd to true)(set: $cropStatus&#39;s 2nd to it +1)
 {
 &lt;!--Maintenance--&gt;
 (if: $event&#39;s 2nd is 0)[Waya talks about how to better maintain the crop.]
@@ -499,8 +512,7 @@ You make sure Ximena takes enough rests and drinks enough water, as she continue
 &lt;!--corn pone (A kind of bread made from corn meal), three sisters succotash (from the Native American word msiquatash, made with corn, squash and beans which were all crops tended to by Native Americans)--&gt;
 }
 
-[[Leave the corn plot|Time 2]]
-(if: $fertilizer &gt; 0)[[[Use fertilizer before you leave|Fertilize Corn 2]]]</tw-passagedata></tw-storydata>
+[[Leave the corn plot|Time 2]]</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
