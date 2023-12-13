@@ -35,15 +35,24 @@ You make sure Adric takes enough rests and drinks enough water, as he continues 
 [[Leave the cassava plot.|Time 1]]</tw-passagedata><tw-passagedata pid="2" name="Adric Convo 2" tags="" position="1700,725" size="100,100">(set: $reputation&#39;s 4th to it +1)(set: $plotChecked&#39;s 4th to true)(set: $cropStatus&#39;s 4th to it +1)
 {
 &lt;!--Maintenance--&gt;
-(if: $event&#39;s 4th is 0)[Adric talks about how to better maintain the crop.]
-&lt;!--Cassava does not tolerate freezing conditions, but does tolerate a wide range of soil pH 4.0 to 8.0 and is most productive in full sun.--&gt;
-
+(if: $event&#39;s 4th is 0)[As you approach, he greets you with a pat on the shoulder.
+&lt;br&gt;
+&quot;Good to see you again, (text-colour:#ffc078)[&#39;&#39;Mayor $name&#39;&#39;]. Always ready to get your hands dirty, ey?&quot;
+&lt;br&gt;
+&quot;You may not know this, but cassava was actually imported from South America to Africa. Since then, however, it has become a staple food crop in many African countries. The crop is often featured in traditional ceremonies and rituals. It thrives in our environment because of its low water requirement, survivability in marginal soils, and flexibility in harvest time. No part of cassava goes to waste as parts are dried and fed to animals and the water squeezed from the fermeted cassava, the starch, is used to harden cloths.&quot;
+&lt;br&gt;
+You found Adric&#39;s explanation of the crop&#39;s history to be very interesting and engaging, as you continue to help him with the cassava trees.]
 &lt;!--Dinner--&gt;
-(else:)[Adric talks about food made from the crop.]
-&lt;!--Cassava flour is used in making garri, a popular food in Nigeria,Cassava flour is used in making garri, a popular food in Nigeria, Garri is a creamy-white, granular flour with a slightly sour, fermented flavor from fermented, gelatinized fresh cassava tubers.--&gt;
+(else:)[As you approach, he greets you with a pat on the shoulder.
+&lt;br&gt;
+&quot;Good to see you again, (text-colour:#ffc078)[&#39;&#39;Mayor $name&#39;&#39;]. You caught me at a good time since I&#39;ll be cooking today.&quot;
+&lt;br&gt;
+&quot;Cassava can be ground and dried into a gluten-, grain-, and nut-free flour, making it a popular baking alternative for those with dietary restrictions. From cassava flour we make garri, which can be soaked in cold water to be eaten like a cereal with sugar. It can also be mixed in boiling water to make eba, which is a type of soft food we eat with our meals.&quot;
+&lt;br&gt;
+You found Adric&#39;s explanation of foods made from cassava to be very interesting and engaging, and the garri he made was great, too!]
 }
 
-[[Leave the cassava plot|Time 2]]</tw-passagedata><tw-passagedata pid="3" name="Bean Final" tags="" position="2175,450" size="100,100">(set: $plotChecked&#39;s 3rd to true)Hey $name! I just wanted to let you know that the rice crops did (if: $cropStatus&#39;s 3rd is &lt; 0)[poorly...](else-if: $cropStatus&#39;s 2nd is &gt; 1)[great!](else:)[fine.]
+[[Leave the cassava plot.|Time 2]]</tw-passagedata><tw-passagedata pid="3" name="Bean Final" tags="" position="2175,450" size="100,100">(set: $plotChecked&#39;s 3rd to true)Hey $name! I just wanted to let you know that the rice crops did (if: $cropStatus&#39;s 3rd is &lt; 0)[poorly...](else-if: $cropStatus&#39;s 2nd is &gt; 1)[great!](else:)[fine.]
 
 (if: $reputation&#39;s 3rd is 2)[You feel a special bond with Ximena.]
 
@@ -77,7 +86,6 @@ Thanks for helping out! Speak to Adric at the cassava farm.
 }
 
 {(if: $event&#39;s 3rd is 0)[[[Help Ximena with the crops|Ximena Convo 2]]]
-(else-if: $event&#39;s 3rd is 1)[[[Approach Ximena and the animals|Ximena Convo 2]]]
 (else:)[[[Ask Ximena about the food.|Ximena Convo 2]]]}
 (if: $fertilizer &gt; 0)[[[Use fertilizer on the crops.|Fertilize Bean 2]]]
 [[Leave the bean plot.|Time 2]]</tw-passagedata><tw-passagedata pid="7" name="Cassava Final" tags="" position="2300,450" size="100,100">(set: $plotChecked&#39;s 4th to true)Hey $name! I just wanted to let you know that the rice crops did (if: $cropStatus&#39;s 4th is &lt; 0)[poorly...](else-if: $cropStatus&#39;s 4th is &gt; 1)[great!](else:)[fine.]
@@ -112,7 +120,6 @@ You&#39;ve spoken to everyone already! Cool! We might ask you to help us with wa
 }
 
 {(if: $event&#39;s 4th is 0)[[[Help Adric with the crops.|Adric Convo 2]]]
-(else-if: $event&#39;s 4th is 1)[[[Approach Adric and the animals.|Adric Convo 2]]]
 (else:)[[[Ask Adric about the food.|Adric Convo 2]]]}
 (if: $fertilizer &gt; 0)[[[Use fertilizer on the crops.|Fertilize Cassava 2]]]
 [[Leave the cassava plot.|Time 2]]</tw-passagedata><tw-passagedata pid="11" name="Corn Final" tags="" position="2025,450" size="100,100">(set: $plotChecked&#39;s 2nd to true)Hey $name! I just wanted to let you know that the rice crops did (if: $cropStatus&#39;s 2nd is &lt; 0)[poorly...](else-if: $cropStatus&#39;s 2nd is &gt; 1)[great!](else:)[fine.]
@@ -149,10 +156,9 @@ Thanks for helping out! Speak to Ximena at the bean farm.
 }
 
 {(if: $event&#39;s 2nd is 0)[[[Help Waya with the crops.|Waya Convo 2]]]
-(else-if: $event&#39;s 2nd is 1)[[[Approach Waya and the animals.|Waya Convo 2]]]
 (else:)[[[Ask Waya about the food.|Waya Convo 2]]]}
 (if: $fertilizer &gt; 0)[[[Use fertilizer on the crops.|Fertilize Corn 2]]]
-[[Leave the corn plot|Time 2]]</tw-passagedata><tw-passagedata pid="15" name="Ending" tags="" position="2400,300" size="100,100">(set: _end to $cropStatus&#39;s 1st + $cropStatus&#39;s 2nd + $cropStatus&#39;s 3rd + $cropStatus&#39;s 4th)
+[[Leave the corn plot.|Time 2]]</tw-passagedata><tw-passagedata pid="15" name="Ending" tags="" position="2400,300" size="100,100">(set: _end to $cropStatus&#39;s 1st + $cropStatus&#39;s 2nd + $cropStatus&#39;s 3rd + $cropStatus&#39;s 4th)
 Overall, the state of $farmName...
 
 (if: _end &gt;= 10)[ is amazing! Well done!](else-if: _end &lt; 2)[has room for improvement. But you can always try again!](else:)[went well. Nicely done!]
@@ -172,10 +178,10 @@ Donning your official title: (text-colour:#ffc078)[&#39;&#39;Mayor $name&#39;&#3
 
 [[Head back to the farmhouse.|Time 1]]</tw-passagedata><tw-passagedata pid="18" name="Farm Plots 2" tags="" position="1500,450" size="100,100">[Which crop would you like to check on?]
 
-(if: $plotChecked&#39;s 1st is false)[[Check on Mei&#39;s rice plot|Rice Status 2]]
-(if: $plotChecked&#39;s 2nd is false)[[Check on Waya&#39;s corn plot|Corn Status 2]]
-(if: $plotChecked&#39;s 3rd is false)[[Check on Ximena&#39;s bean plot|Bean Status 2]]
-(if: $plotChecked&#39;s 4th is false)[[Check on Adric&#39;s cassava plot|Cassava Status 2]]
+(if: $plotChecked&#39;s 1st is false)[[Check on Mei&#39;s rice plot.|Rice Status 2]]
+(if: $plotChecked&#39;s 2nd is false)[[Check on Waya&#39;s corn plot.|Corn Status 2]]
+(if: $plotChecked&#39;s 3rd is false)[[Check on Ximena&#39;s bean plot.|Bean Status 2]]
+(if: $plotChecked&#39;s 4th is false)[[Check on Adric&#39;s cassava plot.|Cassava Status 2]]
 
 [[Head back to the farmhouse.|Time 2]]</tw-passagedata><tw-passagedata pid="19" name="Farm Store" tags="" position="1200,150" size="100,100">Welcome to the farming supplies store for (text-colour:#c0eb75)[&#39;&#39;$farmName&#39;&#39;], (text-colour:#ffc078)[&#39;&#39;Mayor $name&#39;&#39;]! We sell fertilizer that can help further nourish crops in good weather conditions. (if: $store &lt;= 0)[Unfortunately, we&#39;re out of stock at the moment. Please come again when we get a new shipment later!]
 
@@ -245,16 +251,22 @@ You make sure Mei takes enough rests and drinks enough water, as she continues t
 &lt;!--Maintenance--&gt;
 (if: $event&#39;s 1st is 0)[As you approach, she gives you a warm smile.
 &lt;br&gt;
-&quot;Nice to see you again,(text-colour:#ffc078)[&#39;&#39;Mayor $name&#39;&#39;]! We really appreciate you opening up this farm again for us to use.&quot;
+&quot;Nice to see you again, (text-colour:#ffc078)[&#39;&#39;Mayor $name&#39;&#39;]! We really appreciate you opening up this farm again for us to use.&quot;
 &lt;br&gt;
-&quot;If you didn&#39;t already know, rice is a staple food for the Asian population. The cultivation of rice has led to a successful agricultural heritage of many Asian societies. The crop traces back more than 10,000 years ago, where legend has it that rice was given as a gift from the animals after a large flood. This gave the Chinese people a source of plentiful food. Since then, it&#39;s considered sacred and has shaped the cultures and traditions of Asian countries for centuries.&quot;]
+&quot;If you didn&#39;t already know, rice is a staple food for the Asian population. The cultivation of rice has led to a successful agricultural heritage of many Asian societies. The crop traces back more than 10,000 years ago, where legend has it that rice was given as a gift from the animals after a large flood. This gave the Chinese people a source of plentiful food. Since then, it&#39;s considered sacred and has shaped the cultures and traditions of Asian countries for centuries.&quot;
 &lt;br&gt;
-You found Mei&#39;s explanation of the crop&#39;s history to be very interesting and engaging as you continue to help her in the fields.
+You found Mei&#39;s explanation of the crop&#39;s history to be very interesting and engaging, as you continue to help her in the rice paddies.]
 
 &lt;!--Dinner--&gt;
-(else:)[Mei talks about food made from the crop.]
-&lt;!--fried rice, Zongzi (China, glutinous rice stuffed with various ingredients and wrapped in bamboo leaves), champorado (Philippines, sweet chocolate rice porridge), horchata (Mexico, sugared rice milk)--&gt;
+(else:)[As you approach, she gives you a warm smile.
+&lt;br&gt;
+&quot;Nice to see you again, (text-colour:#ffc078)[&#39;&#39;Mayor $name&#39;&#39;]! I decided to take a quick break from the farm to cook up some food for everyone.&quot;
+&lt;br&gt;
+&quot;Rice is a very versatile crop for how much food is made from it and with it. You may know it famously from fried rice, which is often a combination of rice, vegetables, and meat, but many different regions and cultures have rice in all sorts of cuisine. For example, the Philippines has champorado, which is a sweet chocolate rice porridge, and Mexico has horcata, which is a sugared rice milk. So many amazing foods and drinks can be made from rice!&quot;
+&lt;br&gt;
+You found Mei&#39;s explanation of foods made from rice to be very interesting and engaging, and the fried rice she made was great, too!]
 }
+
 [[Leave the rice plot.|Time 2]]</tw-passagedata><tw-passagedata pid="34" name="Notes" tags="" position="400,500" size="100,100">Rice/China/Asia
 - Rice is a staple food for the Asian population.
 - The cultivation of rice has led to a successful agricultural heritage of many Asian societies.
@@ -352,7 +364,6 @@ Thanks for helping out! Waya is waiting for you at the corn farm.--&gt;}
 }
 
 {(if: $event&#39;s 1st is 0)[[[Help Mei with the crops.|Mei Convo 2]]]
-(else-if: $event&#39;s 1st is 1)[[[Approach Mei and the animals.|Mei Convo 2]]]
 (else:)[[[Ask Mei about the food.|Mei Convo 2]]]}
 (if: $fertilizer &gt; 0)[[[Use fertilizer on the crops.|Fertilize Rice 2]]]
 [[Leave the rice plot.|Time 2]]</tw-passagedata><tw-passagedata pid="40" name="Start" tags="" position="100,300" size="100,100">The sun shines down on the beautiful town of (text-colour:#8ce99a)[&#39;&#39;Great Fields&#39;&#39;]: your town! Yes, indeed you are the (text-colour:#ffc078)[newly-elected mayor] of this quaint town known for its small yet diverse and well-knit community. The hardworking citizens of Great Fields are truly the foundation of this town, and you as the mayor are looking for a way to celebrate their craft.
@@ -401,7 +412,13 @@ It&#39;s the next day, and you arrive at (text-colour:#c0eb75)[&#39;&#39;$farmNa
 
 (if: $plotChecked&#39;s 1st is false or $plotChecked&#39;s 2nd is false or $plotChecked&#39;s 3rd is false or $plotChecked&#39;s 4th is false)[[Check up on the crops.|Farm Plots 1]]
 [[Visit the Farm Store.|Farm Store]]
-[[Head home for today.|Transition 1]]</tw-passagedata><tw-passagedata pid="43" name="Time 2" tags="" position="1500,300" size="100,100">(set: $part2 to true)After a few more weeks of preparing for the Great Fields Harvest Festival, you find another day off to go visit the farm. Luckily, the weather is clear and sunny today!
+[[Head home for today.|Transition 1]]</tw-passagedata><tw-passagedata pid="43" name="Time 2" tags="" position="1500,300" size="100,100">{
+&lt;!--Checks if this is the first time entering this scene--&gt;
+(if: $time2Visit is false)[(set: $time2Visit to true)(set: $part2 to true)
+After a few more weeks of preparing for the Great Fields Harvest Festival, you find another day off to go visit the farm. Luckily, the weather is clear and sunny today!]
+
+(else:)[What should you do at the farm?]
+}
 
 (if: $plotChecked&#39;s 1st is false or $plotChecked&#39;s 2nd is false or $plotChecked&#39;s 3rd is false or $plotChecked&#39;s 4th is false)[[Check on the crops.|Farm Plots 2]]
 [[Visit the Farm Store.|Farm Store]]
@@ -413,7 +430,9 @@ The corn plot is doing (if: $cropStatus&#39;s 2nd is &lt; 0)[poorly...](else-if:
 The bean plot is doing (if: $cropStatus&#39;s 3rd is &lt; 0)[poorly...](else-if: $cropStatus&#39;s 3rd is &gt; 1)[great!](else:)[fine.]
 The cassava plot is doing (if: $cropStatus&#39;s 3rd is &lt; 0)[poorly...](else-if: $cropStatus&#39;s 3rd is &gt; 1)[great!](else:)[fine.]
 
-[[Let&#39;s keep going!|Time 2]]</tw-passagedata><tw-passagedata pid="45" name="Transition 2" tags="" position="1800,300" size="100,100">(set: $plotChecked&#39;s 1st to false)(set: $plotChecked&#39;s 2nd to false)(set: $plotChecked&#39;s 3rd to false)(set: $plotChecked&#39;s 4th to false)
+[[Let&#39;s keep going!|Time 2]]
+
+(set: $time2Visit to false)</tw-passagedata><tw-passagedata pid="45" name="Transition 2" tags="" position="1800,300" size="100,100">(set: $plotChecked&#39;s 1st to false)(set: $plotChecked&#39;s 2nd to false)(set: $plotChecked&#39;s 3rd to false)(set: $plotChecked&#39;s 4th to false)
 A few more weeks pass by, and before you know it, it is time for the festival!
 
 [[Let&#39;s celebrate!|Festival]]</tw-passagedata><tw-passagedata pid="46" name="Waya Convo 1" tags="" position="825,725" size="100,100">{(set: $reputation&#39;s 2nd to it +1)(set: $plotChecked&#39;s 2nd to true)(set: $cropStatus&#39;s 2nd to it +1)
@@ -439,18 +458,27 @@ You sit next to Waya in the tool shed as they talk more about how to grow and ha
 You make sure Waya takes enough rests and drinks enough water, as they continue to work and talk about how to grow and harvest corn.]
 }
 
-[[Leave the corn plot.|Time 1]]</tw-passagedata><tw-passagedata pid="47" name="Waya Convo 2" tags="" position="1425,725" size="100,100">(set: $reputation&#39;s 2nd to it +1)(set: $plotChecked&#39;s 2nd to true)(set: $cropStatus&#39;s 2nd to it +1)
-{
+[[Leave the corn plot.|Time 1]]</tw-passagedata><tw-passagedata pid="47" name="Waya Convo 2" tags="" position="1425,725" size="100,100">{(set: $reputation&#39;s 2nd to it +1)(set: $plotChecked&#39;s 2nd to true)(set: $cropStatus&#39;s 2nd to it +1)
 &lt;!--Maintenance--&gt;
-(if: $event&#39;s 2nd is 0)[Waya talks about how to better maintain the crop.]
-&lt;!--Corn does best with warm, sunny growing weather (75–86° F), well-distributed intermittent moderate rains, or irrigation (15 or more inches during the growing season), and 130 or more frost-free days.--&gt;
+(if: $event&#39;s 2nd is 0)[As you approach, they greet you with a firm handshake.
+&lt;br&gt;
+&quot;Greetings, (text-colour:#ffc078)[&#39;&#39;Mayor $name&#39;&#39;]! We really appreciate all the help you do around the farm.&quot;
+&lt;br&gt;
+&quot;As you may have guessed, corn, or maize, has deep cultural and historical roots in Native American traditions, as it played a vital role in the diets of indigenous peoples. It&#39;s celebrated in multiple festivals and events across the United States. It has been deeply rooted in Native American tradition and also serves other purposes, such as the making of mats, baskets, ceremonial rattling sticks, carved to create darts, toys, and more.&quot;
+&lt;br&gt;
+You found Waya&#39;s explanation of the crop&#39;s history to be very interesting and engaging, as you continue to help them in the corn fields.]
 
 &lt;!--Dinner--&gt;
-(else:)[Waya talks about food made from the crop.]
-&lt;!--corn pone (A kind of bread made from corn meal), three sisters succotash (from the Native American word msiquatash, made with corn, squash and beans which were all crops tended to by Native Americans)--&gt;
+(else:)[As you approach, they greet you with a firm handshake.
+&lt;br&gt;
+&quot;Greetings, (text-colour:#ffc078)[&#39;&#39;Mayor $name&#39;&#39;]! Farm work gets pretty tiring, so I&#39;m taking a break to make some food.&quot;
+&lt;br&gt;
+&quot;Corn is a versatile crop when it comes to cooking, but for today&#39;s meal, I&#39;m making something simple called succotash. It comes from the Native American word &#39;msiquatash&#39; which means, &#39;corn simmered with other ingredients.&#39; In this case, our other ingredients include squash and beans, which were also important crops for indigenous peoples.&quot;
+&lt;br&gt;
+You found Waya&#39;s explanation of foods made from corn to be very interesting and engaging, and the succotash they made was great, too!]
 }
 
-[[Leave the corn plot|Time 2]]</tw-passagedata><tw-passagedata pid="48" name="Ximena Convo 1" tags="" position="975,725" size="100,100">{(set: $reputation&#39;s 3rd to it +1)(set: $plotChecked&#39;s 3rd to true)(set: $cropStatus&#39;s 3rd to it +1)
+[[Leave the corn plot.|Time 2]]</tw-passagedata><tw-passagedata pid="48" name="Ximena Convo 1" tags="" position="975,725" size="100,100">{(set: $reputation&#39;s 3rd to it +1)(set: $plotChecked&#39;s 3rd to true)(set: $cropStatus&#39;s 3rd to it +1)
 &lt;!--Clear weather--&gt;
 (if: $weather &lt; 70 and &gt; 30)[As you approach, she waves a hand in greeting.
 &lt;br&gt;
@@ -473,18 +501,28 @@ You sit next to Ximena in the barn as she talks more about how to grow and harve
 You make sure Ximena takes enough rests and drinks enough water, as she continues to work and talk about how to grow and harvest beans.]
 }
 
-[[Leave the bean plot.|Time 1]]</tw-passagedata><tw-passagedata pid="49" name="Ximena Convo 2" tags="" position="1575,725" size="100,100">(set: $reputation&#39;s 3rd to it +1)(set: $plotChecked&#39;s 3rd to true)(set: $cropStatus&#39;s 3rd to it +1)
-{
+[[Leave the bean plot.|Time 1]]</tw-passagedata><tw-passagedata pid="49" name="Ximena Convo 2" tags="" position="1575,725" size="100,100">{(set: $reputation&#39;s 3rd to it +1)(set: $plotChecked&#39;s 3rd to true)(set: $cropStatus&#39;s 3rd to it +1)
+
 &lt;!--Maintenance--&gt;
-(if: $event&#39;s 3rd is 0)[Ximena talks about how to better maintain the crop.]
-&lt;!--Beans grow best in slightly acidic to neutral soil, pH between 6 and 7. Clay or silt loams are better for bean production than sandy soils, although good drainage is important. Use well-rotted manure or compost at planting to increase soil organic matter.--&gt;
+(if: $event&#39;s 3rd is 0)[As you approach, she waves a hand in greeting.
+&lt;br&gt;
+&quot;//Hola//, (text-colour:#ffc078)[&#39;&#39;Mayor $name&#39;&#39;]! It&#39;s always a great time at the farm when you come to visit.&quot;
+&lt;br&gt;
+&quot;It&#39;s no secret that beans have a long history in Mexico, as beans are an integral part of the Mexican diet. This crop is deeply ingrained in Mexican dishes and cultural practices. Beans have been around since pre-Hispanic Mexico and served as a base for daily meals. They were consumed ground up, processed into a paste, or mixed with grains. On cold days, beans were milled into powder and mixed with corn flour to create masa for tamales.&quot;
+&lt;br&gt;
+You found Ximena&#39;s explanation of the crop&#39;s history to be very interesting and engaging, as you continue to help her with the bean stalks.]
 
 &lt;!--Dinner--&gt;
-(else:)[Ximena talks about food made from the crop.]
-&lt;!--Refried beans, or &quot;frijoles refritos,&quot; are a staple in Mexican cuisine, with a history dating back centuries. This classic recipe showcases the creamy texture and earthy flavor of pinto beans, which have nourished the Mexican people for generations.--&gt;
+(else:)[As you approach, she waves a hand in greeting.
+&lt;br&gt;
+&quot;//Hola//, (text-colour:#ffc078)[&#39;&#39;Mayor $name&#39;&#39;]! I&#39;m glad I made sure to cook extra food just in case!.&quot;
+&lt;br&gt;
+&quot;For today, I&#39;m cooking refried beans, or &#39;frijoles refritos.&#39; This dish is a staple in Mexican cuisine, with a history dating back centuries. In northern Mexico and Tex-Mex cuisine, frijoles refritos are usually prepared with pinto beans, but many other varieties of bean are used in other parts of Mexico, such as black, Peruano, or red kidney beans.&quot;
+&lt;br&gt;
+You found Waya&#39;s explanation of foods made from beans to be very interesting and engaging, and the frijoles refritos she made was great, too!]
 }
 
-[[Leave the bean plot|Time 2]]</tw-passagedata></tw-storydata>
+[[Leave the bean plot.|Time 2]]</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
