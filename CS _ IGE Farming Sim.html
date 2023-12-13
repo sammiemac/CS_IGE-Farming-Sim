@@ -52,13 +52,17 @@ You found Adric&#39;s explanation of the crop&#39;s history to be very interesti
 You found Adric&#39;s explanation of foods made from cassava to be very interesting and engaging, and the garri he made was great, too!]
 }
 
-[[Leave the cassava plot.|Time 2]]</tw-passagedata><tw-passagedata pid="3" name="Bean Final" tags="" position="2175,450" size="100,100">(set: $plotChecked&#39;s 3rd to true)Hey $name! I just wanted to let you know that the rice crops did (if: $cropStatus&#39;s 3rd is &lt; 0)[poorly...](else-if: $cropStatus&#39;s 2nd is &gt; 1)[great!](else:)[fine.]
+[[Leave the cassava plot.|Time 2]]</tw-passagedata><tw-passagedata pid="3" name="Bean Final" tags="" position="2175,450" size="100,100">(set: $plotChecked&#39;s 3rd to true)You go to meet up with Ximena, who&#39;s currently in line for the ferris wheel. As you approach, she waves a hand in greeting.
+
+&quot;Nice seeing you, (colour:#ffc078)[&#39;&#39;Mayor $name&#39;&#39;]! This festival has been a lot of fun so far. Seeing all these people celebrating our community reminds me of Día de los Muertos.&quot;
+
+&quot;During Día de los Muertos and in the preceding weeks, families celebrate the spirits of departed loved ones in various ways, including erecting ofrendas or small altars in their houses, decorating tombs, and eating skull-shaped candies and sweet breads.&quot;
+
+&quot;Oh, by the way! I just wanted to let you know that the bean crops did (if: $cropStatus&#39;s 3rd is &lt; 0)[poorly... but that&#39;s okay. I&#39;m sure we can do better next time!&quot;](else-if: $cropStatus&#39;s 3rd is &gt; 1)[great! You were a real big help on the farm!&quot;](else:)[okay, and I just know with a little more work it can be even better!&quot;]
 
 (if: $reputation&#39;s 3rd is 2)[You feel a special bond with Ximena.]
 
-&lt;!--Festival: Día de los Muertos, during that period and in the preceding weeks, families celebrate the spirits of departed loved ones in various ways, including erecting ofrendas (small altars) in their houses, decorating tombs, and eating skull-shaped candies and sweet breads. It is both a celebration of one’s ancestors, with whom many believe they can communicate during those events, and an acceptance of death as natural and inevitable rather than as something to be feared. --&gt;
-
-[[Leave|Festival]]</tw-passagedata><tw-passagedata pid="4" name="Bean Plot" tags="" position="800,0" size="100,100">Hi there! You&#39;re $name, right? My name is Ximena and I&#39;ll be helping you grow your beans on this farm! Beans have a long history in Mexico, as beans are an integral part of the Mexican diet. This food is deeply engrained in Mexican dishes and cultural practices.
+[[Head back.|Festival]]</tw-passagedata><tw-passagedata pid="4" name="Bean Plot" tags="" position="800,0" size="100,100">Hi there! You&#39;re $name, right? My name is Ximena and I&#39;ll be helping you grow your beans on this farm! Beans have a long history in Mexico, as beans are an integral part of the Mexican diet. This food is deeply engrained in Mexican dishes and cultural practices.
 
 Beans have been around since pre-Hispanic Mexico and served as a base for daily meals. They were consumed ground up, processed into a paste, or mixed with grains. On cold days, beans were milled into powder and mixed with corn flour to create masa for tamales.
 
@@ -88,13 +92,17 @@ Thanks for helping out! Speak to Adric at the cassava farm.
 {(if: $event&#39;s 3rd is 0)[[[Help Ximena with the crops|Ximena Convo 2]]]
 (else:)[[[Ask Ximena about the food.|Ximena Convo 2]]]}
 (if: $fertilizer &gt; 0)[[[Use fertilizer on the crops.|Fertilize Bean 2]]]
-[[Leave the bean plot.|Time 2]]</tw-passagedata><tw-passagedata pid="7" name="Cassava Final" tags="" position="2300,450" size="100,100">(set: $plotChecked&#39;s 4th to true)Hey $name! I just wanted to let you know that the rice crops did (if: $cropStatus&#39;s 4th is &lt; 0)[poorly...](else-if: $cropStatus&#39;s 4th is &gt; 1)[great!](else:)[fine.]
+[[Leave the bean plot.|Time 2]]</tw-passagedata><tw-passagedata pid="7" name="Cassava Final" tags="" position="2300,450" size="100,100">(set: $plotChecked&#39;s 4th to true)You go to meet up with Adric, who&#39;s currently in line for the carousel. As you approach, he greets you with a pat on the shoulder.
+
+&quot;Good evening, (colour:#ffc078)[&#39;&#39;Mayor $name&#39;&#39;]! You did a great job hosting this festival. With all the food present here, it reminds me of the Homowo festivals in Ghana.&quot;
+
+&quot;Homowo is a festival celebrated by the Ga people of Ghana in the Greater Accra Region. The festival starts at the end of April into May with the planting of crops before the rainy season starts. The Ga people celebrate Homowo in the remembrance of famine that once happened in their history in pre-colonial Ghana.&quot;
+
+&quot;Oh, by the way! I just wanted to let you know that the cassava crops did (if: $cropStatus&#39;s 4th is &lt; 0)[poorly... but that&#39;s okay. I&#39;m sure we can do better next time!&quot;](else-if: $cropStatus&#39;s 4th is &gt; 1)[[great! You were a real big help on the farm!&quot;](else:)[okay, and I just know with a little more work it can be even better!&quot;]
 
 (if: $reputation&#39;s 4th is 2)[You feel a special bond with Adric.]
 
-&lt;!--Festival: Homowo is a festival celebrated by the Ga people of Ghana in the Greater Accra Region. The festival starts at the end of April into May with the planting of crops (mainly millet) before the rainy season starts. The Ga people celebrate Homowo in the remembrance of famine that once happened in their history in precolonial Ghana.--&gt;
-
-[[Leave|Festival]]</tw-passagedata><tw-passagedata pid="8" name="Cassava Plot" tags="" position="950,0" size="100,100">Hi there! You&#39;re $name, right? My name is Adric and I&#39;ll be helping you grow your cassava on this farm! Cassava is a staple food crop in Madagascar, Africa. The crop is often featured in traditional ceremonies and rituals.]
+[[Head back.|Festival]]</tw-passagedata><tw-passagedata pid="8" name="Cassava Plot" tags="" position="950,0" size="100,100">Hi there! You&#39;re $name, right? My name is Adric and I&#39;ll be helping you grow your cassava on this farm! Cassava is a staple food crop in Madagascar, Africa. The crop is often featured in traditional ceremonies and rituals.]
 
 In the middle of the nineteenth century, cassava became increasingly important as a staple food and was widely planted in Africa. It thrives in our environment because of its low water requirement, survivability in marginal soils, and flexibility in harvest time. No part of cassava goes to waste as parts are dried and fed to animals and the water squeezed from the fermeted cassava, the starch, is used to harden cloths.
 
@@ -122,13 +130,17 @@ You&#39;ve spoken to everyone already! Cool! We might ask you to help us with wa
 {(if: $event&#39;s 4th is 0)[[[Help Adric with the crops.|Adric Convo 2]]]
 (else:)[[[Ask Adric about the food.|Adric Convo 2]]]}
 (if: $fertilizer &gt; 0)[[[Use fertilizer on the crops.|Fertilize Cassava 2]]]
-[[Leave the cassava plot.|Time 2]]</tw-passagedata><tw-passagedata pid="11" name="Corn Final" tags="" position="2025,450" size="100,100">(set: $plotChecked&#39;s 2nd to true)Hey $name! I just wanted to let you know that the rice crops did (if: $cropStatus&#39;s 2nd is &lt; 0)[poorly...](else-if: $cropStatus&#39;s 2nd is &gt; 1)[great!](else:)[fine.]
+[[Leave the cassava plot.|Time 2]]</tw-passagedata><tw-passagedata pid="11" name="Corn Final" tags="" position="2025,450" size="100,100">(set: $plotChecked&#39;s 2nd to true)You go to meet up with Waya, who&#39;s on their way to enter the corn field maze. As you approach, they greet you with a firm handshake.
+
+&quot;Hello, (colour:#ffc078)[&#39;&#39;Mayor $name&#39;&#39;]! I&#39;m really glad everyone is enjoying the festival. In my culture, we have a festival similar to this called the Green Corn Festival.&quot;
+
+&quot;The Green Corn Festival, also known as the Green Corn Ceremony, is a type of celebration and religious ceremony commonly practiced by the Eastern Woodlands and Southeastern tribes, including the Creek, Cherokee, and Seminole. During the ceremony, the members of the tribe give thanks for the corn, rain, sun, and a good harvest.&quot;
+
+&quot;Oh, by the way! I just wanted to let you know that the corn crops did (if: $cropStatus&#39;s 2nd is &lt; 0)[poorly... but that&#39;s okay. I&#39;m sure we can do better next time!&quot;](else-if: $cropStatus&#39;s 2nd is &gt; 1)[great! You were a real big help on the farm!&quot;](else:)[okay, and I just know with a little more work it can be even better!&quot;]
 
 (if: $reputation&#39;s 2nd is 2)[You feel a special bond with Waya.]
 
-&lt;!--Festival: The Green Corn Festival, also known as the Green Corn Ceremony, is a type of celebration and religious ceremony commonly practiced by the Eastern Woodlands and Southeastern tribes, including the Creek, Cherokee, and Seminole. It occurs in late summer, coinciding with the ripening of the corn crops. The ceremony usually lasts for three days, and involves dancing, feasting, fasting, religious observation, and other activities. During the ceremony, the members of the tribe give thanks for the corn, rain, sun, and a good harvest.--&gt;
-
-[[Leave|Festival]]</tw-passagedata><tw-passagedata pid="12" name="Corn Plot" tags="" position="650,0" size="100,100">Hi there! You&#39;re $name, right? My name is Waya and I&#39;ll be helping you grow your corn on this farm! Corn has deep cultural and historical roots in Native American traditions, as it played a vital role in the diets of indigenous peoples. It is celebrated in multiple festivals and events across the country.
+[[Head back.|Festival]]</tw-passagedata><tw-passagedata pid="12" name="Corn Plot" tags="" position="650,0" size="100,100">Hi there! You&#39;re $name, right? My name is Waya and I&#39;ll be helping you grow your corn on this farm! Corn has deep cultural and historical roots in Native American traditions, as it played a vital role in the diets of indigenous peoples. It is celebrated in multiple festivals and events across the country.
 
 Corn is also known as maize. It has been deeply rooted in Native American tradition and also serves other purposes, such as the making of mats, baskets, ceremonial rattling sticks, carved to create darts, toys, and more.
 
@@ -158,12 +170,19 @@ Thanks for helping out! Speak to Ximena at the bean farm.
 {(if: $event&#39;s 2nd is 0)[[[Help Waya with the crops.|Waya Convo 2]]]
 (else:)[[[Ask Waya about the food.|Waya Convo 2]]]}
 (if: $fertilizer &gt; 0)[[[Use fertilizer on the crops.|Fertilize Corn 2]]]
-[[Leave the corn plot.|Time 2]]</tw-passagedata><tw-passagedata pid="15" name="Ending" tags="" position="2400,300" size="100,100">(set: _end to $cropStatus&#39;s 1st + $cropStatus&#39;s 2nd + $cropStatus&#39;s 3rd + $cropStatus&#39;s 4th)
-Overall, the state of $farmName...
+[[Leave the corn plot.|Time 2]]</tw-passagedata><tw-passagedata pid="15" name="Ending" tags="" position="2400,300" size="100,100">(set: _end to $cropStatus&#39;s 1st + $cropStatus&#39;s 2nd + $cropStatus&#39;s 3rd + $cropStatus&#39;s 4th)The Great Fields Harvest Festival was a great success, and the citizens of Great Fields are looking forward to this event next year!
 
-(if: _end &gt;= 10)[ is amazing! Well done!](else-if: _end &lt; 2)[has room for improvement. But you can always try again!](else:)[went well. Nicely done!]
+Overall, the state of (text-colour:#c0eb75)[&#39;&#39;$farmName&#39;&#39;] is...
 
-THE END!</tw-passagedata><tw-passagedata pid="16" name="Farm Name" tags="" position="300,300" size="100,100">{(set: $farmName to (prompt: &quot;What is your farm named?&quot;, &quot;&quot;))}(if: $farmName is not &quot;&quot;)[Oooh, &quot;(text-colour:#c0eb75)[&#39;&#39;$farmName&#39;&#39;]!&quot; I like the sound of that, it&#39;s nice and catchy! 
+(if: _end &gt;= 10)[... Amazing! Well done, (text-colour:#ffc078)[&#39;&#39;Mayor $name&#39;&#39;]!](else-if: _end &lt; 2)[... Not bad, but you can always try again next year!](else:)[... Great, but there&#39;s room for improvement!]
+
+If there&#39;s one thing for sure, it&#39;s that you&#39;ve learned a lot about the different crops, foods, and celebrations from all sorts of cultures and regions. 
+
+(text-colour:#e599f7)[&#39;&#39;THE END!!!&#39;&#39;]
+
+(text-colour:grey)[//Credits://
+CS 2990 Team - Nick Hortua, Devon Mamawag, Samantha Macaraniag
+IGE 2600 Team - Winson Chen, Justin Gov, Ashley Nguyen, Anthony Torres]</tw-passagedata><tw-passagedata pid="16" name="Farm Name" tags="" position="300,300" size="100,100">{(set: $farmName to (prompt: &quot;What is your farm named?&quot;, &quot;&quot;))}(if: $farmName is not &quot;&quot;)[Oooh, &quot;(text-colour:#c0eb75)[&#39;&#39;$farmName&#39;&#39;]!&quot; I like the sound of that, it&#39;s nice and catchy! 
 
 Donning your official title: (text-colour:#ffc078)[&#39;&#39;Mayor $name&#39;&#39;], your first act for the town of Great Fields is to open (text-colour:#c0eb75)[&#39;&#39;$farmName&#39;&#39;] and hire four new farmhands to help grow its crops. The citizens rejoice over your idea for a harvest festival and your commitment to its community!
 
@@ -202,14 +221,27 @@ But first, you should probably start a farm and hire some farmhands, don&#39;t y
 [[Leave the corn plot.|Time 1]]</tw-passagedata><tw-passagedata pid="26" name="Fertilize Corn 2" tags="" position="1425,850" size="100,100">(set: $cropStatus&#39;s 2nd to it +1)(set: $fertilizer to it -1)You used the fertilizer, helping nourish the corn!
 [[Leave the corn plot.|Time 2]]</tw-passagedata><tw-passagedata pid="27" name="Fertilize Rice 1" tags="" position="700,850" size="100,100">(set: $cropStatus&#39;s 1st to it +1)(set: $fertilizer to it -1)You used the fertilizer, helping nourish the rice!
 [[Leave the rice plot.|Time 1]]</tw-passagedata><tw-passagedata pid="28" name="Fertilize Rice 2" tags="" position="1300,850" size="100,100">(set: $cropStatus&#39;s 1st to it +1)(set: $fertilizer to it -1)You used the fertilizer, helping nourish the rice!
-[[Leave the rice plot.|Time 2]]</tw-passagedata><tw-passagedata pid="29" name="Festival" tags="" position="2100,300" size="100,100">The bustling sounds of the festival fill your ears.
+[[Leave the rice plot.|Time 2]]</tw-passagedata><tw-passagedata pid="29" name="Festival" tags="" position="2100,300" size="100,100">{
+&lt;!--Checks if this is the first time entering this scene--&gt;
+(if: $festivalVisit is false)[(set: $festivalVisit to true)The bustling sounds of the festival fill your ears. Citizens of all ages and backgrounds have poured into the open gates of (text-colour:#c0eb75)[&#39;&#39;$farmName&#39;&#39;]. There&#39;s games, rides, and of course: food, made from crops that were grown right on this farm. You should be proud of yourself, (text-colour:#ffc078)[&#39;&#39;Mayor $name&#39;&#39;], as it seems like the festival was a huge success!
+&lt;br&gt;
+[•••]&lt;1|
+(click-replace: ?1)[(t8n: &quot;dissolve&quot;)[You give the opening speech to begin the festival, and you are met with an uproarous applause. After a few handshakes with some of the town officials, you finally find the time to go meet up with the farmhands to congratulate them on their work.
+&lt;br&gt;
+(if: $plotChecked&#39;s 1st is false)[[[Speak with Mei.|Rice Final]]]&lt;br&gt;
+(if: $plotChecked&#39;s 2nd is false)[[[Speak with Waya.|Corn Final]]]&lt;br&gt;
+(if: $plotChecked&#39;s 3rd is false)[[[Speak with Ximena.|Bean Final]]]&lt;br&gt;
+(if: $plotChecked&#39;s 4th is false)[[[Speak with Adric.|Cassava Final]]]&lt;br&gt;
+(if: $plotChecked&#39;s 1st is true and $plotChecked&#39;s 2nd is true and $plotChecked&#39;s 3rd is true and $plotChecked&#39;s 4th is true)[[[Finish up.|Ending]]]]]]
 
-(if: $plotChecked&#39;s 1st is false)[[[Speak with Mei|Rice Final]]]
-(if: $plotChecked&#39;s 2nd is false)[[[Speak with Waya|Corn Final]]]
-(if: $plotChecked&#39;s 3rd is false)[[[Speak with Ximena|Bean Final]]]
-(if: $plotChecked&#39;s 4th is false)[[[Speak with Adric|Cassava Final]]]
-
-(if: $plotChecked&#39;s 1st is true and $plotChecked&#39;s 2nd is true and $plotChecked&#39;s 3rd is true and $plotChecked&#39;s 4th is true)[[[Finish up|Ending]]]</tw-passagedata><tw-passagedata pid="30" name="Gameplay Loop Intro" tags="" position="700,300" size="100,100">(set: $weather to (random: 0, 100))The (text-colour:#ffc078)[Great Fields Harvest Festival] will be coming in &#39;&#39;3 months&#39;&#39;. During this time, you as the mayor should check up on (text-colour:#c0eb75)[&#39;&#39;$farmName&#39;&#39;] and the four farmhands to make sure all the preparations are going as expected.
+(else:)[What should you do next?
+&lt;br&gt;
+(if: $plotChecked&#39;s 1st is false)[[[Speak with Mei.|Rice Final]]]&lt;br&gt;
+(if: $plotChecked&#39;s 2nd is false)[[[Speak with Waya.|Corn Final]]]&lt;br&gt;
+(if: $plotChecked&#39;s 3rd is false)[[[Speak with Ximena.|Bean Final]]]&lt;br&gt;
+(if: $plotChecked&#39;s 4th is false)[[[Speak with Adric.|Cassava Final]]]&lt;br&gt;
+(if: $plotChecked&#39;s 1st is true and $plotChecked&#39;s 2nd is true and $plotChecked&#39;s 3rd is true and $plotChecked&#39;s 4th is true)[[[Finish up the festival.|Ending]]]]
+}</tw-passagedata><tw-passagedata pid="30" name="Gameplay Loop Intro" tags="" position="700,300" size="100,100">(set: $weather to (random: 0, 100))The (text-colour:#ffc078)[Great Fields Harvest Festival] will be coming in a few months. During this time, you as the mayor should check up on (text-colour:#c0eb75)[&#39;&#39;$farmName&#39;&#39;] and the four farmhands to make sure all the preparations are going as expected.
 
 In fact, looks like you have some time in your busy schedule to go visit them tomorrow! Time to get your tools ready, because it looks like its time to get your hands dirty!
 
@@ -315,13 +347,17 @@ Cassava/Africa
 
 (set: $fertilizer to it +1)(set: $store to 0)(text-colour:grey)[You&#39;ve gained some fertilizer.]
 
-(if: $part2 is false)[[[Leave the store|Time 1]]](else:)[[[Leave the store.|Time 2]]]</tw-passagedata><tw-passagedata pid="36" name="Rice Final" tags="" position="1900,450" size="100,100">(set: $plotChecked&#39;s 1st to true)Hey $name! I just wanted to let you know that the rice crops did (if: $cropStatus&#39;s 1st is &lt; 0)[poorly...](else-if: $cropStatus&#39;s 1st is &gt; 1)[great!](else:)[fine.]
+(if: $part2 is false)[[[Leave the store|Time 1]]](else:)[[[Leave the store.|Time 2]]]</tw-passagedata><tw-passagedata pid="36" name="Rice Final" tags="" position="1900,450" size="100,100">(set: $plotChecked&#39;s 1st to true)You go to meet up with Mei, who&#39;s waiting in line for the duck pond game. As you approach, she gives you a warm smile.
+
+&quot;Hey (colour:#ffc078)[&#39;&#39;Mayor $name&#39;&#39;]! The Great Farms Festival was a great success, wasn&#39;t it? It reminds me of celebrating the Chinese Spring Festival with my family back home.&quot;
+
+&quot;The Chinese Spring Festival, also known as the Lunar New Year, celebrates the beginning of a new year on the traditional Chinese calendar. Over the 15 days, families come together to celebrate the new year and enjoy festive foods such as fish, dumplings and nian gao– a glutinous rice cake.&quot;
+
+&quot;Oh, by the way! I just wanted to let you know that the rice crops did (if: $cropStatus&#39;s 1st is &lt; 0)[poorly... but that&#39;s okay. I&#39;m sure we can do better next time!&quot;](else-if: $cropStatus&#39;s 1st is &gt; 1)[great! You were a real big help on the farm!&quot;](else:)[okay, and I just know with a little more work it can be even better!&quot;]
 
 (if: $reputation&#39;s 1st is 2)[You feel a special bond with Mei.]
 
-&lt;!--Chinese Spring Festival/Lunar New Year, celebrates the beginning of a new year on the traditional Chinese calendar. Over the 15 days, families come together to celebrate the new year and enjoy festive foods such as fish, dumplings and nian gao – a glutinous rice cake.--&gt;
-
-[[Leave|Festival]]</tw-passagedata><tw-passagedata pid="37" name="Rice Plot" tags="" position="500,0" size="100,100">You park your car just by the dirt driveway leading up to the old farmhouse. There used to be farm here in Great Fields, but the farmer it belonged to sadly passed away with no one to care for it afterwards. When you were elected mayor, you saw this as a great oppurtunity to reopen the farm for the citizens to use.
+[[Head back.|Festival]]</tw-passagedata><tw-passagedata pid="37" name="Rice Plot" tags="" position="500,0" size="100,100">You park your car just by the dirt driveway leading up to the old farmhouse. There used to be farm here in Great Fields, but the farmer it belonged to sadly passed away with no one to care for it afterwards. When you were elected mayor, you saw this as a great oppurtunity to reopen the farm for the citizens to use.
 
 [•••]&lt;1|
 (click-replace: ?1)[(t8n: &quot;dissolve&quot;)[As you walk up to the farmhouse, you see a young woman sitting out on the porch. Her eyes widen with excitement as she sees you arrive, getting up from the porch stairs to come great you.
@@ -433,9 +469,11 @@ The cassava plot is doing (if: $cropStatus&#39;s 3rd is &lt; 0)[poorly...](else-
 [[Let&#39;s keep going!|Time 2]]
 
 (set: $time2Visit to false)</tw-passagedata><tw-passagedata pid="45" name="Transition 2" tags="" position="1800,300" size="100,100">(set: $plotChecked&#39;s 1st to false)(set: $plotChecked&#39;s 2nd to false)(set: $plotChecked&#39;s 3rd to false)(set: $plotChecked&#39;s 4th to false)
-A few more weeks pass by, and before you know it, it is time for the festival!
+A few more weeks pass by in the blink of an eye as you put in the final preparations for the event. And before you know it, it&#39;s time for the Great Fields Harvest Festival!
 
-[[Let&#39;s celebrate!|Festival]]</tw-passagedata><tw-passagedata pid="46" name="Waya Convo 1" tags="" position="825,725" size="100,100">{(set: $reputation&#39;s 2nd to it +1)(set: $plotChecked&#39;s 2nd to true)(set: $cropStatus&#39;s 2nd to it +1)
+[[It&#39;s time to celebrate!|Festival]]
+
+(set: $festivalVisit to false)</tw-passagedata><tw-passagedata pid="46" name="Waya Convo 1" tags="" position="825,725" size="100,100">{(set: $reputation&#39;s 2nd to it +1)(set: $plotChecked&#39;s 2nd to true)(set: $cropStatus&#39;s 2nd to it +1)
 &lt;!--Clear weather--&gt;
 (if: $weather &lt; 70 and &gt; 30)[As you approach, they greet you with a firm handshake.
 &lt;br&gt;

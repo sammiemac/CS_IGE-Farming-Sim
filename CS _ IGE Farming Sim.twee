@@ -70,13 +70,17 @@ You found Adric's explanation of foods made from cassava to be very interesting 
 
 
 :: Bean Final {"position":"2175,450","size":"100,100"}
-(set: $plotChecked's 3rd to true)Hey $name! I just wanted to let you know that the rice crops did (if: $cropStatus's 3rd is < 0)[poorly...](else-if: $cropStatus's 2nd is > 1)[great!](else:)[fine.]
+(set: $plotChecked's 3rd to true)You go to meet up with Ximena, who's currently in line for the ferris wheel. As you approach, she waves a hand in greeting.
+
+"Nice seeing you, (colour:#ffc078)[''Mayor $name'']! This festival has been a lot of fun so far. Seeing all these people celebrating our community reminds me of Día de los Muertos."
+
+"During Día de los Muertos and in the preceding weeks, families celebrate the spirits of departed loved ones in various ways, including erecting ofrendas or small altars in their houses, decorating tombs, and eating skull-shaped candies and sweet breads."
+
+"Oh, by the way! I just wanted to let you know that the bean crops did (if: $cropStatus's 3rd is < 0)[poorly... but that's okay. I'm sure we can do better next time!"](else-if: $cropStatus's 3rd is > 1)[great! You were a real big help on the farm!"](else:)[okay, and I just know with a little more work it can be even better!"]
 
 (if: $reputation's 3rd is 2)[You feel a special bond with Ximena.]
 
-<!--Festival: Día de los Muertos, during that period and in the preceding weeks, families celebrate the spirits of departed loved ones in various ways, including erecting ofrendas (small altars) in their houses, decorating tombs, and eating skull-shaped candies and sweet breads. It is both a celebration of one’s ancestors, with whom many believe they can communicate during those events, and an acceptance of death as natural and inevitable rather than as something to be feared. -->
-
-[[Leave|Festival]]
+[[Head back.|Festival]]
 
 
 :: Bean Plot {"position":"800,0","size":"100,100"}
@@ -122,13 +126,17 @@ Thanks for helping out! Speak to Adric at the cassava farm.
 
 
 :: Cassava Final {"position":"2300,450","size":"100,100"}
-(set: $plotChecked's 4th to true)Hey $name! I just wanted to let you know that the rice crops did (if: $cropStatus's 4th is < 0)[poorly...](else-if: $cropStatus's 4th is > 1)[great!](else:)[fine.]
+(set: $plotChecked's 4th to true)You go to meet up with Adric, who's currently in line for the carousel. As you approach, he greets you with a pat on the shoulder.
+
+"Good evening, (colour:#ffc078)[''Mayor $name'']! You did a great job hosting this festival. With all the food present here, it reminds me of the Homowo festivals in Ghana."
+
+"Homowo is a festival celebrated by the Ga people of Ghana in the Greater Accra Region. The festival starts at the end of April into May with the planting of crops before the rainy season starts. The Ga people celebrate Homowo in the remembrance of famine that once happened in their history in pre-colonial Ghana."
+
+"Oh, by the way! I just wanted to let you know that the cassava crops did (if: $cropStatus's 4th is < 0)[poorly... but that's okay. I'm sure we can do better next time!"](else-if: $cropStatus's 4th is > 1)[[great! You were a real big help on the farm!"](else:)[okay, and I just know with a little more work it can be even better!"]
 
 (if: $reputation's 4th is 2)[You feel a special bond with Adric.]
 
-<!--Festival: Homowo is a festival celebrated by the Ga people of Ghana in the Greater Accra Region. The festival starts at the end of April into May with the planting of crops (mainly millet) before the rainy season starts. The Ga people celebrate Homowo in the remembrance of famine that once happened in their history in precolonial Ghana.-->
-
-[[Leave|Festival]]
+[[Head back.|Festival]]
 
 
 :: Cassava Plot {"position":"950,0","size":"100,100"}
@@ -172,13 +180,17 @@ You've spoken to everyone already! Cool! We might ask you to help us with wateri
 
 
 :: Corn Final {"position":"2025,450","size":"100,100"}
-(set: $plotChecked's 2nd to true)Hey $name! I just wanted to let you know that the rice crops did (if: $cropStatus's 2nd is < 0)[poorly...](else-if: $cropStatus's 2nd is > 1)[great!](else:)[fine.]
+(set: $plotChecked's 2nd to true)You go to meet up with Waya, who's on their way to enter the corn field maze. As you approach, they greet you with a firm handshake.
+
+"Hello, (colour:#ffc078)[''Mayor $name'']! I'm really glad everyone is enjoying the festival. In my culture, we have a festival similar to this called the Green Corn Festival."
+
+"The Green Corn Festival, also known as the Green Corn Ceremony, is a type of celebration and religious ceremony commonly practiced by the Eastern Woodlands and Southeastern tribes, including the Creek, Cherokee, and Seminole. During the ceremony, the members of the tribe give thanks for the corn, rain, sun, and a good harvest."
+
+"Oh, by the way! I just wanted to let you know that the corn crops did (if: $cropStatus's 2nd is < 0)[poorly... but that's okay. I'm sure we can do better next time!"](else-if: $cropStatus's 2nd is > 1)[great! You were a real big help on the farm!"](else:)[okay, and I just know with a little more work it can be even better!"]
 
 (if: $reputation's 2nd is 2)[You feel a special bond with Waya.]
 
-<!--Festival: The Green Corn Festival, also known as the Green Corn Ceremony, is a type of celebration and religious ceremony commonly practiced by the Eastern Woodlands and Southeastern tribes, including the Creek, Cherokee, and Seminole. It occurs in late summer, coinciding with the ripening of the corn crops. The ceremony usually lasts for three days, and involves dancing, feasting, fasting, religious observation, and other activities. During the ceremony, the members of the tribe give thanks for the corn, rain, sun, and a good harvest.-->
-
-[[Leave|Festival]]
+[[Head back.|Festival]]
 
 
 :: Corn Plot {"position":"650,0","size":"100,100"}
@@ -224,12 +236,19 @@ Thanks for helping out! Speak to Ximena at the bean farm.
 
 
 :: Ending {"position":"2400,300","size":"100,100"}
-(set: _end to $cropStatus's 1st + $cropStatus's 2nd + $cropStatus's 3rd + $cropStatus's 4th)
-Overall, the state of $farmName...
+(set: _end to $cropStatus's 1st + $cropStatus's 2nd + $cropStatus's 3rd + $cropStatus's 4th)The Great Fields Harvest Festival was a great success, and the citizens of Great Fields are looking forward to this event next year!
 
-(if: _end >= 10)[ is amazing! Well done!](else-if: _end < 2)[has room for improvement. But you can always try again!](else:)[went well. Nicely done!]
+Overall, the state of (text-colour:#c0eb75)[''$farmName''] is...
 
-THE END!
+(if: _end >= 10)[... Amazing! Well done, (text-colour:#ffc078)[''Mayor $name'']!](else-if: _end < 2)[... Not bad, but you can always try again next year!](else:)[... Great, but there's room for improvement!]
+
+If there's one thing for sure, it's that you've learned a lot about the different crops, foods, and celebrations from all sorts of cultures and regions. 
+
+(text-colour:#e599f7)[''THE END!!!'']
+
+(text-colour:grey)[//Credits://
+CS 2990 Team - Nick Hortua, Devon Mamawag, Samantha Macaraniag
+IGE 2600 Team - Winson Chen, Justin Gov, Ashley Nguyen, Anthony Torres]
 
 
 :: Farm Name {"position":"300,300","size":"100,100"}
@@ -324,18 +343,31 @@ But first, you should probably start a farm and hire some farmhands, don't you t
 
 
 :: Festival {"position":"2100,300","size":"100,100"}
-The bustling sounds of the festival fill your ears.
+{
+<!--Checks if this is the first time entering this scene-->
+(if: $festivalVisit is false)[(set: $festivalVisit to true)The bustling sounds of the festival fill your ears. Citizens of all ages and backgrounds have poured into the open gates of (text-colour:#c0eb75)[''$farmName'']. There's games, rides, and of course: food, made from crops that were grown right on this farm. You should be proud of yourself, (text-colour:#ffc078)[''Mayor $name''], as it seems like the festival was a huge success!
+<br>
+[•••]<1|
+(click-replace: ?1)[(t8n: "dissolve")[You give the opening speech to begin the festival, and you are met with an uproarous applause. After a few handshakes with some of the town officials, you finally find the time to go meet up with the farmhands to congratulate them on their work.
+<br>
+(if: $plotChecked's 1st is false)[[[Speak with Mei.|Rice Final]]]<br>
+(if: $plotChecked's 2nd is false)[[[Speak with Waya.|Corn Final]]]<br>
+(if: $plotChecked's 3rd is false)[[[Speak with Ximena.|Bean Final]]]<br>
+(if: $plotChecked's 4th is false)[[[Speak with Adric.|Cassava Final]]]<br>
+(if: $plotChecked's 1st is true and $plotChecked's 2nd is true and $plotChecked's 3rd is true and $plotChecked's 4th is true)[[[Finish up.|Ending]]]]]]
 
-(if: $plotChecked's 1st is false)[[[Speak with Mei|Rice Final]]]
-(if: $plotChecked's 2nd is false)[[[Speak with Waya|Corn Final]]]
-(if: $plotChecked's 3rd is false)[[[Speak with Ximena|Bean Final]]]
-(if: $plotChecked's 4th is false)[[[Speak with Adric|Cassava Final]]]
-
-(if: $plotChecked's 1st is true and $plotChecked's 2nd is true and $plotChecked's 3rd is true and $plotChecked's 4th is true)[[[Finish up|Ending]]]
+(else:)[What should you do next?
+<br>
+(if: $plotChecked's 1st is false)[[[Speak with Mei.|Rice Final]]]<br>
+(if: $plotChecked's 2nd is false)[[[Speak with Waya.|Corn Final]]]<br>
+(if: $plotChecked's 3rd is false)[[[Speak with Ximena.|Bean Final]]]<br>
+(if: $plotChecked's 4th is false)[[[Speak with Adric.|Cassava Final]]]<br>
+(if: $plotChecked's 1st is true and $plotChecked's 2nd is true and $plotChecked's 3rd is true and $plotChecked's 4th is true)[[[Finish up the festival.|Ending]]]]
+}
 
 
 :: Gameplay Loop Intro {"position":"700,300","size":"100,100"}
-(set: $weather to (random: 0, 100))The (text-colour:#ffc078)[Great Fields Harvest Festival] will be coming in ''3 months''. During this time, you as the mayor should check up on (text-colour:#c0eb75)[''$farmName''] and the four farmhands to make sure all the preparations are going as expected.
+(set: $weather to (random: 0, 100))The (text-colour:#ffc078)[Great Fields Harvest Festival] will be coming in a few months. During this time, you as the mayor should check up on (text-colour:#c0eb75)[''$farmName''] and the four farmhands to make sure all the preparations are going as expected.
 
 In fact, looks like you have some time in your busy schedule to go visit them tomorrow! Time to get your tools ready, because it looks like its time to get your hands dirty!
 
@@ -465,13 +497,17 @@ Excellent! Here is your fertilizer!
 
 
 :: Rice Final {"position":"1900,450","size":"100,100"}
-(set: $plotChecked's 1st to true)Hey $name! I just wanted to let you know that the rice crops did (if: $cropStatus's 1st is < 0)[poorly...](else-if: $cropStatus's 1st is > 1)[great!](else:)[fine.]
+(set: $plotChecked's 1st to true)You go to meet up with Mei, who's waiting in line for the duck pond game. As you approach, she gives you a warm smile.
+
+"Hey (colour:#ffc078)[''Mayor $name'']! The Great Farms Festival was a great success, wasn't it? It reminds me of celebrating the Chinese Spring Festival with my family back home."
+
+"The Chinese Spring Festival, also known as the Lunar New Year, celebrates the beginning of a new year on the traditional Chinese calendar. Over the 15 days, families come together to celebrate the new year and enjoy festive foods such as fish, dumplings and nian gao– a glutinous rice cake."
+
+"Oh, by the way! I just wanted to let you know that the rice crops did (if: $cropStatus's 1st is < 0)[poorly... but that's okay. I'm sure we can do better next time!"](else-if: $cropStatus's 1st is > 1)[great! You were a real big help on the farm!"](else:)[okay, and I just know with a little more work it can be even better!"]
 
 (if: $reputation's 1st is 2)[You feel a special bond with Mei.]
 
-<!--Chinese Spring Festival/Lunar New Year, celebrates the beginning of a new year on the traditional Chinese calendar. Over the 15 days, families come together to celebrate the new year and enjoy festive foods such as fish, dumplings and nian gao – a glutinous rice cake.-->
-
-[[Leave|Festival]]
+[[Head back.|Festival]]
 
 
 :: Rice Plot {"position":"500,0","size":"100,100"}
@@ -619,9 +655,11 @@ The cassava plot is doing (if: $cropStatus's 3rd is < 0)[poorly...](else-if: $cr
 
 :: Transition 2 {"position":"1800,300","size":"100,100"}
 (set: $plotChecked's 1st to false)(set: $plotChecked's 2nd to false)(set: $plotChecked's 3rd to false)(set: $plotChecked's 4th to false)
-A few more weeks pass by, and before you know it, it is time for the festival!
+A few more weeks pass by in the blink of an eye as you put in the final preparations for the event. And before you know it, it's time for the Great Fields Harvest Festival!
 
-[[Let's celebrate!|Festival]]
+[[It's time to celebrate!|Festival]]
+
+(set: $festivalVisit to false)
 
 
 :: Waya Convo 1 {"position":"825,725","size":"100,100"}
