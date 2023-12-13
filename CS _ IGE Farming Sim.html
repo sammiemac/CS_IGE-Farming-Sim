@@ -36,18 +36,23 @@ You make sure Adric takes enough rests and drinks enough water, as he continues 
 {
 &lt;!--Maintenance--&gt;
 (if: $event&#39;s 4th is 0)[Adric talks about how to better maintain the crop.]
+&lt;!--Cassava does not tolerate freezing conditions, but does tolerate a wide range of soil pH 4.0 to 8.0 and is most productive in full sun.--&gt;
 
 &lt;!--Animal handling--&gt;
 (else-if: $event&#39;s 4th is 1)[Adric talks about the animal nearby.]
+&lt;!--Livestock: goat--&gt;
 
 &lt;!--Dinner--&gt;
 (else:)[Adric talks about food made from the crop.]
+&lt;!--Cassava flour is used in making garri, a popular food in Nigeria,Cassava flour is used in making garri, a popular food in Nigeria, Garri is a creamy-white, granular flour with a slightly sour, fermented flavor from fermented, gelatinized fresh cassava tubers.--&gt;
 }
 
-[[Leave the rice plot|Time 2]]
+[[Leave the cassava plot|Time 2]]
 (if: $fertilizer &gt; 0)[[[Use fertilizer before you leave|Fertilize Cassava 2]]]</tw-passagedata><tw-passagedata pid="3" name="Bean Final" tags="" position="2175,450" size="100,100">(set: $plotChecked&#39;s 3rd to true)Hey $name! I just wanted to let you know that the rice crops did (if: $cropStatus&#39;s 3rd is &lt; 0)[poorly...](else-if: $cropStatus&#39;s 2nd is &gt; 1)[great!](else:)[fine.]
 
 (if: $reputation&#39;s 3rd is 2)[You feel a special bond with Ximena.]
+
+&lt;!--Festival: Día de los Muertos, during that period and in the preceding weeks, families celebrate the spirits of departed loved ones in various ways, including erecting ofrendas (small altars) in their houses, decorating tombs, and eating skull-shaped candies and sweet breads. It is both a celebration of one’s ancestors, with whom many believe they can communicate during those events, and an acceptance of death as natural and inevitable rather than as something to be feared. --&gt;
 
 [[Leave|Festival]]</tw-passagedata><tw-passagedata pid="4" name="Bean Plot" tags="" position="800,0" size="100,100">Hi there! You&#39;re $name, right? My name is Ximena and I&#39;ll be helping you grow your beans on this farm! Beans have a long history in Mexico, as beans are an integral part of the Mexican diet. This food is deeply engrained in Mexican dishes and cultural practices.
 
@@ -84,6 +89,8 @@ Thanks for helping out! Speak to Adric at the cassava farm.
 
 (if: $reputation&#39;s 4th is 2)[You feel a special bond with Adric.]
 
+&lt;!--Festival: Homowo is a festival celebrated by the Ga people of Ghana in the Greater Accra Region. The festival starts at the end of April into May with the planting of crops (mainly millet) before the rainy season starts. The Ga people celebrate Homowo in the remembrance of famine that once happened in their history in precolonial Ghana.--&gt;
+
 [[Leave|Festival]]</tw-passagedata><tw-passagedata pid="8" name="Cassava Plot" tags="" position="950,0" size="100,100">Hi there! You&#39;re $name, right? My name is Adric and I&#39;ll be helping you grow your cassava on this farm! Cassava is a staple food crop in Madagascar, Africa. The crop is often featured in traditional ceremonies and rituals.]
 
 In the middle of the nineteenth century, cassava became increasingly important as a staple food and was widely planted in Africa. It thrives in our environment because of its low water requirement, survivability in marginal soils, and flexibility in harvest time. No part of cassava goes to waste as parts are dried and fed to animals and the water squeezed from the fermeted cassava, the starch, is used to harden cloths.
@@ -116,6 +123,8 @@ You&#39;ve spoken to everyone already! Cool! We might ask you to help us with wa
 [[Leave the cassava plot|Time 2]]</tw-passagedata><tw-passagedata pid="11" name="Corn Final" tags="" position="2025,450" size="100,100">(set: $plotChecked&#39;s 2nd to true)Hey $name! I just wanted to let you know that the rice crops did (if: $cropStatus&#39;s 2nd is &lt; 0)[poorly...](else-if: $cropStatus&#39;s 2nd is &gt; 1)[great!](else:)[fine.]
 
 (if: $reputation&#39;s 2nd is 2)[You feel a special bond with Waya.]
+
+&lt;!--Festival: The Green Corn Festival, also known as the Green Corn Ceremony, is a type of celebration and religious ceremony commonly practiced by the Eastern Woodlands and Southeastern tribes, including the Creek, Cherokee, and Seminole. It occurs in late summer, coinciding with the ripening of the corn crops. The ceremony usually lasts for three days, and involves dancing, feasting, fasting, religious observation, and other activities. During the ceremony, the members of the tribe give thanks for the corn, rain, sun, and a good harvest.--&gt;
 
 [[Leave|Festival]]</tw-passagedata><tw-passagedata pid="12" name="Corn Plot" tags="" position="650,0" size="100,100">Hi there! You&#39;re $name, right? My name is Waya and I&#39;ll be helping you grow your corn on this farm! Corn has deep cultural and historical roots in Native American traditions, as it played a vital role in the diets of indigenous peoples. It is celebrated in multiple festivals and events across the country.
 
@@ -188,7 +197,7 @@ But first, you should probably start a farm and hire some farmhands, don&#39;t y
 [[Leave the bean plot.|Time 1]]</tw-passagedata><tw-passagedata pid="22" name="Fertilize Bean 2" tags="" position="1575,850" size="100,100">(set: $cropStatus&#39;s 3rd to it +1)(set: $fertilizer to it -1)You used the fertilizer, helping nourish the beans!
 [[Leave the bean plot|Time 2]]</tw-passagedata><tw-passagedata pid="23" name="Fertilize Cassava 1" tags="" position="1100,850" size="100,100">(set: $cropStatus&#39;s 4th to it +1)(set: $fertilizer to it -1)You used the fertilizer, helping nourish the cassava!
 [[Leave the cassava plot|Time 1]]</tw-passagedata><tw-passagedata pid="24" name="Fertilize Cassava 2" tags="" position="1700,850" size="100,100">(set: $cropStatus&#39;s 4th to it +1)(set: $fertilizer to it -1)You used the fertilizer, helping nourish the cassava!
-[[Leave the bean plot|Time 2]]</tw-passagedata><tw-passagedata pid="25" name="Fertilize Corn 1" tags="" position="825,850" size="100,100">(set: $cropStatus&#39;s 2nd to it +1)(set: $fertilizer to it -1)You used the fertilizer, helping nourish the corn!
+[[Leave the cassava plot|Time 2]]</tw-passagedata><tw-passagedata pid="25" name="Fertilize Corn 1" tags="" position="825,850" size="100,100">(set: $cropStatus&#39;s 2nd to it +1)(set: $fertilizer to it -1)You used the fertilizer, helping nourish the corn!
 [[Leave the corn plot.|Time 1]]</tw-passagedata><tw-passagedata pid="26" name="Fertilize Corn 2" tags="" position="1425,850" size="100,100">(set: $cropStatus&#39;s 2nd to it +1)(set: $fertilizer to it -1)You used the fertilizer, helping nourish the corn!
 [[Leave the corn plot|Time 2]]</tw-passagedata><tw-passagedata pid="27" name="Fertilize Rice 1" tags="" position="700,850" size="100,100">(set: $cropStatus&#39;s 1st to it +1)(set: $fertilizer to it -1)You used the fertilizer, helping nourish the rice!
 [[Leave the rice plot.|Time 1]]</tw-passagedata><tw-passagedata pid="28" name="Fertilize Rice 2" tags="" position="1300,850" size="100,100">(set: $cropStatus&#39;s 1st to it +1)(set: $fertilizer to it -1)You used the fertilizer, helping nourish the rice!
@@ -240,12 +249,15 @@ You make sure Mei takes enough rests and drinks enough water, as she continues t
 {
 &lt;!--Maintenance--&gt;
 (if: $event&#39;s 1st is 0)[Mei talks about how to better maintain the crop.]
+&lt;!--It is best suited to regions which have high humidity, prolonged sunshine and an assured supply of water.--&gt;
 
 &lt;!--Animal handling--&gt;
 (else-if: $event&#39;s 1st is 1)[Mei talks about the animal nearby.]
+&lt;!--Livestock animal: Pigs--&gt;
 
 &lt;!--Dinner--&gt;
 (else:)[Mei talks about food made from the crop.]
+&lt;!--fried rice, Zongzi (China, glutinous rice stuffed with various ingredients and wrapped in bamboo leaves), champorado (Philippines, sweet chocolate rice porridge), horchata (Mexico, sugared rice milk)--&gt;
 }
 
 [[Leave the rice plot|Time 2]]
@@ -300,6 +312,8 @@ Cassava/Africa
 (if: $part2 is false)[[[Leave the store|Time 1]]](else:)[[[Leave the store.|Time 2]]]</tw-passagedata><tw-passagedata pid="36" name="Rice Final" tags="" position="1900,450" size="100,100">(set: $plotChecked&#39;s 1st to true)Hey $name! I just wanted to let you know that the rice crops did (if: $cropStatus&#39;s 1st is &lt; 0)[poorly...](else-if: $cropStatus&#39;s 1st is &gt; 1)[great!](else:)[fine.]
 
 (if: $reputation&#39;s 1st is 2)[You feel a special bond with Mei.]
+
+&lt;!--Chinese Spring Festival/Lunar New Year, celebrates the beginning of a new year on the traditional Chinese calendar. Over the 15 days, families come together to celebrate the new year and enjoy festive foods such as fish, dumplings and nian gao – a glutinous rice cake.--&gt;
 
 [[Leave|Festival]]</tw-passagedata><tw-passagedata pid="37" name="Rice Plot" tags="" position="500,0" size="100,100">You park your car just by the dirt driveway leading up to the old farmhouse. There used to be farm here in Great Fields, but the farmer it belonged to sadly passed away with no one to care for it afterwards. When you were elected mayor, you saw this as a great oppurtunity to reopen the farm for the citizens to use.
 
@@ -431,20 +445,7 @@ You sit next to Waya in the tool shed as they talk more about how to grow and ha
 You make sure Waya takes enough rests and drinks enough water, as they continue to work and talk about how to grow and harvest corn.]
 }
 
-[[Leave the corn plot.|Time 1]]</tw-passagedata><tw-passagedata pid="47" name="Waya Convo 2" tags="" position="1425,725" size="100,100">(set: $reputation&#39;s 2nd to it +1)(set: $plotChecked&#39;s 2nd to true)(set: $cropStatus&#39;s 2nd to it +1)
-{
-&lt;!--Maintenance--&gt;
-(if: $event&#39;s 2nd is 0)[Waya talks about how to better maintain the crop.]
-
-&lt;!--Animal handling--&gt;
-(else-if: $event&#39;s 2nd is 1)[Waya talks about the animal nearby.]
-
-&lt;!--Dinner--&gt;
-(else:)[Waya talks about food made from the crop.]
-}
-
-[[Leave the rice plot|Time 2]]
-(if: $fertilizer &gt; 0)[[[Use fertilizer before you leave|Fertilize Corn 2]]]</tw-passagedata><tw-passagedata pid="48" name="Ximena Convo 1" tags="" position="975,725" size="100,100">{(set: $reputation&#39;s 3rd to it +1)(set: $plotChecked&#39;s 3rd to true)(set: $cropStatus&#39;s 3rd to it +1)
+[[Leave the corn plot.|Time 1]]</tw-passagedata><tw-passagedata pid="47" name="Ximena Convo 1" tags="" position="975,725" size="100,100">{(set: $reputation&#39;s 3rd to it +1)(set: $plotChecked&#39;s 3rd to true)(set: $cropStatus&#39;s 3rd to it +1)
 &lt;!--Clear weather--&gt;
 (if: $weather &lt; 70 and &gt; 30)[As you approach, she waves a hand in greeting.
 &lt;br&gt;
@@ -467,20 +468,39 @@ You sit next to Ximena in the barn as she talks more about how to grow and harve
 You make sure Ximena takes enough rests and drinks enough water, as she continues to work and talk about how to grow and harvest beans.]
 }
 
-[[Leave the bean plot.|Time 1]]</tw-passagedata><tw-passagedata pid="49" name="Ximena Convo 2" tags="" position="1575,725" size="100,100">(set: $reputation&#39;s 3rd to it +1)(set: $plotChecked&#39;s 3rd to true)(set: $cropStatus&#39;s 3rd to it +1)
+[[Leave the bean plot.|Time 1]]</tw-passagedata><tw-passagedata pid="48" name="Ximena Convo 2" tags="" position="1575,725" size="100,100">(set: $reputation&#39;s 3rd to it +1)(set: $plotChecked&#39;s 3rd to true)(set: $cropStatus&#39;s 3rd to it +1)
 {
 &lt;!--Maintenance--&gt;
 (if: $event&#39;s 3rd is 0)[Ximena talks about how to better maintain the crop.]
+&lt;!--Beans grow best in slightly acidic to neutral soil, pH between 6 and 7. Clay or silt loams are better for bean production than sandy soils, although good drainage is important. Use well-rotted manure or compost at planting to increase soil organic matter.--&gt;
 
 &lt;!--Animal handling--&gt;
 (else-if: $event&#39;s 3rd is 1)[Ximena talks about the animal nearby.]
+&lt;!--Livestock: Chicken--&gt;
 
 &lt;!--Dinner--&gt;
 (else:)[Ximena talks about food made from the crop.]
+&lt;!--Refried beans, or &quot;frijoles refritos,&quot; are a staple in Mexican cuisine, with a history dating back centuries. This classic recipe showcases the creamy texture and earthy flavor of pinto beans, which have nourished the Mexican people for generations.--&gt;
 }
 
-[[Leave the rice plot|Time 2]]
-(if: $fertilizer &gt; 0)[[[Use fertilizer before you leave|Fertilize Bean 2]]]</tw-passagedata></tw-storydata>
+[[Leave the bean plot|Time 2]]
+(if: $fertilizer &gt; 0)[[[Use fertilizer before you leave|Fertilize Bean 2]]]</tw-passagedata><tw-passagedata pid="49" name="Waya Convo 2" tags="" position="1425,725" size="100,100">(set: $reputation&#39;s 2nd to it +1)(set: $plotChecked&#39;s 2nd to true)(set: $cropStatus&#39;s 2nd to it +1)
+{
+&lt;!--Maintenance--&gt;
+(if: $event&#39;s 2nd is 0)[Waya talks about how to better maintain the crop.]
+&lt;!--Corn does best with warm, sunny growing weather (75–86° F), well-distributed intermittent moderate rains, or irrigation (15 or more inches during the growing season), and 130 or more frost-free days.--&gt;
+
+&lt;!--Animal handling--&gt;
+(else-if: $event&#39;s 2nd is 1)[Waya talks about the animal nearby.]
+&lt;!--Livestock animal: Cows (though historically it would be elk or bison)--&gt;
+
+&lt;!--Dinner--&gt;
+(else:)[Waya talks about food made from the crop.]
+&lt;!--corn pone (A kind of bread made from corn meal), three sisters succotash (from the Native American word msiquatash, made with corn, squash and beans which were all crops tended to by Native Americans)--&gt;
+}
+
+[[Leave the corn plot|Time 2]]
+(if: $fertilizer &gt; 0)[[[Use fertilizer before you leave|Fertilize Corn 2]]]</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim

@@ -50,15 +50,18 @@ You make sure Adric takes enough rests and drinks enough water, as he continues 
 {
 <!--Maintenance-->
 (if: $event's 4th is 0)[Adric talks about how to better maintain the crop.]
+<!--Cassava does not tolerate freezing conditions, but does tolerate a wide range of soil pH 4.0 to 8.0 and is most productive in full sun.-->
 
 <!--Animal handling-->
 (else-if: $event's 4th is 1)[Adric talks about the animal nearby.]
+<!--Livestock: goat-->
 
 <!--Dinner-->
 (else:)[Adric talks about food made from the crop.]
+<!--Cassava flour is used in making garri, a popular food in Nigeria,Cassava flour is used in making garri, a popular food in Nigeria, Garri is a creamy-white, granular flour with a slightly sour, fermented flavor from fermented, gelatinized fresh cassava tubers.-->
 }
 
-[[Leave the rice plot|Time 2]]
+[[Leave the cassava plot|Time 2]]
 (if: $fertilizer > 0)[[[Use fertilizer before you leave|Fertilize Cassava 2]]]
 
 
@@ -66,6 +69,8 @@ You make sure Adric takes enough rests and drinks enough water, as he continues 
 (set: $plotChecked's 3rd to true)Hey $name! I just wanted to let you know that the rice crops did (if: $cropStatus's 3rd is < 0)[poorly...](else-if: $cropStatus's 2nd is > 1)[great!](else:)[fine.]
 
 (if: $reputation's 3rd is 2)[You feel a special bond with Ximena.]
+
+<!--Festival: Día de los Muertos, during that period and in the preceding weeks, families celebrate the spirits of departed loved ones in various ways, including erecting ofrendas (small altars) in their houses, decorating tombs, and eating skull-shaped candies and sweet breads. It is both a celebration of one’s ancestors, with whom many believe they can communicate during those events, and an acceptance of death as natural and inevitable rather than as something to be feared. -->
 
 [[Leave|Festival]]
 
@@ -118,6 +123,8 @@ Thanks for helping out! Speak to Adric at the cassava farm.
 
 (if: $reputation's 4th is 2)[You feel a special bond with Adric.]
 
+<!--Festival: Homowo is a festival celebrated by the Ga people of Ghana in the Greater Accra Region. The festival starts at the end of April into May with the planting of crops (mainly millet) before the rainy season starts. The Ga people celebrate Homowo in the remembrance of famine that once happened in their history in precolonial Ghana.-->
+
 [[Leave|Festival]]
 
 
@@ -166,6 +173,8 @@ You've spoken to everyone already! Cool! We might ask you to help us with wateri
 (set: $plotChecked's 2nd to true)Hey $name! I just wanted to let you know that the rice crops did (if: $cropStatus's 2nd is < 0)[poorly...](else-if: $cropStatus's 2nd is > 1)[great!](else:)[fine.]
 
 (if: $reputation's 2nd is 2)[You feel a special bond with Waya.]
+
+<!--Festival: The Green Corn Festival, also known as the Green Corn Ceremony, is a type of celebration and religious ceremony commonly practiced by the Eastern Woodlands and Southeastern tribes, including the Creek, Cherokee, and Seminole. It occurs in late summer, coinciding with the ripening of the corn crops. The ceremony usually lasts for three days, and involves dancing, feasting, fasting, religious observation, and other activities. During the ceremony, the members of the tribe give thanks for the corn, rain, sun, and a good harvest.-->
 
 [[Leave|Festival]]
 
@@ -290,7 +299,7 @@ But first, you should probably start a farm and hire some farmhands, don't you t
 
 :: Fertilize Cassava 2 {"position":"1700,850","size":"100,100"}
 (set: $cropStatus's 4th to it +1)(set: $fertilizer to it -1)You used the fertilizer, helping nourish the cassava!
-[[Leave the bean plot|Time 2]]
+[[Leave the cassava plot|Time 2]]
 
 
 :: Fertilize Corn 1 {"position":"825,850","size":"100,100"}
@@ -378,12 +387,15 @@ You make sure Mei takes enough rests and drinks enough water, as she continues t
 {
 <!--Maintenance-->
 (if: $event's 1st is 0)[Mei talks about how to better maintain the crop.]
+<!--It is best suited to regions which have high humidity, prolonged sunshine and an assured supply of water.-->
 
 <!--Animal handling-->
 (else-if: $event's 1st is 1)[Mei talks about the animal nearby.]
+<!--Livestock animal: Pigs-->
 
 <!--Dinner-->
 (else:)[Mei talks about food made from the crop.]
+<!--fried rice, Zongzi (China, glutinous rice stuffed with various ingredients and wrapped in bamboo leaves), champorado (Philippines, sweet chocolate rice porridge), horchata (Mexico, sugared rice milk)-->
 }
 
 [[Leave the rice plot|Time 2]]
@@ -450,6 +462,8 @@ Excellent! Here is your fertilizer!
 (set: $plotChecked's 1st to true)Hey $name! I just wanted to let you know that the rice crops did (if: $cropStatus's 1st is < 0)[poorly...](else-if: $cropStatus's 1st is > 1)[great!](else:)[fine.]
 
 (if: $reputation's 1st is 2)[You feel a special bond with Mei.]
+
+<!--Chinese Spring Festival/Lunar New Year, celebrates the beginning of a new year on the traditional Chinese calendar. Over the 15 days, families come together to celebrate the new year and enjoy festive foods such as fish, dumplings and nian gao – a glutinous rice cake.-->
 
 [[Leave|Festival]]
 
@@ -629,15 +643,18 @@ You make sure Waya takes enough rests and drinks enough water, as they continue 
 {
 <!--Maintenance-->
 (if: $event's 2nd is 0)[Waya talks about how to better maintain the crop.]
+<!--Corn does best with warm, sunny growing weather (75–86° F), well-distributed intermittent moderate rains, or irrigation (15 or more inches during the growing season), and 130 or more frost-free days.-->
 
 <!--Animal handling-->
 (else-if: $event's 2nd is 1)[Waya talks about the animal nearby.]
+<!--Livestock animal: Cows (though historically it would be elk or bison)-->
 
 <!--Dinner-->
 (else:)[Waya talks about food made from the crop.]
+<!--corn pone (A kind of bread made from corn meal), three sisters succotash (from the Native American word msiquatash, made with corn, squash and beans which were all crops tended to by Native Americans)-->
 }
 
-[[Leave the rice plot|Time 2]]
+[[Leave the corn plot|Time 2]]
 (if: $fertilizer > 0)[[[Use fertilizer before you leave|Fertilize Corn 2]]]
 
 
@@ -673,13 +690,16 @@ You make sure Ximena takes enough rests and drinks enough water, as she continue
 {
 <!--Maintenance-->
 (if: $event's 3rd is 0)[Ximena talks about how to better maintain the crop.]
+<!--Beans grow best in slightly acidic to neutral soil, pH between 6 and 7. Clay or silt loams are better for bean production than sandy soils, although good drainage is important. Use well-rotted manure or compost at planting to increase soil organic matter.-->
 
 <!--Animal handling-->
 (else-if: $event's 3rd is 1)[Ximena talks about the animal nearby.]
+<!--Livestock: Chicken-->
 
 <!--Dinner-->
 (else:)[Ximena talks about food made from the crop.]
+<!--Refried beans, or "frijoles refritos," are a staple in Mexican cuisine, with a history dating back centuries. This classic recipe showcases the creamy texture and earthy flavor of pinto beans, which have nourished the Mexican people for generations.-->
 }
 
-[[Leave the rice plot|Time 2]]
+[[Leave the bean plot|Time 2]]
 (if: $fertilizer > 0)[[[Use fertilizer before you leave|Fertilize Bean 2]]]
