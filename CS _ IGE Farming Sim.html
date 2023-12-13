@@ -38,10 +38,6 @@ You make sure Adric takes enough rests and drinks enough water, as he continues 
 (if: $event&#39;s 4th is 0)[Adric talks about how to better maintain the crop.]
 &lt;!--Cassava does not tolerate freezing conditions, but does tolerate a wide range of soil pH 4.0 to 8.0 and is most productive in full sun.--&gt;
 
-&lt;!--Animal handling--&gt;
-(else-if: $event&#39;s 4th is 1)[Adric talks about the animal nearby.]
-&lt;!--Livestock: goat--&gt;
-
 &lt;!--Dinner--&gt;
 (else:)[Adric talks about food made from the crop.]
 &lt;!--Cassava flour is used in making garri, a popular food in Nigeria,Cassava flour is used in making garri, a popular food in Nigeria, Garri is a creamy-white, granular flour with a slightly sour, fermented flavor from fermented, gelatinized fresh cassava tubers.--&gt;
@@ -75,9 +71,6 @@ Thanks for helping out! Speak to Adric at the cassava farm.
 [[Leave the bean plot.|Time 1]]</tw-passagedata><tw-passagedata pid="6" name="Bean Status 2" tags="" position="1575,600" size="100,100">{
 &lt;!--Maintenance--&gt;
 (if: $event&#39;s 3rd is 0)[You see Ximena working on the beans.]
-
-&lt;!--Animal handling--&gt;
-(else-if: $event&#39;s 3rd is 1)[You see Ximena tending to some animals.]
 
 &lt;!--Dinner--&gt;
 (else:)[You see Ximena in the kitchen preparing some food.]
@@ -113,9 +106,6 @@ You&#39;ve spoken to everyone already! Cool! We might ask you to help us with wa
 [[Leave the cassava plot.|Time 1]]</tw-passagedata><tw-passagedata pid="10" name="Cassava Status 2" tags="" position="1700,600" size="100,100">{
 &lt;!--Maintenance--&gt;
 (if: $event&#39;s 4th is 0)[You see Adric working on the cassava.]
-
-&lt;!--Animal handling--&gt;
-(else-if: $event&#39;s 4th is 1)[You see Adric tending to some animals.]
 
 &lt;!--Dinner--&gt;
 (else:)[You see Adric in the kitchen preparing some food.]
@@ -153,9 +143,6 @@ Thanks for helping out! Speak to Ximena at the bean farm.
 [[Leave the corn plot.|Time 1]]</tw-passagedata><tw-passagedata pid="14" name="Corn Status 2" tags="" position="1425,600" size="100,100">{
 &lt;!--Maintenance--&gt;
 (if: $event&#39;s 2nd is 0)[You see Waya working on the corn.]
-
-&lt;!--Animal handling--&gt;
-(else-if: $event&#39;s 2nd is 1)[You see Waya tending to some animals.]
 
 &lt;!--Dinner--&gt;
 (else:)[You see Waya in the kitchen preparing some food.]
@@ -264,10 +251,6 @@ You make sure Mei takes enough rests and drinks enough water, as she continues t
 &lt;br&gt;
 You found Mei&#39;s explanation of the crop&#39;s history to be very interesting and engaging as you continue to help her in the fields.
 
-&lt;!--Animal handling--&gt;
-(else-if: $event&#39;s 1st is 1)[Mei talks about the animal nearby.]
-&lt;!--Livestock animal: Pigs--&gt;
-
 &lt;!--Dinner--&gt;
 (else:)[Mei talks about food made from the crop.]
 &lt;!--fried rice, Zongzi (China, glutinous rice stuffed with various ingredients and wrapped in bamboo leaves), champorado (Philippines, sweet chocolate rice porridge), horchata (Mexico, sugared rice milk)--&gt;
@@ -364,9 +347,6 @@ Thanks for helping out! Waya is waiting for you at the corn farm.--&gt;}
 &lt;!--Maintenance--&gt;
 (if: $event&#39;s 1st is 0)[You see Mei working on the rice.]
 
-&lt;!--Animal handling--&gt;
-(else-if: $event&#39;s 1st is 1)[You see Mei tending to some animals.]
-
 &lt;!--Dinner--&gt;
 (else:)[You see Mei in the kitchen preparing some food.]
 }
@@ -393,7 +373,7 @@ personalization. Remove this comment once you&#39;ve done so --&gt;</tw-passaged
 (set: $reputation to (a: 0, 0, 0, 0))
 
 &lt;!--Random event for Time 2: 0 for maintaining crop, 1 for animals, 2 for food--&gt;
-(set: $event to (a: (random: 0, 2), (random: 0, 2), (random: 0, 2), (random: 0, 2)))
+(set: $event to (a: (random: 0, 1), (random: 0, 1), (random: 0, 1), (random: 0, 1)))
 
 &lt;!--General farm management--&gt;
 (set: $plotChecked to (a: false, false, false, false))
@@ -459,7 +439,18 @@ You sit next to Waya in the tool shed as they talk more about how to grow and ha
 You make sure Waya takes enough rests and drinks enough water, as they continue to work and talk about how to grow and harvest corn.]
 }
 
-[[Leave the corn plot.|Time 1]]</tw-passagedata><tw-passagedata pid="47" name="Ximena Convo 1" tags="" position="975,725" size="100,100">{(set: $reputation&#39;s 3rd to it +1)(set: $plotChecked&#39;s 3rd to true)(set: $cropStatus&#39;s 3rd to it +1)
+[[Leave the corn plot.|Time 1]]</tw-passagedata><tw-passagedata pid="47" name="Waya Convo 2" tags="" position="1425,725" size="100,100">(set: $reputation&#39;s 2nd to it +1)(set: $plotChecked&#39;s 2nd to true)(set: $cropStatus&#39;s 2nd to it +1)
+{
+&lt;!--Maintenance--&gt;
+(if: $event&#39;s 2nd is 0)[Waya talks about how to better maintain the crop.]
+&lt;!--Corn does best with warm, sunny growing weather (75–86° F), well-distributed intermittent moderate rains, or irrigation (15 or more inches during the growing season), and 130 or more frost-free days.--&gt;
+
+&lt;!--Dinner--&gt;
+(else:)[Waya talks about food made from the crop.]
+&lt;!--corn pone (A kind of bread made from corn meal), three sisters succotash (from the Native American word msiquatash, made with corn, squash and beans which were all crops tended to by Native Americans)--&gt;
+}
+
+[[Leave the corn plot|Time 2]]</tw-passagedata><tw-passagedata pid="48" name="Ximena Convo 1" tags="" position="975,725" size="100,100">{(set: $reputation&#39;s 3rd to it +1)(set: $plotChecked&#39;s 3rd to true)(set: $cropStatus&#39;s 3rd to it +1)
 &lt;!--Clear weather--&gt;
 (if: $weather &lt; 70 and &gt; 30)[As you approach, she waves a hand in greeting.
 &lt;br&gt;
@@ -482,37 +473,18 @@ You sit next to Ximena in the barn as she talks more about how to grow and harve
 You make sure Ximena takes enough rests and drinks enough water, as she continues to work and talk about how to grow and harvest beans.]
 }
 
-[[Leave the bean plot.|Time 1]]</tw-passagedata><tw-passagedata pid="48" name="Ximena Convo 2" tags="" position="1575,725" size="100,100">(set: $reputation&#39;s 3rd to it +1)(set: $plotChecked&#39;s 3rd to true)(set: $cropStatus&#39;s 3rd to it +1)
+[[Leave the bean plot.|Time 1]]</tw-passagedata><tw-passagedata pid="49" name="Ximena Convo 2" tags="" position="1575,725" size="100,100">(set: $reputation&#39;s 3rd to it +1)(set: $plotChecked&#39;s 3rd to true)(set: $cropStatus&#39;s 3rd to it +1)
 {
 &lt;!--Maintenance--&gt;
 (if: $event&#39;s 3rd is 0)[Ximena talks about how to better maintain the crop.]
 &lt;!--Beans grow best in slightly acidic to neutral soil, pH between 6 and 7. Clay or silt loams are better for bean production than sandy soils, although good drainage is important. Use well-rotted manure or compost at planting to increase soil organic matter.--&gt;
-
-&lt;!--Animal handling--&gt;
-(else-if: $event&#39;s 3rd is 1)[Ximena talks about the animal nearby.]
-&lt;!--Livestock: Chicken--&gt;
 
 &lt;!--Dinner--&gt;
 (else:)[Ximena talks about food made from the crop.]
 &lt;!--Refried beans, or &quot;frijoles refritos,&quot; are a staple in Mexican cuisine, with a history dating back centuries. This classic recipe showcases the creamy texture and earthy flavor of pinto beans, which have nourished the Mexican people for generations.--&gt;
 }
 
-[[Leave the bean plot|Time 2]]</tw-passagedata><tw-passagedata pid="49" name="Waya Convo 2" tags="" position="1425,725" size="100,100">(set: $reputation&#39;s 2nd to it +1)(set: $plotChecked&#39;s 2nd to true)(set: $cropStatus&#39;s 2nd to it +1)
-{
-&lt;!--Maintenance--&gt;
-(if: $event&#39;s 2nd is 0)[Waya talks about how to better maintain the crop.]
-&lt;!--Corn does best with warm, sunny growing weather (75–86° F), well-distributed intermittent moderate rains, or irrigation (15 or more inches during the growing season), and 130 or more frost-free days.--&gt;
-
-&lt;!--Animal handling--&gt;
-(else-if: $event&#39;s 2nd is 1)[Waya talks about the animal nearby.]
-&lt;!--Livestock animal: Cows (though historically it would be elk or bison)--&gt;
-
-&lt;!--Dinner--&gt;
-(else:)[Waya talks about food made from the crop.]
-&lt;!--corn pone (A kind of bread made from corn meal), three sisters succotash (from the Native American word msiquatash, made with corn, squash and beans which were all crops tended to by Native Americans)--&gt;
-}
-
-[[Leave the corn plot|Time 2]]</tw-passagedata></tw-storydata>
+[[Leave the bean plot|Time 2]]</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim

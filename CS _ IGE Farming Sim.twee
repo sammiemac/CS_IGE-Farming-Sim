@@ -52,10 +52,6 @@ You make sure Adric takes enough rests and drinks enough water, as he continues 
 (if: $event's 4th is 0)[Adric talks about how to better maintain the crop.]
 <!--Cassava does not tolerate freezing conditions, but does tolerate a wide range of soil pH 4.0 to 8.0 and is most productive in full sun.-->
 
-<!--Animal handling-->
-(else-if: $event's 4th is 1)[Adric talks about the animal nearby.]
-<!--Livestock: goat-->
-
 <!--Dinner-->
 (else:)[Adric talks about food made from the crop.]
 <!--Cassava flour is used in making garri, a popular food in Nigeria,Cassava flour is used in making garri, a popular food in Nigeria, Garri is a creamy-white, granular flour with a slightly sour, fermented flavor from fermented, gelatinized fresh cassava tubers.-->
@@ -105,9 +101,6 @@ Thanks for helping out! Speak to Adric at the cassava farm.
 {
 <!--Maintenance-->
 (if: $event's 3rd is 0)[You see Ximena working on the beans.]
-
-<!--Animal handling-->
-(else-if: $event's 3rd is 1)[You see Ximena tending to some animals.]
 
 <!--Dinner-->
 (else:)[You see Ximena in the kitchen preparing some food.]
@@ -159,9 +152,6 @@ You've spoken to everyone already! Cool! We might ask you to help us with wateri
 {
 <!--Maintenance-->
 (if: $event's 4th is 0)[You see Adric working on the cassava.]
-
-<!--Animal handling-->
-(else-if: $event's 4th is 1)[You see Adric tending to some animals.]
 
 <!--Dinner-->
 (else:)[You see Adric in the kitchen preparing some food.]
@@ -215,9 +205,6 @@ Thanks for helping out! Speak to Ximena at the bean farm.
 {
 <!--Maintenance-->
 (if: $event's 2nd is 0)[You see Waya working on the corn.]
-
-<!--Animal handling-->
-(else-if: $event's 2nd is 1)[You see Waya tending to some animals.]
 
 <!--Dinner-->
 (else:)[You see Waya in the kitchen preparing some food.]
@@ -402,10 +389,6 @@ You make sure Mei takes enough rests and drinks enough water, as she continues t
 <br>
 You found Mei's explanation of the crop's history to be very interesting and engaging as you continue to help her in the fields.
 
-<!--Animal handling-->
-(else-if: $event's 1st is 1)[Mei talks about the animal nearby.]
-<!--Livestock animal: Pigs-->
-
 <!--Dinner-->
 (else:)[Mei talks about food made from the crop.]
 <!--fried rice, Zongzi (China, glutinous rice stuffed with various ingredients and wrapped in bamboo leaves), champorado (Philippines, sweet chocolate rice porridge), horchata (Mexico, sugared rice milk)-->
@@ -526,9 +509,6 @@ Thanks for helping out! Waya is waiting for you at the corn farm.-->}
 <!--Maintenance-->
 (if: $event's 1st is 0)[You see Mei working on the rice.]
 
-<!--Animal handling-->
-(else-if: $event's 1st is 1)[You see Mei tending to some animals.]
-
 <!--Dinner-->
 (else:)[You see Mei in the kitchen preparing some food.]
 }
@@ -563,7 +543,7 @@ personalization. Remove this comment once you've done so -->
 (set: $reputation to (a: 0, 0, 0, 0))
 
 <!--Random event for Time 2: 0 for maintaining crop, 1 for animals, 2 for food-->
-(set: $event to (a: (random: 0, 2), (random: 0, 2), (random: 0, 2), (random: 0, 2)))
+(set: $event to (a: (random: 0, 1), (random: 0, 1), (random: 0, 1), (random: 0, 1)))
 
 <!--General farm management-->
 (set: $plotChecked to (a: false, false, false, false))
@@ -659,10 +639,6 @@ You make sure Waya takes enough rests and drinks enough water, as they continue 
 (if: $event's 2nd is 0)[Waya talks about how to better maintain the crop.]
 <!--Corn does best with warm, sunny growing weather (75–86° F), well-distributed intermittent moderate rains, or irrigation (15 or more inches during the growing season), and 130 or more frost-free days.-->
 
-<!--Animal handling-->
-(else-if: $event's 2nd is 1)[Waya talks about the animal nearby.]
-<!--Livestock animal: Cows (though historically it would be elk or bison)-->
-
 <!--Dinner-->
 (else:)[Waya talks about food made from the crop.]
 <!--corn pone (A kind of bread made from corn meal), three sisters succotash (from the Native American word msiquatash, made with corn, squash and beans which were all crops tended to by Native Americans)-->
@@ -704,10 +680,6 @@ You make sure Ximena takes enough rests and drinks enough water, as she continue
 <!--Maintenance-->
 (if: $event's 3rd is 0)[Ximena talks about how to better maintain the crop.]
 <!--Beans grow best in slightly acidic to neutral soil, pH between 6 and 7. Clay or silt loams are better for bean production than sandy soils, although good drainage is important. Use well-rotted manure or compost at planting to increase soil organic matter.-->
-
-<!--Animal handling-->
-(else-if: $event's 3rd is 1)[Ximena talks about the animal nearby.]
-<!--Livestock: Chicken-->
 
 <!--Dinner-->
 (else:)[Ximena talks about food made from the crop.]
