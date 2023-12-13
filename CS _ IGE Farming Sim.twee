@@ -132,7 +132,7 @@ Thanks for helping out! Speak to Adric at the cassava farm.
 
 "Homowo is a festival celebrated by the Ga people of Ghana in the Greater Accra Region. The festival starts at the end of April into May with the planting of crops before the rainy season starts. The Ga people celebrate Homowo in the remembrance of famine that once happened in their history in pre-colonial Ghana."
 
-"Oh, by the way! I just wanted to let you know that the cassava crops did (if: $cropStatus's 4th is < 0)[poorly... but that's okay. I'm sure we can do better next time!"](else-if: $cropStatus's 4th is > 1)[[great! You were a real big help on the farm!"](else:)[okay, and I just know with a little more work it can be even better!"]
+"Oh, by the way! I just wanted to let you know that the cassava crops did (if: $cropStatus's 4th is < 0)[poorly... but that's okay. I'm sure we can do better next time!"](else-if: $cropStatus's 4th is > 1)[great! You were a real big help on the farm!"](else:)[okay, and I just know with a little more work it can be even better!"]
 
 (if: $reputation's 4th is 2)[You feel a special bond with Adric.]
 
@@ -244,7 +244,7 @@ Overall, the state of (text-colour:#c0eb75)[''$farmName''] is...
 
 If there's one thing for sure, it's that you've learned a lot about the different crops, foods, and celebrations from all sorts of cultures and regions. 
 
-(text-colour:#e599f7)[''THE END!!!'']
+[[THE END!!!|Start]]
 
 (text-colour:grey)[//Credits://
 CS 2990 Team - Nick Hortua, Devon Mamawag, Samantha Macaraniag
@@ -609,7 +609,7 @@ personalization. Remove this comment once you've done so -->
 It's the next day, and you arrive at (text-colour:#c0eb75)[''$farmName'']. 
 
 <!--Rainy weather-->
-(if: $weather <= 30)[Raining is coming down hard onto your windshield as you try to get your car up the muddied driveway.]
+(if: $weather <= 30)[Rain is coming down hard onto your windshield as you try to get your car up the muddied driveway.]
 
 <!--Drought-->
 (else-if: $weather >= 70)[A drought has sadly struck the small town, and you drive your car up the dried dirtroad to the farm.]

@@ -98,7 +98,7 @@ Thanks for helping out! Speak to Adric at the cassava farm.
 
 &quot;Homowo is a festival celebrated by the Ga people of Ghana in the Greater Accra Region. The festival starts at the end of April into May with the planting of crops before the rainy season starts. The Ga people celebrate Homowo in the remembrance of famine that once happened in their history in pre-colonial Ghana.&quot;
 
-&quot;Oh, by the way! I just wanted to let you know that the cassava crops did (if: $cropStatus&#39;s 4th is &lt; 0)[poorly... but that&#39;s okay. I&#39;m sure we can do better next time!&quot;](else-if: $cropStatus&#39;s 4th is &gt; 1)[[great! You were a real big help on the farm!&quot;](else:)[okay, and I just know with a little more work it can be even better!&quot;]
+&quot;Oh, by the way! I just wanted to let you know that the cassava crops did (if: $cropStatus&#39;s 4th is &lt; 0)[poorly... but that&#39;s okay. I&#39;m sure we can do better next time!&quot;](else-if: $cropStatus&#39;s 4th is &gt; 1)[great! You were a real big help on the farm!&quot;](else:)[okay, and I just know with a little more work it can be even better!&quot;]
 
 (if: $reputation&#39;s 4th is 2)[You feel a special bond with Adric.]
 
@@ -178,7 +178,7 @@ Overall, the state of (text-colour:#c0eb75)[&#39;&#39;$farmName&#39;&#39;] is...
 
 If there&#39;s one thing for sure, it&#39;s that you&#39;ve learned a lot about the different crops, foods, and celebrations from all sorts of cultures and regions. 
 
-(text-colour:#e599f7)[&#39;&#39;THE END!!!&#39;&#39;]
+[[THE END!!!|Start]]
 
 (text-colour:grey)[//Credits://
 CS 2990 Team - Nick Hortua, Devon Mamawag, Samantha Macaraniag
@@ -435,7 +435,7 @@ personalization. Remove this comment once you&#39;ve done so --&gt;</tw-passaged
 It&#39;s the next day, and you arrive at (text-colour:#c0eb75)[&#39;&#39;$farmName&#39;&#39;]. 
 
 &lt;!--Rainy weather--&gt;
-(if: $weather &lt;= 30)[Raining is coming down hard onto your windshield as you try to get your car up the muddied driveway.]
+(if: $weather &lt;= 30)[Rain is coming down hard onto your windshield as you try to get your car up the muddied driveway.]
 
 &lt;!--Drought--&gt;
 (else-if: $weather &gt;= 70)[A drought has sadly struck the small town, and you drive your car up the dried dirtroad to the farm.]
